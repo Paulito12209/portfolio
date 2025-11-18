@@ -1,0 +1,30 @@
+@use '../../../styles/variables' as vars;
+@use '../../../styles/mixins' as mix; // <- [mixins]
+
+.main-container {
+    margin-left: vars.$sidebar; // Platz für Navigation
+    height: 100vh;
+
+    @include mix.dFlex($jc: start,
+        $ai: start, $fdir: row);
+    // display: flex;
+    // flex-direction: row; // <- HORIZONTAL!
+    overflow-x: auto; // <- Horizontaler Scroll
+    overflow-y: hidden;
+    scroll-snap-type: x proximity; // <- [mandatory] ist zu aggressiv
+    scroll-behavior: smooth;
+    color: white;
+}
+
+.section {
+    min-width: calc(100vw - #{vars.$sidebar}); // Volle Breite minus Sidebar
+    height: 100vh;
+
+    @include mix.dFlex();
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    scroll-snap-align: start;
+    // scroll-snap-stop: always;
+    flex-shrink: 0; // Wichtig: Sections sollen nicht schrumpfen
+}

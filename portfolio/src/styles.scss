@@ -1,5 +1,8 @@
+html,
 body {
     background-color: black;
+    height: 100vh;
+    overflow: hidden; // <- Das ist der Trick!
 }
 
 // FONT: QUANTICO -> im public Ordner
