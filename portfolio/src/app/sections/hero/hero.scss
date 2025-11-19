@@ -1,0 +1,106 @@
+@use '../../../styles/variables' as vars; // <- [_variables]
+@use '../../../styles/mixins.scss' as mix; // <- [mixins]
+
+:host {
+    @include mix.dFlex($ai: end, $fdir: column); // <- Drückt alles nach rechts
+    height: 100vh;
+    width: 100%;
+}
+
+.hero-header {
+    height: 10%; // Header-Bereich
+    width: 80%;
+    @include mix.dFlex($jc: flex-end, $ai: center, $g: 32px);
+    padding: 0 10% 0 0;
+
+    nav {
+        @include mix.dFlex($g: 16px);
+
+        a {
+            @include mix.dFlex($ai: center, $g: 8px);
+            color: vars.$neon;
+            text-decoration: none;
+            font-size: 14px;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+
+                &:hover {
+                    // filter: invert(67%) sepia(50%) saturate(596%) hue-rotate(38deg) brightness(223%) contrast(83%);
+                    filter: brightness(0) saturate(100%) invert(82%) sepia(35%) saturate(3000%) hue-rotate(35deg) brightness(145%) contrast(104%);
+                }
+            }
+        }
+    }
+}
+
+.language-toggle {
+    @include mix.dFlex($jc: flex-end, $ai: center);
+}
+
+.lang-de,
+.lang-en {
+    @include mix.dFlex($jc: flex-end, $ai: center, $g: 16px);
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    border: none;
+
+    &:hover {
+        color: vars.$neon;
+    }
+}
+
+.hero-content {
+    height: 90%; // Hero-Inhalt
+    width: 80%;
+    @include mix.dFlex($g: 16px);
+
+    .hero-image {
+        height: 100%;
+        width: 70%;
+        @include mix.dFlex($g: 16px);
+        background-image: url(../../../../public/img/pa-hero-bg-image.png);
+        background-repeat: no-repeat;
+        // background-position: bottom;
+        background-size: cover;
+
+        .hero-text {
+            padding-top: 50%;
+            @include mix.dFlex($fdir: column, $g: 16px);
+
+            h1 {
+                color: vars.$neon;
+                font-size: vars.$f-h1;
+                margin: 0;
+            }
+
+            h3 {
+                color: transparent; // Füllfarbe ausblenden
+                -webkit-text-stroke: 2px vars.$neon; // Konturbreite + Farbe
+                font-size: vars.$f-h3;
+                text-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+                margin: 0;
+            }
+        }
+    }
+
+    .hero-bow {
+        height: 50%;
+        width: 30%;
+        @include mix.dFlex($jc: end, $ai: start);
+        padding-right: 40px;
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@use '../../../styles/variables' as vars; // <- [_variables]
+@use '../../../styles/mixins.scss' as mix; // <- [mixins]
+
+:host {
+    @include mix.dFlex(); // <- Zentriert alles
+    height: 100vh;
+    width: 100dvh;
+}
+
+.why-me-content {
+    height: 70%;
+    width: 70%;
+    @include mix.dFlex($g: 16px);
+
+    h2 {
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        color: transparent; // Füllfarbe ausblenden
+        -webkit-text-stroke: 2px vars.$neon; // Konturbreite + Farbe
+        font-size: vars.$f-h2;
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        margin: 0;
+        flex-shrink: 0; // <- H2 soll nicht schrumpfen
+    }
+
+    .why-me-text {
+        @include mix.dFlex($ai: start, $fdir: column, $g: 16px);
+        width: 75%;
+        overflow: hidden; // <- Verhindert Überlauf als Sicherheit
+
+        p {
+            font-size: vars.$f-p;
+            font-weight: 400;
+
+        }
+
+        p,
+        h3 {
+            margin: 0;
+            word-wrap: break-word; // <- Bricht lange Wörter um}
+        }
+
+        h3 {
+            color: vars.$neon;
+            font-size: vars.$f-h3;
+            font-weight: 700;
+        }
+
+    }
+
+
+}
+
+.why-me-bow {
+    height: 80%;
+    width: 25%;
+    @include mix.dFlex($jc: end, $ai: end);
+    padding-right: 40px;
+
+    button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.why-me-details {
+    @include mix.dFlex($jc: start, $fdir: column);
+
+}
+
+h3 {
+    text-align: start;
+}
+
+.why-me-description {
+    @include mix.dFlex($jc: center, $g: 32px);
+}
+
+.suitcase-icon {
+    @include mix.dFlex($fdir: column);
+}
+
+.why-me-contact-button {
+    background: vars.$neon;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 16px;
+}

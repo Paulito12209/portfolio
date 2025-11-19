@@ -6,7 +6,7 @@
     inset: 0 auto 0 0; // top:0; left:0; bottom:0
     width: vars.$sidebar;
     background-color: vars.$neon;
-    border-right: 5px solid white;
+    // border-right: 5px solid white;
 
     @include mix.dFlex($jc: stretch, $fdir: column, $g: 16px);
 
