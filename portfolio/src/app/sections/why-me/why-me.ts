@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-why-me',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './why-me.html',
   styleUrl: './why-me.scss',
 })

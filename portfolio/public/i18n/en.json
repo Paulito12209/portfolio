@@ -1,0 +1,16 @@
+{
+    "NAV": {
+        "WHY_ME": "Why me",
+        "SKILLS": "Skills",
+        "MY_WORK": "My Work",
+        "CONTACT": "Contact"
+    },
+    "HERO": {
+        "TITLE": "Paul Angeles",
+        "SUBTITLE": "Frontend Developer"
+    },
+    "WHY_ME": {
+        "TITLE": "Why Me",
+        "SUBTITLE": "I am"
+    }
+}

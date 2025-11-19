@@ -5,15 +5,15 @@
         <a href="github..."><img src="img/icons/github-icon.svg" alt="GitHub Icon"></a>
     </nav>
     <div class="language-toggle" role="group" aria-label="Sprachauswahl">
-        <button class="lang-de" aria-pressed="true">DE</button> |
-        <button class="lang-en" aria-pressed="false">EN</button>
+        <button class="lang-de" (click)="changeLanguage('de')" aria-pressed="true">DE</button> |
+        <button class="lang-en" (click)="changeLanguage('en')" aria-pressed="false">EN</button>
     </div>
 </header>
 <div class="hero-content">
     <div class="hero-image">
         <div class="hero-text">
-            <h1>Paul Angeles</h1>
-            <h3>Frontend Developer</h3>
+            <h1>{{ 'HERO.TITLE' | translate }}</h1>
+            <h3>{{ 'HERO.SUBTITLE' | translate }}</h3>
         </div>
 
     </div>
