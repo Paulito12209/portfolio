@@ -9,7 +9,7 @@
 
 .why-me-content {
     height: 70%;
-    width: 70%;
+    width: 70dvh;
     @include mix.dFlex($g: 16px);
 
     h2 {
@@ -87,4 +87,8 @@ h3 {
     padding: 8px 16px;
     border: none;
     border-radius: 16px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
