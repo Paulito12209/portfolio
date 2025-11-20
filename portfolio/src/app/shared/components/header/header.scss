@@ -4,13 +4,14 @@
 
 :host {
     @include mix.dFlex($jc: end); // Navbar wird nach rechts gedrückt
-    height: 80px;
+    height: 100px;
     width: 100%;
 }
 
 nav {
     @include mix.dFlex($g: 48px);
-    padding: 40px;
+    padding: 40px 0 30px 0;
+    margin-right: 10%;
 
     >ul {
         @include mix.dFlex($g: 16px);
