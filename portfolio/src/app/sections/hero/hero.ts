@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from "@ngx-translate/core";
+import { Header } from '../../shared/components/header/header';
+import { SectionBow } from '../../shared/components/section-bow/section-bow';
 
 @Component({
   selector: 'app-hero',
-  imports: [TranslateModule],
+  imports: [TranslateModule, Header, SectionBow],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
 export class Hero {
-  constructor(private translate: TranslateService) { }
 
-  changeLanguage(language: string) {
-    this.translate.use(language);
-  }
 }

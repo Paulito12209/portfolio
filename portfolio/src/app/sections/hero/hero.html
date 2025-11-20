@@ -1,21 +1,14 @@
-<header class="hero-header">
-    <nav aria-label="Social Media Links">
-        <a href="mailto:..."><img src="img/icons/mail-icon.svg" alt="Mail Icon"></a>
-        <a href="linkedin..."><img src="img/icons/linkedin-icon.svg" alt="LinkedIn Icon"></a>
-        <a href="github..."><img src="img/icons/github-icon.svg" alt="GitHub Icon"></a>
-    </nav>
-    <div class="language-toggle" role="group" aria-label="Sprachauswahl">
-        <button class="lang-de" (click)="changeLanguage('de')" aria-pressed="true">DE</button> |
-        <button class="lang-en" (click)="changeLanguage('en')" aria-pressed="false">EN</button>
-    </div>
-</header>
-<div class="hero-content">
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>{{ 'HERO.TITLE' | translate }}</h1>
-            <h3>{{ 'HERO.SUBTITLE' | translate }}</h3>
+<div class="hero-container">
+    <app-header></app-header>
+    <div class="hero-content">
+        <div class="hero-image">
+            <div class="hero-image-bg">
+                <div class="hero-text">
+                    <h1>{{ 'HERO.TITLE' | translate }}</h1>
+                    <h3>{{ 'HERO.SUBTITLE' | translate }}</h3>
+                </div>
+            </div>
         </div>
-
+        <app-section-bow></app-section-bow>
     </div>
-    <div class="hero-bow"><button><img src="img/arrow-right.svg" alt="Pfeil nach rechts"></button></div>
 </div>

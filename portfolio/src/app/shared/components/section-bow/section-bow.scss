@@ -1,0 +1,14 @@
+// @use '../../../../styles/variables' as vars; // <- [_variables]
+@use '../../../../styles/mixins.scss' as mix; // <- [mixins]
+
+.hero-bow {
+    @include mix.dFlex($ai: end);
+    height: 420px;
+    padding-right: 40px;
+
+    button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}

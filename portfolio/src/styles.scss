@@ -1,12 +1,16 @@
 @use 'styles/variables' as vars; // <- [_variables]
 @use 'styles/mixins.scss' as mix; // <- [mixins]
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 // Globales Layout - verhindert vertikales Scrollen
 html,
 body {
     background-color: black;
     height: 100vh;
-    margin: 0;
     overflow: hidden; // <- Das ist der Trick!
     font-family: vars.$font-quantico;
 }

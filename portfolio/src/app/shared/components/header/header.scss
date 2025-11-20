@@ -1,0 +1,60 @@
+@use '../../../../styles/variables' as vars; // <- [_variables]
+@use '../../../../styles/mixins.scss' as mix; // <- [mixins]
+
+
+:host {
+    @include mix.dFlex($jc: end); // Navbar wird nach rechts gedrückt
+    height: 80px;
+    width: 100%;
+}
+
+nav {
+    @include mix.dFlex($g: 48px);
+    padding: 40px;
+
+    >ul {
+        @include mix.dFlex($g: 16px);
+
+        >li {
+            list-style: none;
+        }
+    }
+
+}
+
+a {
+    @include mix.dFlex();
+    text-decoration: none;
+    cursor: pointer;
+    // transition: transform 0.2s ease;  // <- Später Einlesen
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(82%) sepia(35%) saturate(3000%) hue-rotate(35deg) brightness(145%) contrast(104%);
+        }
+    }
+}
+
+.language-toggle {
+    @include mix.dFlex($g: 8px);
+
+    button {
+        @include mix.dFlex();
+        background: transparent;
+        color: white;
+        font-size: 18px;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            color: vars.$neon;
+        }
+    }
+}
