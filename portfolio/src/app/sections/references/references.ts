@@ -4,11 +4,11 @@ import { SectionContent } from '../../shared/components/section-content/section-
 import { SectionBow } from '../../shared/components/section-bow/section-bow';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-references',
   imports: [TranslateModule, SectionContent, SectionBow],
-  templateUrl: './projects.html',
-  styleUrl: './projects.scss',
+  templateUrl: './references.html',
+  styleUrl: './references.scss',
 })
-export class Projects {
+export class References {
 
 }

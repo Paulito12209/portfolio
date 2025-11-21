@@ -44,7 +44,7 @@ a {
 }
 
 .language-toggle {
-    @include mix.dFlex($g: 8px);
+    @include mix.dFlex();
 
     button {
         @include mix.dFlex();
@@ -52,6 +52,7 @@ a {
         color: white;
         font-size: 18px;
         border: none;
+        padding: 0 8px;
 
         &:hover {
             cursor: pointer;

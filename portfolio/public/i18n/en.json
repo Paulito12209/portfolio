@@ -11,6 +11,19 @@
     },
     "WHY_ME": {
         "TITLE": "Why Me",
+        "TEXT": "A short introduction of your skills. Highlight your experience of working on different projects using different front-end technologies and emphasise your openness to learning and adapting to new technologies. ",
         "SUBTITLE": "I am"
+    },
+    "SKILLS": {
+        "TITLE": "Skills"
+    },
+    "PROJECTS": {
+        "TITLE": "Projects"
+    },
+    "REFERENCES": {
+        "TITLE": "References"
+    },
+    "CONTACT": {
+        "TITLE": "Contact"
     }
 }

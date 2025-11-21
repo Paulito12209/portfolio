@@ -3,7 +3,6 @@
 
 .hero-bow {
     @include mix.dFlex($ai: end);
-    height: 500px;
     padding-right: 40px;
 
     button {

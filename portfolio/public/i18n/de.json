@@ -11,6 +11,19 @@
     },
     "WHY_ME": {
         "TITLE": "Warum Ich",
+        "TEXT": "Eine kurze Vorstellung Ihrer Fähigkeiten. Heben Sie Ihre Erfahrung bei der Arbeit an verschiedenen Projekten mit unterschiedlichen Front-End-Technologien hervor und betonen Sie Ihre Offenheit für das Lernen und die Anpassung an neue Technologien.",
         "SUBTITLE": "Ich bin"
+    },
+    "SKILLS": {
+        "TITLE": "Fähigkeiten"
+    },
+    "PROJECTS": {
+        "TITLE": "Meine Projekte"
+    },
+    "REFERENCES": {
+        "TITLE": "Referenzen"
+    },
+    "CONTACT": {
+        "TITLE": "Kontakt"
     }
 }

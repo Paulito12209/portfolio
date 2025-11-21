@@ -1,29 +1,12 @@
-<div class="why-me-content">
-    <h2>{{ 'WHY_ME.TITLE' | translate }}</h2>
-    <div class="why-me-text">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In provident error, blanditiis perferendis quo id
-            impedit assumenda harum, dolore rem nam necessitatibus, nesciunt voluptates modi eligendi dolorem quod
-            aperiam corrupti.
-        </p>
-        <div class="why-me-details">
-            <h3>{{ 'WHY_ME.SUBTITLE' | translate }}</h3>
-            <div class="why-me-description">
-                <div><img src="img/icons/location-icon.svg" alt="Location Icon">
-                    <p>located in Berlin</p>
-                </div>
-                <div>
-                    <div class="suitcase-icon"><img src="img/icons/wifi-waves.svg" alt=""><img
-                            src="img/icons/lap-top-icon.svg" alt=""></div>
-                    <p>open to work remorte</p>
-                </div>
-                <div>
-                    <img src="img/icons/suitcase-icon.svg" alt="">
-                    <p>open to relocate</p>
-                </div>
+<div class="why-me-container">
+    <app-section-content title="WHY_ME.TITLE">
+        <p>{{ 'WHY_ME.TEXT' | translate }}</p>
+        <h3>{{ 'WHY_ME.SUBTITLE' | translate }}</h3>
+        <div class="card-subcontent">
+            <div class="why-me-details">
+                <!-- Später Komponente für Icon -->
             </div>
         </div>
-        <div><button class="why-me-contact-button">Contact me</button></div>
-    </div>
+    </app-section-content>
+    <app-section-bow></app-section-bow>
 </div>
-
-<div class="why-me-bow"><button><img src="img/arrow-right.svg" alt="Pfeil nach rechts"></button></div>

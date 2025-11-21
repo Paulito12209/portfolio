@@ -4,10 +4,11 @@ import { WhyMe } from '../../sections/why-me/why-me';
 import { Skills } from '../../sections/skills/skills';
 import { Projects } from '../../sections/projects/projects';
 import { Contact } from '../../sections/contact/contact';
+import { References } from '../../sections/references/references';
 
 @Component({
   selector: 'app-main-content',
-  imports: [Hero, WhyMe, Skills, Projects, Contact],
+  imports: [Hero, WhyMe, Skills, Projects, References, Contact],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',
 })
