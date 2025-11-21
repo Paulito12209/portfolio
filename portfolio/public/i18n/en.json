@@ -10,9 +10,10 @@
         "SUBTITLE": "Frontend Developer"
     },
     "WHY_ME": {
-        "TITLE": "Why Me",
+        "TITLE": "Why me",
         "TEXT": "A short introduction of your skills. Highlight your experience of working on different projects using different front-end technologies and emphasise your openness to learning and adapting to new technologies. ",
-        "SUBTITLE": "I am"
+        "SUBTITLE": "I am",
+        "BUTTON": "Contact me"
     },
     "SKILLS": {
         "TITLE": "Skills"

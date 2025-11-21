@@ -1,12 +1,17 @@
 <div class="why-me-container">
-    <app-section-content title="WHY_ME.TITLE">
-        <p>{{ 'WHY_ME.TEXT' | translate }}</p>
-        <h3>{{ 'WHY_ME.SUBTITLE' | translate }}</h3>
-        <div class="card-subcontent">
-            <div class="why-me-details">
-                <!-- Später Komponente für Icon -->
+    <div class="why-me-content">
+        <app-section-content title="WHY_ME.TITLE">
+            <p>{{ 'WHY_ME.TEXT' | translate }}</p>
+            <h3>{{ 'WHY_ME.SUBTITLE' | translate }}</h3>
+            <div class="why-me-subcontent">
+                <div class="why-me-details">
+                    <!-- Später Komponente für Icon -->
+                </div>
+                <app-button title="WHY_ME.BUTTON"></app-button>
             </div>
-        </div>
-    </app-section-content>
-    <app-section-bow></app-section-bow>
+        </app-section-content>
+    </div>
+    <div class="why-me-bow">
+        <app-section-bow></app-section-bow>
+    </div>
 </div>

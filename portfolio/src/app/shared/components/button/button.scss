@@ -1,0 +1,21 @@
+@use '../../../../styles/variables' as vars; // <- [_variables]
+@use '../../../../styles/mixins' as mix; // <- [mixins]
+
+:host {
+    @include mix.dFlex(); // <- Zentriert alles bei größerer Auflösung
+    height: 100%;
+    width: 100%;
+
+    button {
+        background-color: vars.$neon;
+        color: vars.$black;
+        font-size: vars.$f-p;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        padding: 10px 32px;
+        border-radius: 24px;
+        border: none;
+        cursor: pointer;
+    }
+}

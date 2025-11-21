@@ -33,7 +33,7 @@
 
             background-image: url(../../../../public/img/pa-hero-bg-image.png);
             background-repeat: no-repeat;
-            background-position: center; // <- Später Einlesen
+            background-position: top; // <- Später Einlesen
             background-size: cover;
 
             .hero-text {
@@ -58,4 +58,8 @@
             }
         }
     }
+}
+
+.hero-bow {
+    margin-top: 365px;
 }

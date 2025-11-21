@@ -2,14 +2,45 @@
 @use '../../../styles/mixins.scss' as mix; // <- [mixins]
 
 :host {
-    @include mix.dFlex(); // <- Zentriert alles
+    @include mix.dFlex(); // <- Zentriert alles bei größerer Auflösung
     height: 100%;
     width: 100%;
 }
 
 .why-me-container {
-    @include mix.dFlex($ai: start);
+    @include mix.dFlex($jc: space-between, $ai: start);
     flex: 1;
     height: 100%;
     max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
+}
+
+.why-me-content {
+    padding-top: 196px;
+    width: 75%;
+
+    p {
+        font-size: vars.$f-p;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 32px;
+    }
+
+    h3 {
+        color: vars.$neon;
+        font-size: vars.$f-h3;
+        font-weight: 700;
+    }
+}
+
+.why-me-subcontent {
+    @include mix.dFlex($jc: start, $ai: end, $fdir: column);
+
+    .why-me-details {
+        @include mix.dFlex($jc: start, $fdir: column);
+    }
+
+}
+
+.why-me-bow {
+    padding-top: 1000px;
 }
