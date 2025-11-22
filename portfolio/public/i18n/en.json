@@ -13,7 +13,13 @@
         "TITLE": "Why me",
         "TEXT": "A short introduction of your skills. Highlight your experience of working on different projects using different front-end technologies and emphasise your openness to learning and adapting to new technologies. ",
         "SUBTITLE": "I am",
-        "BUTTON": "Contact me"
+        "BUTTON": "Contact me",
+        "DETAIL_IMG_1": "./img/icons/location-icon.svg",
+        "DETAIL_IMG_2": "./img/icons/lap-top-icon.svg",
+        "DETAIL_IMG_3": "./img/icons/suitcase-icon.svg",
+        "DETAIL_1": "located in berlin",
+        "DETAIL_2": "open to work remotely",
+        "DETAIL_3": "open to relocate"
     },
     "SKILLS": {
         "TITLE": "Skills"

@@ -13,7 +13,13 @@
         "TITLE": "Warum ich",
         "TEXT": "Eine kurze Vorstellung Ihrer Fähigkeiten. Heben Sie Ihre Erfahrung bei der Arbeit an verschiedenen Projekten mit unterschiedlichen Front-End-Technologien hervor und betonen Sie Ihre Offenheit für das Lernen und die Anpassung an neue Technologien.",
         "SUBTITLE": "Ich bin",
-        "BUTTON": "Kontaktiere mich"
+        "BUTTON": "Kontaktiere mich",
+        "DETAIL_IMG_1": "./img/icons/location-icon.svg",
+        "DETAIL_IMG_2": "./img/icons/lap-top-icon.svg",
+        "DETAIL_IMG_3": "./img/icons/suitcase-icon.svg",
+        "DETAIL_1": "wohnhaft in Berlin",
+        "DETAIL_2": "offen für Remote-Arbeit",
+        "DETAIL_3": "offen für Umzug"
     },
     "SKILLS": {
         "TITLE": "Fähigkeiten"

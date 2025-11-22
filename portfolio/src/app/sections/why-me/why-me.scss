@@ -33,10 +33,14 @@
 }
 
 .why-me-subcontent {
-    @include mix.dFlex($jc: start, $ai: end, $fdir: column);
+    @include mix.dFlex($jc: end, $ai: end, $fdir: column, $g: 32px);
+    width: 100%;
+    flex: 1;
 
     .why-me-details {
-        @include mix.dFlex($jc: start, $fdir: column);
+        @include mix.dFlex($jc: space-around);
+        width: 100%;
+        padding: 0 40px;
     }
 
 }
