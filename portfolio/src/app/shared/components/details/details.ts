@@ -8,6 +8,5 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './details.scss',
 })
 export class Details {
-  @Input() icon: string = '';
   @Input() detail: string = '';
 }

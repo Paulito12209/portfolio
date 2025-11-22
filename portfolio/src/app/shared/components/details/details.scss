@@ -3,15 +3,21 @@
 
 :host {
     @include mix.dFlex($fdir: column, $g: 8px);
+    cursor: pointer;
+
+    &:hover {
+        caption {
+            color: vars.$neon;
+        }
+    }
 }
 
-img {
-    width: 40px;
-    height: 40px;
-}
+.detail-content {
+    @include mix.dFlex($fdir: column, $g: 8px);
 
-caption {
-    font-family: vars.$font-quantico;
-    font-size: 16px;
-    font-weight: 400;
+    caption {
+        font-family: vars.$font-quantico;
+        font-size: 16px;
+        font-weight: 400;
+    }
 }

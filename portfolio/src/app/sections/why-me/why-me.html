@@ -5,9 +5,24 @@
             <h3>{{ 'WHY_ME.SUBTITLE' | translate }}</h3>
             <div class="why-me-subcontent">
                 <div class="why-me-details">
-                    <app-details icon="WHY_ME.DETAIL_IMG_1" detail="WHY_ME.DETAIL_1"></app-details>
-                    <app-details icon="WHY_ME.DETAIL_IMG_2" detail="WHY_ME.DETAIL_2"></app-details>
-                    <app-details icon="WHY_ME.DETAIL_IMG_3" detail="WHY_ME.DETAIL_3"></app-details>
+                    <app-details detail="WHY_ME.DETAIL_1">
+                        <div class="details-img-swap">
+                            <img src="{{ 'WHY_ME.DETAIL_IMG_1_NORMAL' | translate }}" alt="Location Icon">
+                            <img src="{{ 'WHY_ME.DETAIL_IMG_1_HOVER' | translate }}" alt="Location Icon">
+                        </div>
+                    </app-details>
+                    <app-details detail="WHY_ME.DETAIL_2">
+                        <div class="details-img-swap">
+                            <img src="{{ 'WHY_ME.DETAIL_IMG_2_NORMAL' | translate }}" alt="Laptop Icon">
+                            <img src="{{ 'WHY_ME.DETAIL_IMG_2_HOVER' | translate }}" alt="Laptop Icon">
+                        </div>
+                    </app-details>
+                    <app-details detail="WHY_ME.DETAIL_3">
+                        <div class="details-img-swap">
+                            <img src="{{ 'WHY_ME.DETAIL_IMG_3_NORMAL' | translate }}" alt="Suitcase Icon">
+                            <img src="{{ 'WHY_ME.DETAIL_IMG_3_HOVER' | translate }}" alt="Suitcase Icon">
+                        </div>
+                    </app-details>
                 </div>
                 <app-button title="WHY_ME.BUTTON"></app-button>
             </div>
