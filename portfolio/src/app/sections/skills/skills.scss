@@ -3,101 +3,72 @@
 
 :host {
     @include mix.dFlex();
-    height: 100vh;
-    width: 100dvh;
+    height: 100%;
+    width: 100%;
+}
+
+.skills-container {
+    @include mix.dFlex($jc: space-between);
+    flex: 1;
+    height: 100%;
+    max-width: 1440px;
 }
 
 .skills-content {
-    height: 70%;
-    width: 70%;
     @include mix.dFlex($g: 16px);
+    padding-top: 306px;
+    width: 70%;
 
     h2 {
         transform: rotate(180deg);
         writing-mode: vertical-rl;
-        color: transparent;
-        -webkit-text-stroke: 2px vars.$neon;
+        color: transparent; // Füllfarbe ausblenden
+        -webkit-text-stroke: 2px vars.$neon; // Konturbreite + Farbe
         font-size: vars.$f-h2;
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
         margin: 0;
-        flex-shrink: 0;
-    }
-
-    .skills-text {
-        @include mix.dFlex($ai: start, $fdir: column, $g: 24px);
-        width: 75%;
-        overflow: hidden;
-
-        p {
-            font-size: vars.$f-p;
-            font-weight: 400;
-            margin: 0;
-            word-wrap: break-word;
-        }
-    }
-}
-
-/* Ober-Div mit zwei Haupt-Bereichen */
-.skills-main-container {
-    @include mix.dFlex($g: 32px);
-    width: 100%;
-}
-
-/* Erste Div: 10 Skills mit Icons */
-.skills-icons-section {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-}
-
-.skill-item {
-    @include mix.dFlex($fdir: column, $ai: center, $g: 8px);
-
-    img {
-        width: 32px;
-        height: 32px;
-    }
-
-    span {
-        font-size: 12px;
-        color: vars.$neon;
-        font-weight: 500;
-        text-align: center;
-    }
-
-    &:hover {
-        // transform: scale(1, 005);
-        cursor: pointer;
-    }
-}
-
-/* Zweite Div: 2 weitere Bereiche */
-.skills-additional-section {
-    @include mix.dFlex($jc: start, $fdir: column, $g: 16px);
-}
-
-.additional-item-1 {
-    h4 {
-        color: vars.$neon;
-        font-size: vars.$f-h3;
-        margin: 0 0 8px 0;
+        flex-shrink: 0; // <- H2 soll nicht schrumpfen
     }
 
     p {
         font-size: vars.$f-p;
-        margin: 0;
-        color: white;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 32px;
     }
 }
 
-.skills-contact-button {
-    background: vars.$neon;
-    color: vars.$black;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 16px;
-    font-weight: 600;
-    cursor: pointer;
+.skills-subcontent {
+    @include mix.dFlex($fdir: column, $ai: start, $g: 32px);
+    width: 100%;
+}
+
+.skills-icon-list {
+    @include mix.dFlex($jc: start, $g: 24px);
+    flex-grow: max-content;
+
+    .skills-icons {
+        @include mix.dFlex($jc: start, $g: 24px);
+
+        .challenge-me {
+            @include mix.dFlex();
+            width: 50%;
+            padding: 0 12px;
+
+            p {
+                font-size: vars.$f-subtext;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// p {
+//     font-size: vars.$f-subtext;
+// }
+
+.skills-button {
+    display: none; // Standardmäßig ausgeblendet (für Mobile später)
 }
 
 .skills-bow {
@@ -105,7 +76,7 @@
     width: 25%;
     @include mix.dFlex($jc: end, $ai: start);
     padding-right: 40px;
-    margin-top: 30%;
+    margin-top: 50%;
 
     button {
         background: transparent;

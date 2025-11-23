@@ -1,6 +1,51 @@
 <div class="skills-container">
-    <app-section-content title="SKILLS.TITLE">
+    <div class="skills-content">
+        <app-section-content title="SKILLS.TITLE">
+            <p>{{ 'SKILLS.TEXT' | translate }}</p>
+            <div class="skills-subcontent">
+                <div class="skills-icon-list">
+                    <div class="skills-icons">
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_ANGULAR' | translate }}"
+                            name="{{ 'SKILLS.ICON_ANGULAR_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_TYPESCRIPT' | translate }}"
+                            name="{{ 'SKILLS.ICON_TYPESCRIPT_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_JAVASCRIPT' | translate }}"
+                            name="{{ 'SKILLS.ICON_JAVASCRIPT_DESCRIPTION' | translate }}"></app-skill-icon>
+                    </div>
+                    <div class="skills-icons">
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_HTML' | translate }}"
+                            name="{{ 'SKILLS.ICON_HTML_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_CSS' | translate }}"
+                            name="{{ 'SKILLS.ICON_CSS_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_API' | translate }}"
+                            name="{{ 'SKILLS.ICON_API_DESCRIPTION' | translate }}"></app-skill-icon>
+                    </div>
+                </div>
+                <div class="skills-icon-list">
+                    <div class="skills-icons">
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_FIREBASE' | translate }}"
+                            name="{{ 'SKILLS.ICON_FIREBASE_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_GIT' | translate }}"
+                            name="{{ 'SKILLS.ICON_GIT_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_SCRUM' | translate }}"
+                            name="{{ 'SKILLS.ICON_SCRUM_DESCRIPTION' | translate }}"></app-skill-icon>
+                    </div>
+                    <div class="skills-icons">
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_MATERIAL_DESIGN' | translate }}"
+                            name="{{ 'SKILLS.ICON_MATERIAL_DESIGN_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <app-skill-icon icon="{{ 'SKILLS.ICON_CHALLENGE_ME' | translate }}"
+                            name="{{ 'SKILLS.ICON_CHALLENGE_ME_DESCRIPTION' | translate }}"></app-skill-icon>
+                        <div class="challenge-me">
+                            <p>{{ 'SKILLS.SUBTEXT' | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+                <app-button class="skills-button" title="SKILLS.BUTTON"></app-button>
+            </div>
+        </app-section-content>
+    </div>
+    <div class="skills-bow">
+        <app-section-bow></app-section-bow>
+    </div>
 
-    </app-section-content>
-    <app-section-bow></app-section-bow>
 </div>

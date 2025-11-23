@@ -25,7 +25,31 @@
         "DETAIL_3": "open to relocate"
     },
     "SKILLS": {
-        "TITLE": "Skills"
+        "TITLE": "My Skill Set",
+        "TEXT": "A short introduction of your skills. Highlight your experience of working on different projects using different front-end technologies and emphasise your openness to learning and adapting to new technologies.",
+        "ICON_ANGULAR": "./img/icons/skills/angular-icon.svg",
+        "ICON_ANGULAR_DESCRIPTION": "Angular",
+        "ICON_TYPESCRIPT": "./img/icons/skills/typescript-icon.svg",
+        "ICON_TYPESCRIPT_DESCRIPTION": "TypeScript",
+        "ICON_JAVASCRIPT": "./img/icons/skills/javascript-icon.svg",
+        "ICON_JAVASCRIPT_DESCRIPTION": "JavaScript",
+        "ICON_HTML": "./img/icons/skills/html-icon.svg",
+        "ICON_HTML_DESCRIPTION": "HTML",
+        "ICON_CSS": "./img/icons/skills/css-icon.svg",
+        "ICON_CSS_DESCRIPTION": "CSS",
+        "ICON_API": "./img/icons/skills/rest-api-icon.svg",
+        "ICON_API_DESCRIPTION": "REST-API",
+        "ICON_FIREBASE": "./img/icons/skills/firebase-icon.svg",
+        "ICON_FIREBASE_DESCRIPTION": "Firebase",
+        "ICON_GIT": "./img/icons/skills/git-icon.svg",
+        "ICON_GIT_DESCRIPTION": "Git",
+        "ICON_SCRUM": "./img/icons/skills/scrum-icon.svg",
+        "ICON_SCRUM_DESCRIPTION": "Scrum",
+        "ICON_MATERIAL_DESIGN": "./img/icons/skills/material-design-icon.svg",
+        "ICON_MATERIAL_DESIGN_DESCRIPTION": "Material Design",
+        "ICON_CHALLENGE_ME": "./img/icons/skills/challange-icon.svg",
+        "ICON_CHALLENGE_ME_DESCRIPTION": "Challenge Me",
+        "SUBTEXT": "Show that you are motivated to improve your skills, implement innovative solutions and stay abreast of new technologies."
     },
     "PROJECTS": {
         "TITLE": "Projects"

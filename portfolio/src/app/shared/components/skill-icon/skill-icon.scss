@@ -1,0 +1,12 @@
+@use '../../../../styles/variables' as vars; // <- [_variables]
+@use '../../../../styles/mixins.scss' as mix; // <- [mixins]
+
+:host {
+    @include mix.dFlex($fdir: column, $g: 8px); // <- Zentriert alles
+    width: 100px;
+
+    p {
+        font-size: vars.$f-p;
+        text-align: center;
+    }
+}

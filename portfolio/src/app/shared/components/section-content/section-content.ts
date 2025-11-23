@@ -4,7 +4,7 @@ import { Details } from '../details/details';
 
 @Component({
   selector: 'app-section-content',
-  imports: [TranslateModule, Details],
+  imports: [TranslateModule],
   templateUrl: './section-content.html',
   styleUrl: './section-content.scss',
 })
