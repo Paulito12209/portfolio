@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from "@ngx-translate/core";
-import { Details } from '../details/details';
 
 @Component({
   selector: 'app-section-content',
