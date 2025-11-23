@@ -25,7 +25,7 @@
         "DETAIL_3": "offen für Umzug"
     },
     "SKILLS": {
-        "TITLE": "Fähigkeiten",
+        "TITLE": "Meine Fähigkeiten",
         "TEXT": "Eine kurze Vorstellung Ihrer Fähigkeiten. Heben Sie Ihre Erfahrung bei der Arbeit an verschiedenen Projekten mit unterschiedlichen Front-End-Technologien hervor und betonen Sie Ihre Offenheit für das Lernen und die Anpassung an neue Technologien.",
         "ICON_ANGULAR": "./img/icons/skills/angular-icon.svg",
         "ICON_ANGULAR_DESCRIPTION": "Angular",
