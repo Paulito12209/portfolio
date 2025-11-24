@@ -1,0 +1,141 @@
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
+
+:host {
+    @include mix.dFlex($fdir: column, $ai: start, $jc: start);
+    width: 100%;
+    max-width: 900px; // Begrenzung auf 1000px
+    background: rgba(181, 233, 59, 0.2); // 20% von #B5E93B
+    border: 1px solid vars.$neon;
+    border-radius: 32px;
+    padding: 16px 16px 16px 16px;
+    box-sizing: border-box;
+}
+
+.project-details-headline {
+    @include mix.dFlex($jc: start, $g: 16px);
+    // flex: 1;
+    margin-bottom: 32px;
+    padding-left: 12px;
+
+    h1 {
+        font-size: vars.$f-h1;
+        color: transparent;
+        -webkit-text-stroke: 1px vars.$neon;
+        margin: 0;
+        line-height: 0.8;
+    }
+
+    h3 {
+        font-size: vars.$f-h3;
+        color: vars.$neon;
+        margin: 0;
+        line-height: 0.8;
+        font-weight: 400;
+    }
+}
+
+.project-details-container {
+    @include mix.dFlex($jc: start, $ai: start, $g: 32px);
+    width: 100%;
+    padding-left: 64px;
+}
+
+.project-details-list {
+    flex: 1;
+    max-width: 400px;
+
+    ul {
+        @include mix.dFlex($fdir: column, $ai: start, $g: 32px);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    li {
+        position: relative;
+        padding-left: 24px; // Platz für das Bullet
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px; // Ausrichtung
+            width: 8px;
+            height: 8px;
+            border: 1px solid vars.$neon; // Nur Kontur
+            border-radius: 50%; // Kreis
+            background: transparent;
+        }
+    }
+
+    h4 {
+        color: white;
+        font-size: vars.$f-h4;
+        font-weight: 400;
+        margin: 0 0 8px 0;
+    }
+
+    p {
+        font-size: vars.$f-p;
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+
+.project-details-image {
+    @include mix.dFlex($fdir: column, $ai: start, $g: 32px);
+    flex: 1;
+    max-width: 350px;
+
+    img {
+        height: 200px;
+        max-width: 400px; // Begrenzung für das Bild
+        border-radius: 24px;
+        // border: 2px solid rgba(255, 255, 255, 0.1); 
+    }
+}
+
+.project-details-list-end {
+    margin-top: 8px;
+    height: 140px;
+    width: 100%;
+    padding-left: 64px;
+    padding-right: 32px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        position: relative;
+        padding-left: 24px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border: 1px solid vars.$neon;
+            border-radius: 50%;
+            background: transparent;
+        }
+    }
+
+    h4 {
+        color: white;
+        font-size: vars.$f-h4;
+        margin: 0 0 8px 0;
+    }
+
+    p {
+        font-size: vars.$f-p;
+        margin: 0;
+        line-height: 1.5;
+    }
+}

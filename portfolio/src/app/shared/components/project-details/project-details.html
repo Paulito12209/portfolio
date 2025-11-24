@@ -1,1 +1,32 @@
-<p>project-details works!</p>
+<div class="project-details-headline">
+    <h1>{{ number }}</h1>
+    <h3>{{ title }}</h3>
+</div>
+
+<div class="project-details-container">
+    <div class="project-details-list">
+        <ul>
+            <li>
+                <h4>{{ 'PROJECTS.ABOUT' | translate }}</h4>
+                <p>{{ description | translate }}</p>
+            </li>
+            <li>
+                <h4>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h4>
+                <p>{{ technologies | translate }}</p>
+            </li>
+        </ul>
+    </div>
+    <div class="project-details-image">
+        <img [src]="image" [alt]="title">
+        <app-button [title]="'PROJECTS.BUTTON_LIVE'"></app-button>
+    </div>
+</div>
+
+<div class="project-details-list-end">
+    <ul>
+        <li>
+            <h4>{{ 'PROJECTS.LEARNING' | translate }}</h4>
+            <p>{{ learning | translate }}</p>
+        </li>
+    </ul>
+</div>

@@ -72,9 +72,10 @@
 }
 
 .skills-bow {
+    @include mix.dFlex($jc: end, $ai: start);
     height: 80%;
     width: 25%;
-    @include mix.dFlex($jc: end, $ai: start);
+
     padding-right: 40px;
     margin-top: 50%;
 

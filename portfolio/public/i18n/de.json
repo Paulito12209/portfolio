@@ -52,7 +52,17 @@
         "SUBTEXT": "Zeigen Sie, dass Sie motiviert sind, Ihre Fähigkeiten zu verbessern, innovative Lösungen umzusetzen und sich über neue Technologien auf dem Laufenden zu halten."
     },
     "PROJECTS": {
-        "TITLE": "Meine Projekte"
+        "TITLE": "Meine Arbeit",
+        "ABOUT": "Über das Projekt",
+        "TECHNOLOGIES": "Verwendete Technologien",
+        "LEARNING": "Was ich gelernt habe",
+        "BUTTON_LIVE": "Live Test",
+        "JOIN_DESCRIPTION": "Task Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+        "JOIN_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man eine komplexe Anwendung mit Drag-and-Drop-Funktionalität und State Management erstellt.",
+        "POLLO_DESCRIPTION": "Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+        "POLLO_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man objektorientierte Programmierung in JavaScript umsetzt und einen Game-Loop erstellt.",
+        "BUBBLE_DESCRIPTION": "Eine Slack-ähnliche Chat-Anwendung, die es Benutzern ermöglicht, in Echtzeit zu kommunizieren. Funktionen umfassen Kanäle, Direktnachrichten und Threads.",
+        "BUBBLE_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man Firebase für Echtzeit-Datensynchronisation und Authentifizierung nutzt."
     },
     "REFERENCES": {
         "TITLE": "Referenzen"

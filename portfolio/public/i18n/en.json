@@ -52,7 +52,17 @@
         "SUBTEXT": "Show that you are motivated to improve your skills, implement innovative solutions and stay abreast of new technologies."
     },
     "PROJECTS": {
-        "TITLE": "Projects"
+        "TITLE": "My Work",
+        "ABOUT": "About the project",
+        "TECHNOLOGIES": "Technologies I have used",
+        "LEARNING": "What I have learned",
+        "BUTTON_LIVE": "Live Test",
+        "JOIN_DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "JOIN_LEARNING": "Through this project, I learned how to build a complex application with drag-and-drop functionality and state management.",
+        "POLLO_DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+        "POLLO_LEARNING": "Through this project, I learned how to implement object-oriented programming in JavaScript and create a game loop.",
+        "BUBBLE_DESCRIPTION": "A Slack-like chat application that allows users to communicate in real-time. Features include channels, direct messages, and threads.",
+        "BUBBLE_LEARNING": "Through this project, I learned how to use Firebase for real-time data synchronization and authentication."
     },
     "REFERENCES": {
         "TITLE": "References"
