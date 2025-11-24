@@ -61,9 +61,9 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 8px; // Ausrichtung
-            width: 8px;
-            height: 8px;
+            top: 12px; // Ausrichtung
+            width: 10px;
+            height: 10px;
             border: 1px solid vars.$neon; // Nur Kontur
             border-radius: 50%; // Kreis
             background: transparent;
@@ -92,8 +92,8 @@
     img {
         height: 200px;
         max-width: 400px; // Begrenzung für das Bild
-        border-radius: 24px;
-        // border: 2px solid rgba(255, 255, 255, 0.1); 
+        border-radius: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 }
 
@@ -111,6 +111,7 @@
     }
 
     li {
+        // @include mix.dFlex($fdir: column, $ai: start);
         position: relative;
         padding-left: 24px;
 
@@ -118,9 +119,9 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 8px;
-            width: 8px;
-            height: 8px;
+            top: 12px;
+            width: 10px;
+            height: 10px;
             border: 1px solid vars.$neon;
             border-radius: 50%;
             background: transparent;
