@@ -1,0 +1,12 @@
+@use '../../../../styles/variables' as vars;
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: vars.$f-subtext;
+    font-family: vars.$font-quantico;
+
+    &:hover {
+        color: vars.$neon;
+    }
+}

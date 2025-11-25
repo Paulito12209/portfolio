@@ -1,0 +1,98 @@
+@use '../../../styles/variables' as vars;
+@use '../../../styles/mixins.scss' as mix;
+
+:host {
+    @include mix.dFlex($jc: end, $ai: stretch, $g: 40px);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    @include mix.dFlex($jc: flex-start, $ai: start);
+    flex: 1; // Take remaining space
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0;
+    padding: 0; // No padding needed, gap handles it
+    box-sizing: border-box;
+}
+
+.contact-content {
+    @include mix.dFlex($jc: start, $ai: start);
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding-top: 10%;
+    box-sizing: border-box;
+
+    ::ng-deep app-section-content {
+        h2 {
+            align-self: flex-start !important;
+        }
+    }
+}
+
+.contact-right-content {
+    @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding-top: 10%;
+    box-sizing: border-box;
+}
+
+.right-bar {
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
+    box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
+    z-index: 1000;
+    flex-shrink: 0;
+}
+
+.contact-form-container {
+    @include mix.dFlex($fdir: column, $ai: stretch, $g: 16px);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.privacy-policy {
+    width: 100%;
+}
+
+.submit-btn-container {
+    @include mix.dFlex($jc: center);
+    margin-top: 16px;
+}
+
+.contact-right-text {
+    @include mix.dFlex($fdir: column, $ai: end, $g: 16px);
+    width: 100%;
+    max-width: 400px;
+
+    p {
+        color: white;
+        font-size: vars.$f-p;
+        text-align: right;
+
+        &:first-child {
+            color: vars.$neon;
+            font-weight: 700;
+        }
+    }
+}
+
+.contact-right-bow {
+    @include mix.dFlex($jc: end);
+    transform: rotate(180deg);
+    margin: 120px 0;
+}
+
+.footer-content {
+    width: 100%;
+}

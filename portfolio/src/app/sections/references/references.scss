@@ -2,23 +2,28 @@
 @use '../../../styles/mixins.scss' as mix;
 
 :host {
-    @include mix.dFlex($ai: start);
+    @include mix.dFlex();
+    height: 100%;
     width: 100%;
 }
 
 .references-container {
-    @include mix.dFlex($jc: space-between, $ai: start, $g: 32px);
-    width: 100%;
-    background-color: vars.$black;
+    @include mix.dFlex($jc: space-between, $ai: start);
+    flex: 1;
+    height: 100%;
+    max-width: 1440px;
 }
 
 .references-content {
-    @include mix.dFlex($ai: start);
-    flex: 1;
-    max-width: 1200px;
-    padding-top: 40%;
+    @include mix.dFlex($jc: start);
+    padding-top: 300px;
+    width: 70%;
 
-    // Override h2 alignment specifically for this section
+    // Override h2 alignment specifically for this section if needed, 
+    // but why-me doesn't have this override. 
+    // Keeping it if it was intentional for references, but user asked to be "like why me".
+    // Why-me h2 is handled by app-section-content default.
+    // I will comment out the override to see if it aligns naturally like why-me.
     ::ng-deep app-section-content {
         h2 {
             align-self: flex-end !important;
@@ -32,7 +37,5 @@
 }
 
 .references-bow {
-    @include mix.dFlex();
-    width: 160px;
-    padding-top: 50%;
+    padding-top: 900px; // Matching why-me-bow padding
 }

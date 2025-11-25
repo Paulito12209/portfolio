@@ -1,5 +1,34 @@
-<div class="contact-container"><app-section-content title="CONTACT.TITLE">
+<div class="contact-container">
+    <div class="contact-content">
+        <app-section-content title="CONTACT.TITLE">
+            <div class="contact-form-container">
+                <div class="form-group">
+                    <app-form-name></app-form-name>
+                </div>
+                <div class="form-group">
+                    <app-form-email></app-form-email>
+                </div>
+                <div class="form-group">
+                    <app-form-message></app-form-message>
+                </div>
+                <app-form-validation-box></app-form-validation-box>
+            </div>
+        </app-section-content>
+    </div>
 
-    </app-section-content>
-    <!-- <app-section-bow></app-section-bow> -->
+    <div class="contact-right-content">
+        <div class="contact-right-text">
+            <p>{{ 'CONTACT.HEADING' | translate }}</p>
+            <p>{{ 'CONTACT.TEXT' | translate }}</p>
+            <app-email></app-email>
+            <app-phone-number></app-phone-number>
+        </div>
+        <div class="contact-right-bow">
+            <app-section-bow></app-section-bow>
+        </div>
+        <div class="footer-content">
+            <app-footer></app-footer>
+        </div>
+    </div>
 </div>
+<div class="right-bar"></div>

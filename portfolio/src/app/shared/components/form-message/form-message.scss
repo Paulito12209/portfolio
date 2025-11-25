@@ -1,0 +1,28 @@
+@use '../../../../styles/variables' as vars;
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid vars.$neon;
+    border-radius: 30px;
+    padding: 24px 24px;
+    color: white;
+    font-family: vars.$font-quantico;
+    font-size: vars.$f-p;
+    outline: none;
+    transition: all 0.3s ease;
+    resize: none;
+
+    &::placeholder {
+        color: #9E9D9D;
+    }
+
+    &:focus {
+        box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
+    }
+}

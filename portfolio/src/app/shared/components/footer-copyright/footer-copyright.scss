@@ -1,0 +1,6 @@
+@use '../../../../styles/variables' as vars;
+
+p {
+    color: white;
+    font-size: vars.$f-subtext;
+}

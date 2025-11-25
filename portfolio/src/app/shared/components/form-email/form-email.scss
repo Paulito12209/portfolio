@@ -1,0 +1,29 @@
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
+
+:host {
+    @include mix.dFlex($jc: center);
+    display: block;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid vars.$neon;
+    border-radius: 30px;
+    padding: 16px 24px;
+    color: white;
+    font-family: vars.$font-quantico;
+    font-size: vars.$f-p;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+        color: #9E9D9D;
+    }
+
+    &:focus {
+        box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
+    }
+}

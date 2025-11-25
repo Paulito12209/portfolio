@@ -14,19 +14,19 @@ import { CommonModule } from '@angular/common';
 export class References {
   references = [
     {
-      person: 'Max Muster',
-      project: 'Projekt Kochwelt',
-      description: '"Paul ist ein sehr aufmerksamer und talentierter Entwickler. Er kann die Aufgabenverteilung gut planen und dokumentieren."'
+      person: 'REFERENCES.REF_1_PERSON',
+      project: 'REFERENCES.REF_1_PROJECT',
+      description: 'REFERENCES.REF_1_DESCRIPTION'
     },
     {
-      person: 'Eva Elf',
-      project: 'Projekt Kochwelt',
-      description: '"Paul bemüht sich immer einen zu unterstützen, wenn man mal ein Problem hat."'
+      person: 'REFERENCES.REF_2_PERSON',
+      project: 'REFERENCES.REF_2_PROJECT',
+      description: 'REFERENCES.REF_2_DESCRIPTION'
     },
     {
-      person: 'Noah Nussbaum',
-      project: 'Projekt Join',
-      description: '"Paul ist ein sehr aufmerksamer und talentierter Entwickler. Er kann die Aufgabenverteilung gut planen und dokumentieren."'
+      person: 'REFERENCES.REF_3_PERSON',
+      project: 'REFERENCES.REF_3_PROJECT',
+      description: 'REFERENCES.REF_3_DESCRIPTION'
     }
   ];
 }

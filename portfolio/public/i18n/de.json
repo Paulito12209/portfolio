@@ -65,9 +65,32 @@
         "BUBBLE_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man Firebase für Echtzeit-Datensynchronisation und Authentifizierung nutzt."
     },
     "REFERENCES": {
-        "TITLE": "Referenzen"
+        "TITLE": "Referenzen",
+        "REF_1_PERSON": "Max Muster",
+        "REF_1_PROJECT": "Projekt Kochwelt",
+        "REF_1_DESCRIPTION": "\"Paul ist ein sehr aufmerksamer und talentierter Entwickler. Er kann die Aufgabenverteilung gut planen und dokumentieren.\"",
+        "REF_2_PERSON": "Eva Elf",
+        "REF_2_PROJECT": "Projekt Kochwelt",
+        "REF_2_DESCRIPTION": "\"Paul bemüht sich immer einen zu unterstützen, wenn man mal ein Problem hat.\"",
+        "REF_3_PERSON": "Noah Nussbaum",
+        "REF_3_PROJECT": "Projekt Join",
+        "REF_3_DESCRIPTION": "\"Paul ist ein sehr aufmerksamer und talentierter Entwickler. Er kann die Aufgabenverteilung gut planen und dokumentieren.\""
     },
     "CONTACT": {
-        "TITLE": "Kontakt"
+        "TITLE": "Kontaktiere mich",
+        "HEADING": "Lass uns zusammenarbeiten.",
+        "TEXT": "Ermutigen Sie Menschen, Sie zu kontaktieren und beschreiben Sie, an welcher Rolle Sie interessiert sind. Drücken Sie Ihr Vertrauen in Ihre Fähigkeit aus, durch Ihr Fachwissen und Ihre Begeisterung für die Verbesserung Ihrer Fähigkeiten einen sinnvollen Beitrag zu einem Team zu leisten.",
+        "FORM_NAME": "Dein Name",
+        "FORM_EMAIL": "Deine E-Mail",
+        "FORM_MESSAGE": "Deine Nachricht",
+        "PRIVACY_TEXT": "Ich habe die",
+        "PRIVACY_LINK": "Datenschutzerklärung",
+        "PRIVACY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+        "BUTTON_SEND": "Senden"
+    },
+    "FOOTER": {
+        "LEGAL_NOTICE": "Impressum",
+        "PRIVACY_POLICY": "Datenschutz",
+        "COPYRIGHT": "© Paul Angeles 2025"
     }
 }

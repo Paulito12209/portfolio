@@ -1,0 +1,16 @@
+<div class="privacy-policy">
+    <div class="privacy-row">
+        <div class="checkbox-wrapper">
+            <input type="checkbox" id="privacy" [(ngModel)]="privacyPolicyChecked" name="privacy">
+            <label for="privacy" class="checkbox-custom"></label>
+        </div>
+        <label for="privacy" class="privacy-text">
+            {{ 'CONTACT.PRIVACY_TEXT' | translate }} <a href="#">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a> {{
+            'CONTACT.PRIVACY_TEXT_2' | translate }}
+        </label>
+    </div>
+    <div class="submit-btn-container">
+        <button class="validation-btn" [disabled]="!privacyPolicyChecked">{{ 'CONTACT.BUTTON_SEND' | translate
+            }}</button>
+    </div>
+</div>

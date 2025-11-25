@@ -1,0 +1,7 @@
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
+
+.footer-container {
+    @include mix.dFlex($fdir: column, $jc: flex-start, $ai: end, $g: 8px);
+    width: 100%;
+}

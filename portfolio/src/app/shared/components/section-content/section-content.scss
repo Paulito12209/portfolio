@@ -18,5 +18,5 @@ h2 {
 
 .card-content {
     @include mix.dFlex($jc: start, $ai: start, $fdir: column);
-    flex: 1;
+    // flex: 1;
 }

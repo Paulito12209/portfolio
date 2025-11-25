@@ -1,0 +1,23 @@
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
+
+:host {
+    @include mix.dFlex($jc: end, $ai: center, $g: 16px);
+    width: 100%;
+    margin-top: 24px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: vars.$f-p;
+    font-family: vars.$font-quantico;
+
+    &:hover {
+        color: vars.$neon;
+    }
+}
+
+img {
+    filter: brightness(0) invert(1); // Make icon white
+}

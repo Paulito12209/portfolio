@@ -15,7 +15,7 @@
 }
 
 .hero-content {
-    @include mix.dFlex($ai: start);
+    @include mix.dFlex($jc: space-between, $ai: start);
     flex: 1; // <- hero-content nimmt nur verfügbaren Raum ein
     width: 100%;
 
