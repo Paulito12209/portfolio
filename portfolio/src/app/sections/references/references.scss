@@ -1,0 +1,38 @@
+@use '../../../styles/variables' as vars;
+@use '../../../styles/mixins.scss' as mix;
+
+:host {
+    @include mix.dFlex($ai: start);
+    width: 100%;
+}
+
+.references-container {
+    @include mix.dFlex($jc: space-between, $ai: start, $g: 32px);
+    width: 100%;
+    background-color: vars.$black;
+}
+
+.references-content {
+    @include mix.dFlex($ai: start);
+    flex: 1;
+    max-width: 1200px;
+    padding-top: 40%;
+
+    // Override h2 alignment specifically for this section
+    ::ng-deep app-section-content {
+        h2 {
+            align-self: flex-end !important;
+        }
+    }
+}
+
+.references-list {
+    @include mix.dFlex($fdir: column, $ai: stretch, $g: 16px);
+    width: 100%;
+}
+
+.references-bow {
+    @include mix.dFlex();
+    width: 160px;
+    padding-top: 50%;
+}

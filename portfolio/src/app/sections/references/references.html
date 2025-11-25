@@ -1,5 +1,14 @@
-<div class="references-container"><app-section-content title="REFERENCES.TITLE">
-
-    </app-section-content>
-    <app-section-bow></app-section-bow>
+<div class="references-container">
+    <div class="references-content">
+        <app-section-content title="REFERENCES.TITLE">
+            <div class="references-list">
+                <app-reference-details *ngFor="let reference of references" [person]="reference.person"
+                    [project]="reference.project" [description]="reference.description">
+                </app-reference-details>
+            </div>
+        </app-section-content>
+    </div>
+    <div class="references-bow">
+        <app-section-bow></app-section-bow>
+    </div>
 </div>
