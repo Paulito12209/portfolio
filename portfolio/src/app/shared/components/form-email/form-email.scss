@@ -26,4 +26,14 @@ input {
     &:focus {
         box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
     }
+
+    // Autofill styles - verhindert weißen Hintergrund
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-text-fill-color: white;
+        -webkit-box-shadow: 0 0 0px 1000px black inset;
+        box-shadow: 0 0 0px 1000px black inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
 }
