@@ -1,0 +1,77 @@
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
+
+:host {
+    @include mix.dFlex($jc: end, $ai: stretch, $g: 40px);
+    margin-left: vars.$sidebar; // Platz für Navigation
+    height: 100%;
+}
+
+.privacy-policy-container {
+    @include mix.dFlex($jc: space-between, $ai: start, $g: 40px);
+    flex: 1;
+    height: 100%;
+    max-width: 1440px;
+    position: relative;
+}
+
+.privacy-policy-content {
+    @include mix.dFlex($ai: start);
+    flex: 1;
+    padding-top: 10%;
+}
+
+.privacy-policy-main {
+    @include mix.dFlex($fdir: column, $ai: start, $g: 24px);
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    h3 {
+        color: vars.$neon;
+        font-size: vars.$f-h4;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    p {
+        color: white;
+        font-size: vars.$f-p;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+.privacy-policy-section {
+    @include mix.dFlex($fdir: column, $ai: start, $g: 12px);
+    width: 100%;
+}
+
+.privacy-policy-right {
+    @include mix.dFlex($fdir: column, $jc: space-between, $ai: end, $g: 16px);
+    padding-top: 10%;
+    flex-shrink: 0;
+}
+
+.privacy-policy-right-spacer {
+    flex: 1;
+}
+
+.privacy-policy-bow {
+    @include mix.dFlex($jc: end);
+    transform: rotate(180deg);
+    margin: 120px 0;
+}
+
+.footer-content {
+    width: 100%;
+}
+
+.right-bar {
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
+    box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
+    z-index: 1000;
+    flex-shrink: 0;
+}

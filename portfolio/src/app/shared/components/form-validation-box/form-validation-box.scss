@@ -61,12 +61,12 @@
 }
 
 .privacy-text {
-    color: vars.$neon; // Neon color for privacy text
+    color: vars.$neon;
     font-size: vars.$f-button;
     flex: 1;
 
     a {
-        color: white; // White for links
+        color: white;
         text-decoration: none;
 
         &:hover {
@@ -82,21 +82,20 @@
 }
 
 .validation-btn {
-    background-color: #9E9D9D; // Gray by default
+    background-color: #9E9D9D;
     color: vars.$black;
     font-size: vars.$f-p;
     font-weight: 400;
     padding: 10px 32px;
     border-radius: 24px;
     border: none;
-    cursor: not-allowed; // Not allowed by default
+    cursor: not-allowed;
     transition: all 0.3s;
 
     &:hover {
         box-shadow: 0 0 15px rgba(vars.$neon, 0.5);
     }
 
-    // When checkbox is checked (enabled state)
     &:not(:disabled) {
         background-color: vars.$neon;
         cursor: pointer;

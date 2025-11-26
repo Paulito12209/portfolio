@@ -26,7 +26,6 @@ export class Contact {
   privacyPolicyChecked: boolean = false;
 
   onSubmit() {
-    // TODO: Implement form submission logic
     console.log('Form submitted', { name: this.name, email: this.email, message: this.message });
   }
 }

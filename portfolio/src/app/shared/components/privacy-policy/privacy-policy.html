@@ -1,1 +1,37 @@
-<a href="#">privacy policy</a>
+<div class="privacy-policy-container">
+    <app-header></app-header>
+    <div class="privacy-policy-content">
+        <app-section-content title="PRIVACY_POLICY.TITLE">
+            <div class="privacy-policy-main">
+                <section class="privacy-policy-section">
+                    <h3>{{ 'PRIVACY_POLICY.INTRO_TITLE' | translate }}</h3>
+                    <p>{{ 'PRIVACY_POLICY.INTRO_TEXT' | translate }}</p>
+                </section>
+
+                <section class="privacy-policy-section">
+                    <h3>{{ 'PRIVACY_POLICY.DATA_COLLECTION_TITLE' | translate }}</h3>
+                    <p>{{ 'PRIVACY_POLICY.DATA_COLLECTION_TEXT' | translate }}</p>
+                </section>
+
+                <section class="privacy-policy-section">
+                    <h3>{{ 'PRIVACY_POLICY.RIGHTS_TITLE' | translate }}</h3>
+                    <p>{{ 'PRIVACY_POLICY.RIGHTS_TEXT' | translate }}</p>
+                </section>
+            </div>
+        </app-section-content>
+
+
+    </div>
+    <div class="privacy-policy-right">
+        <div class="privacy-policy-right-spacer"></div>
+        <app-email></app-email>
+        <app-phone-number></app-phone-number>
+        <div class="privacy-policy-bow">
+            <app-section-bow></app-section-bow>
+        </div>
+        <div class="footer-content">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
+<div class="right-bar"></div>

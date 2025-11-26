@@ -4,14 +4,15 @@
 :host {
     @include mix.dFlex(); // <- Zentriert den Inhalt
     height: 100%;
-    width: 100%;
+    // width: 100%;
+    max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
 }
 
 .hero-container {
     @include mix.dFlex($fdir: column); // <- Sorgt dafür, dass app-header über hero-content platziert wird
     flex: 1; // <- hero-container nimmt nur verfügbaren Raum ein
     height: 100%;
-    max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
+    // max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
 }
 
 .hero-content {

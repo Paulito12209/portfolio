@@ -92,5 +92,26 @@
         "LEGAL_NOTICE": "Impressum",
         "PRIVACY_POLICY": "Datenschutz",
         "COPYRIGHT": "© Paul Angeles 2025"
+    },
+    "IMPRINT": {
+        "TITLE": "Impressum",
+        "PROVIDER_TITLE": "Angaben gemäß § 5 TMG",
+        "PROVIDER_NAME": "Paul Angeles Chaquire",
+        "PROVIDER_ADDRESS": "Musterstraße 123, 10115 Berlin",
+        "CONTACT_TITLE": "Kontakt",
+        "CONTACT_EMAIL": "E-Mail: paul.angeles.chaquire@gmail.com",
+        "DISCLAIMER_TITLE": "Haftungsausschluss",
+        "DISCLAIMER_TEXT": "Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.",
+        "COPYRIGHT_TITLE": "Urheberrecht",
+        "COPYRIGHT_TEXT": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    },
+    "PRIVACY_POLICY": {
+        "TITLE": "Datenschutz",
+        "INTRO_TITLE": "Datenschutzerklärung",
+        "INTRO_TEXT": "Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).",
+        "DATA_COLLECTION_TITLE": "Erhebung und Verarbeitung von Daten",
+        "DATA_COLLECTION_TEXT": "Wenn Sie mir eine E-Mail senden oder das Kontaktformular nutzen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.",
+        "RIGHTS_TITLE": "Ihre Rechte",
+        "RIGHTS_TEXT": "Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren."
     }
 }

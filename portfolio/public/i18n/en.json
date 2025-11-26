@@ -92,5 +92,26 @@
         "LEGAL_NOTICE": "Legal notice",
         "PRIVACY_POLICY": "privacy policy",
         "COPYRIGHT": "© Paul Angeles 2025"
+    },
+    "IMPRINT": {
+        "TITLE": "Legal Notice",
+        "PROVIDER_TITLE": "Information according to § 5 TMG",
+        "PROVIDER_NAME": "Paul Angeles Chaquire",
+        "PROVIDER_ADDRESS": "Musterstraße 123, 10115 Berlin",
+        "CONTACT_TITLE": "Contact",
+        "CONTACT_EMAIL": "Email: paul.angeles.chaquire@gmail.com",
+        "DISCLAIMER_TITLE": "Disclaimer",
+        "DISCLAIMER_TEXT": "The contents of this page were created with the greatest care. However, no guarantee can be given for the accuracy, completeness and timeliness of the content. As a service provider, I am responsible for my own content on these pages in accordance with § 7 para.1 TMG under general law.",
+        "COPYRIGHT_TITLE": "Copyright",
+        "COPYRIGHT_TEXT": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator."
+    },
+    "PRIVACY_POLICY": {
+        "TITLE": "Privacy Policy",
+        "INTRO_TITLE": "Privacy Policy",
+        "INTRO_TEXT": "The protection of your personal data is of particular concern to me. I therefore process your data exclusively on the basis of legal regulations (GDPR, TKG 2003).",
+        "DATA_COLLECTION_TITLE": "Collection and Processing of Data",
+        "DATA_COLLECTION_TEXT": "If you send me an email or use the contact form, your provided data will be stored for the purpose of processing your request and in case of follow-up questions. I will not share this data without your consent.",
+        "RIGHTS_TITLE": "Your Rights",
+        "RIGHTS_TEXT": "You have the right to information, correction, deletion, restriction, data portability, revocation and objection. If you believe that the processing of your data violates data protection law or your data protection rights have been violated in any other way, you can file a complaint with the supervisory authority."
     }
 }

@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
 import { MainContent } from './core/main-content/main-content';
+import { Imprint } from './shared/components/imprint/imprint';
+import { PrivacyPolicy } from './shared/components/privacy-policy/privacy-policy';
 
 export const routes: Routes = [{ path: '', component: MainContent, pathMatch: 'full' },
-// Legal pages kommen später:
-// { path: 'imprint', component: ImprintComponent },
-// { path: 'privacy-policy', component: PrivacyPolicyComponent },
+{ path: 'imprint', component: Imprint },
+{ path: 'privacy-policy', component: PrivacyPolicy },
 { path: '**', redirectTo: '' }];

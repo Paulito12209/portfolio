@@ -1,1 +1,43 @@
-<a href="#">Legal notice</a>
+<div class="imprint-container">
+    <app-header></app-header>
+    <div class="imprint-content">
+        <app-section-content title="IMPRINT.TITLE">
+            <div class="imprint-main">
+                <section class="imprint-section">
+                    <h3>{{ 'IMPRINT.PROVIDER_TITLE' | translate }}</h3>
+                    <p>{{ 'IMPRINT.PROVIDER_NAME' | translate }}</p>
+                    <p>{{ 'IMPRINT.PROVIDER_ADDRESS' | translate }}</p>
+                </section>
+
+                <section class="imprint-section">
+                    <h3>{{ 'IMPRINT.CONTACT_TITLE' | translate }}</h3>
+                    <p>{{ 'IMPRINT.CONTACT_EMAIL' | translate }}</p>
+                </section>
+
+                <section class="imprint-section">
+                    <h3>{{ 'IMPRINT.DISCLAIMER_TITLE' | translate }}</h3>
+                    <p>{{ 'IMPRINT.DISCLAIMER_TEXT' | translate }}</p>
+                </section>
+
+                <section class="imprint-section">
+                    <h3>{{ 'IMPRINT.COPYRIGHT_TITLE' | translate }}</h3>
+                    <p>{{ 'IMPRINT.COPYRIGHT_TEXT' | translate }}</p>
+                </section>
+            </div>
+        </app-section-content>
+
+
+    </div>
+    <div class="imprint-right">
+        <div class="imprint-right-spacer"></div>
+        <app-email></app-email>
+        <app-phone-number></app-phone-number>
+        <div class="imprint-bow">
+            <app-section-bow></app-section-bow>
+        </div>
+        <div class="footer-content">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
+<div class="right-bar"></div>
