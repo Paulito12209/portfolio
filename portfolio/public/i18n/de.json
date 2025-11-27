@@ -86,7 +86,12 @@
         "PRIVACY_TEXT": "Ich habe die",
         "PRIVACY_LINK": "Datenschutzerklärung",
         "PRIVACY_TEXT_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-        "BUTTON_SEND": "Senden"
+        "BUTTON_SEND": "Senden",
+        "ERROR_NAME": "Bitte gib deinen Namen ein",
+        "ERROR_EMAIL_REQUIRED": "Bitte gib deine E-Mail ein",
+        "ERROR_EMAIL_INVALID": "Bitte gib eine gültige E-Mail ein",
+        "ERROR_MESSAGE": "Bitte gib eine Nachricht ein",
+        "ERROR_PRIVACY": "Bitte akzeptiere die Datenschutzerklärung"
     },
     "FOOTER": {
         "LEGAL_NOTICE": "Impressum",

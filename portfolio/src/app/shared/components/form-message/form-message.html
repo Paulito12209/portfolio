@@ -1,2 +1,12 @@
-<textarea [placeholder]="'CONTACT.FORM_MESSAGE' | translate" [ngModel]="message"
-    (ngModelChange)="messageChange.emit($event)" name="message" rows="10"></textarea>
+<div class="input-container">
+    <textarea [placeholder]="'CONTACT.FORM_MESSAGE' | translate" [ngModel]="message"
+        (ngModelChange)="messageChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid" name="message"
+        rows="10">
+    </textarea>
+    <span class="error-message" *ngIf="isInvalid">
+        {{ 'CONTACT.ERROR_MESSAGE' | translate }}
+    </span>
+</div>
+
+<!-- <textarea [placeholder]="'CONTACT.FORM_MESSAGE' | translate" [ngModel]="message"
+    (ngModelChange)="messageChange.emit($event)" name="message" rows="10"></textarea> -->

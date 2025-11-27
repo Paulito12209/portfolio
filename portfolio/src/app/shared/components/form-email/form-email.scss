@@ -1,10 +1,14 @@
 @use '../../../../styles/variables' as vars;
-@use '../../../../styles/mixins.scss' as mix;
 
 :host {
-    @include mix.dFlex($jc: center);
     display: block;
     width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 input {
@@ -27,7 +31,12 @@ input {
         box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
     }
 
-    // Autofill styles - verhindert weißen Hintergrund
+    &.invalid {
+        border-color: #FF3B3B;
+        box-shadow: 0 0 10px rgba(#FF3B3B, 0.3);
+    }
+
+    // Autofill styles
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
@@ -37,3 +46,49 @@ input {
         transition: background-color 5000s ease-in-out 0s;
     }
 }
+
+.error-message {
+    color: #FF3B3B;
+    font-size: 14px;
+    padding-left: 24px;
+}
+
+// @use '../../../../styles/variables' as vars;
+// @use '../../../../styles/mixins.scss' as mix;
+
+// :host {
+//     @include mix.dFlex($jc: center);
+//     display: block;
+//     width: 100%;
+// }
+
+// input {
+//     width: 100%;
+//     background-color: transparent;
+//     border: 1px solid vars.$neon;
+//     border-radius: 30px;
+//     padding: 16px 24px;
+//     color: white;
+//     font-family: vars.$font-quantico;
+//     font-size: vars.$f-p;
+//     outline: none;
+//     transition: all 0.3s ease;
+
+//     &::placeholder {
+//         color: #9E9D9D;
+//     }
+
+//     &:focus {
+//         box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
+//     }
+
+//     // Autofill styles - verhindert weißen Hintergrund
+//     &:-webkit-autofill,
+//     &:-webkit-autofill:hover,
+//     &:-webkit-autofill:focus {
+//         -webkit-text-fill-color: white;
+//         -webkit-box-shadow: 0 0 0px 1000px black inset;
+//         box-shadow: 0 0 0px 1000px black inset;
+//         transition: background-color 5000s ease-in-out 0s;
+//     }
+// }

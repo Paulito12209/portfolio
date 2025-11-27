@@ -3,15 +3,17 @@
         <app-section-content title="CONTACT.TITLE">
             <div class="contact-form-container">
                 <div class="form-group">
-                    <app-form-name></app-form-name>
+                    <app-form-name [(name)]="name"></app-form-name>
                 </div>
                 <div class="form-group">
-                    <app-form-email></app-form-email>
+                    <app-form-email [(email)]="email"></app-form-email>
                 </div>
                 <div class="form-group">
-                    <app-form-message></app-form-message>
+                    <app-form-message [(message)]="message"></app-form-message>
                 </div>
-                <app-form-validation-box></app-form-validation-box>
+                <app-form-validation-box [(privacyPolicyChecked)]="privacyPolicyChecked" [formValid]="isFormValid()"
+                    (submitForm)="onSubmit()">
+                </app-form-validation-box>
             </div>
         </app-section-content>
     </div>

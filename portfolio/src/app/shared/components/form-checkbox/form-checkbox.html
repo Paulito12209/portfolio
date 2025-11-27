@@ -1,1 +1,9 @@
-<p>form-checkbox works!</p>
+<div class="checkbox-wrapper">
+    <input 
+        type="checkbox" 
+        id="privacy-checkbox"
+        [ngModel]="checked"
+        (ngModelChange)="onCheckboxChange($event)"
+        name="privacy-checkbox">
+    <label for="privacy-checkbox" class="checkbox-custom"></label>
+</div>

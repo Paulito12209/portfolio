@@ -1,2 +1,10 @@
-<input type="email" [placeholder]="'CONTACT.FORM_EMAIL' | translate" [ngModel]="email"
-    (ngModelChange)="emailChange.emit($event)" name="email">
+<div class="input-container">
+    <input type="email" [placeholder]="'CONTACT.FORM_EMAIL' | translate" [ngModel]="email"
+        (ngModelChange)="emailChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid" name="email">
+    <span class="error-message" *ngIf="isInvalid">
+        {{ errorMessage | translate }}
+    </span>
+</div>
+
+<!-- <input type="email" [placeholder]="'CONTACT.FORM_EMAIL' | translate" [ngModel]="email"
+    (ngModelChange)="emailChange.emit($event)" name="email"> -->
