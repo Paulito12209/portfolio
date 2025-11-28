@@ -1,15 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-form-checkbox',
-//   imports: [],
-//   templateUrl: './form-checkbox.html',
-//   styleUrl: './form-checkbox.scss',
-// })
-// export class FormCheckbox {
-
-// }
-
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -28,3 +16,15 @@ export class FormCheckbox {
     this.checkedChange.emit(value);
   }
 }
+
+// import { Component } from '@angular/core';
+
+// @Component({
+//   selector: 'app-form-checkbox',
+//   imports: [],
+//   templateUrl: './form-checkbox.html',
+//   styleUrl: './form-checkbox.scss',
+// })
+// export class FormCheckbox {
+
+// }
