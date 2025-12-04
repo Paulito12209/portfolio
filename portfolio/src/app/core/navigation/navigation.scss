@@ -12,9 +12,21 @@
 
     padding: 40px 0;
     // z-index: 1000;
+
+    /*==== Mobile: Top-Bar ====*/
+    @media (max-width: vars.$mobile) {
+        inset: 0 0 auto 0; // top:0; left:0; right:0; bottom:auto
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        z-index: 10;
+    }
 }
 
-/* Logo */
+/*==== Logo ====*/
 .logo-link {
     cursor: pointer;
 
@@ -25,7 +37,23 @@
     }
 }
 
-/* Sections */
+/*==== Burger Button ====*/
+.burger-btn {
+    display: none;
+
+    @media (max-width: vars.$mobile) {
+        display: block;
+        background: transparent;
+        border: none;
+        font-size: 40px;
+        color: vars.$black;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+    }
+}
+
+/*==== Sections (Desktop) ====*/
 .nav-sections {
     @include mix.dFlex($fdir: column, $g: 32px);
     list-style: none;
@@ -33,6 +61,11 @@
     padding: 0;
     width: 100%;
     height: 100%;
+
+    /*==== Mobile: Links ausblenden ====*/
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
 }
 
 .nav-link {
@@ -66,4 +99,64 @@
     // &.active {
     //     color: vars.$black;
     // }
+}
+
+/*==== Mobile Overlay ====*/
+.mobile-overlay {
+    display: none;
+
+    @media (max-width: vars.$mobile) {
+        @include mix.dFlex($fdir: column, $jc: start, $ai: center, $g: 32px);
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: vars.$neon;
+        padding: 48px 24px;
+        z-index: 9;
+    }
+}
+
+.overlay-links {
+    @include mix.dFlex($fdir: column, $g: 24px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    button {
+        background: transparent;
+        border: none;
+        font-family: vars.$font-quantico;
+        font-size: 24px;
+        color: vars.$black;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.overlay-language {
+    @include mix.dFlex($g: 8px);
+    margin-top: 32px;
+
+    button {
+        background: transparent;
+        border: none;
+        font-family: vars.$font-quantico;
+        font-size: 18px;
+        color: vars.$black;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    span {
+        color: vars.$black;
+        font-size: 18px;
+    }
 }

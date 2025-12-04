@@ -12,6 +12,18 @@
     scroll-snap-type: x proximity; // <- [mandatory] ist zu aggressiv
     scroll-behavior: smooth;
     color: white;
+
+    /*==== Mobile: vertikales Layout ====*/
+    @media (max-width: vars.$mobile) {
+        margin-left: 0;
+        margin-top: 80px; // Platz für Top-Bar
+        height: auto;
+        min-height: calc(100vh - 80px);
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: visible;
+        scroll-snap-type: none;
+    }
 }
 
 .section {
@@ -21,4 +33,13 @@
     scroll-behavior: smooth;
     // scroll-snap-stop: always; // <- auskommentiert für flüssigeres Scrollen
     flex-shrink: 0; // Wichtig: Sections sollen nicht schrumpfen
+
+    /*==== Mobile: volle Breite, auto Höhe ====*/
+    @media (max-width: vars.$mobile) {
+        min-width: 100vw;
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        scroll-snap-align: none;
+    }
 }

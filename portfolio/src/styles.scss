@@ -14,6 +14,14 @@ body {
     height: 100vh;
     overflow: hidden; // <- Das ist der Trick!
     font-family: vars.$font-quantico;
+
+    /*==== Mobile: vertikales Scrollen erlauben ====*/
+    @media (max-width: vars.$mobile) {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: auto;
+        min-height: 100vh;
+    }
 }
 
 // FONT: QUANTICO -> im public Ordner

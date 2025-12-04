@@ -4,11 +4,31 @@
         <img class="logo" src="img/pa-logo.png" alt="Logo Paul Angeles" />
     </a>
 
-    <!-- Sections -->
+    <!-- Burger Menu Button (nur Mobile) -->
+    <button class="burger-btn" (click)="toggleMenu()" aria-label="Menü öffnen">
+        ≡
+    </button>
+
+    <!-- Sections (Desktop) -->
     <ul class="nav-sections" role="list">
         <li><button type="button" class="nav-link">{{ 'NAV.WHY_ME' | translate }}</button></li>
         <li><button type="button" class="nav-link">{{ 'NAV.SKILLS' | translate }}</button></li>
         <li><button type="button" class="nav-link">{{ 'NAV.MY_WORK' | translate }}</button></li>
         <li><button type="button" class="nav-link">{{ 'NAV.CONTACT' | translate }}</button></li>
     </ul>
+
+    <!-- Overlay (nur Mobile, wenn geöffnet) -->
+    <div class="mobile-overlay" *ngIf="menuOpen">
+        <ul class="overlay-links">
+            <li><button type="button" (click)="toggleMenu()">{{ 'NAV.WHY_ME' | translate }}</button></li>
+            <li><button type="button" (click)="toggleMenu()">{{ 'NAV.SKILLS' | translate }}</button></li>
+            <li><button type="button" (click)="toggleMenu()">{{ 'NAV.MY_WORK' | translate }}</button></li>
+            <li><button type="button" (click)="toggleMenu()">{{ 'NAV.CONTACT' | translate }}</button></li>
+        </ul>
+        <div class="overlay-language">
+            <button (click)="changeLanguage('de')">DE</button>
+            <span>|</span>
+            <button (click)="changeLanguage('en')">EN</button>
+        </div>
+    </div>
 </nav>

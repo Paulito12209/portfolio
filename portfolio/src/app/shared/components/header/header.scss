@@ -9,7 +9,12 @@
     right: 0;
     height: 100px;
     width: 100%;
-    z-index: 1000;
+    z-index: 10;
+
+    /*==== Mobile: Header ausblenden ====*/
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
 }
 
 nav {
