@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteBase /projects/portfolio/
+
+RewriteRule ^index.html$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /projects/portfolio/index.html [L]
+
