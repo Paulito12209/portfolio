@@ -36,10 +36,12 @@
 
     /*==== Mobile: volle Breite, auto Höhe ====*/
     @media (max-width: vars.$mobile) {
+        display: flex;
+        flex-direction: column;
         min-width: 100vw;
         width: 100vw;
         height: auto;
-        min-height: 100vh;
+        min-height: calc(100vh - 80px);
         scroll-snap-align: none;
     }
 }

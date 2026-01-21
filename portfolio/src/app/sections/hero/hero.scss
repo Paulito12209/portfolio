@@ -2,17 +2,43 @@
 @use '../../../styles/mixins.scss' as mix; // <- [mixins]
 
 :host {
-    @include mix.dFlex(); // <- Zentriert den Inhalt
+    display: flex; // Ensure it behaves as a flex item
+    flex-direction: column;
     height: 100%;
-    // width: 100%;
-    max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
+    width: 100%;
+    flex: 1;
+    max-width: 1440px;
+    margin: 0 auto; // Center host if needed
 }
 
 .hero-container {
-    @include mix.dFlex($fdir: column); // <- Sorgt dafür, dass app-header über hero-content platziert wird
-    flex: 1; // <- hero-container nimmt nur verfügbaren Raum ein
+    @include mix.dFlex($fdir: column);
+    flex: 1;
     height: 100%;
-    // max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
+    width: 100%;
+
+    @media (max-width: vars.$mobile) {
+        height: calc(100vh - 80px); // Explicit defined size to prevent squashing
+        min-height: calc(100vh - 80px);
+    }
+
+    app-header {
+        width: 100%; // Ensure header takes full width
+
+        @media (max-width: vars.$mobile) {
+            display: none;
+        }
+    }
+}
+
+
+
+.hero-bow {
+    margin-top: 265px;
+
+    @media (max-width: vars.$mobile) {
+        display: none; // Pfeile in Mobile View ausblenden
+    }
 }
 
 .hero-content {
@@ -34,8 +60,14 @@
 
             background-image: url(../../../../public/img/pa-hero-bg-image.png);
             background-repeat: no-repeat;
-            background-position: top; // <- Später Einlesen
+            background-position: top;
             background-size: cover;
+
+            @media (max-width: vars.$mobile) {
+                position: relative; // Needed for absolute positioning of text
+                height: 440px; // Fixed height for image area on mobile
+                flex: unset; // Disable flex expansion
+            }
 
             .hero-text {
                 @include mix.dFlex($fdir: column);
@@ -44,10 +76,27 @@
                 width: 100%;
                 padding-top: 40%;
 
+                @media (max-width: vars.$mobile) {
+                    position: absolute; // Float above/below image
+                    bottom: -128px; // Pull text down to overlap/hang out
+                    left: 0;
+                    height: auto;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+                    z-index: 5; // Ensure text is on top
+                }
+
                 h1 {
                     color: vars.$neon;
                     font-size: vars.$f-h1;
                     text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+
+                    @media (max-width: vars.$mobile) {
+                        font-size: 56px;
+                        line-height: 1;
+                        margin: 0;
+                    }
                 }
 
                 h3 {
@@ -55,12 +104,31 @@
                     -webkit-text-stroke: 2px vars.$neon; // Konturbreite + Farbe
                     font-size: vars.$f-h3;
                     text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+
+                    @media (max-width: vars.$mobile) {
+                        color: vars.$neon;
+                        -webkit-text-stroke: 0;
+                        font-family: vars.$font-quantico;
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        letter-spacing: 1.5px;
+                        margin-bottom: 0;
+                        order: -1;
+                    }
+                }
+
+                .location {
+                    display: none; // Hidden on desktop
+
+                    @media (max-width: vars.$mobile) {
+                        display: block; // Visible on mobile
+                        color: white;
+                        font-family: vars.$font-quantico;
+                        font-size: 24px;
+                        margin-top: 8px;
+                    }
                 }
             }
         }
     }
-}
-
-.hero-bow {
-    margin-top: 265px;
 }

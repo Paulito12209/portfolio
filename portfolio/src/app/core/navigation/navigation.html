@@ -19,6 +19,9 @@
 
     <!-- Overlay (nur Mobile, wenn geöffnet) -->
     <div class="mobile-overlay" *ngIf="menuOpen">
+        <button class="close-btn" (click)="toggleMenu()" aria-label="Menü schließen">
+            ✕
+        </button>
         <ul class="overlay-links">
             <li><button type="button" (click)="toggleMenu()">{{ 'NAV.WHY_ME' | translate }}</button></li>
             <li><button type="button" (click)="toggleMenu()">{{ 'NAV.SKILLS' | translate }}</button></li>

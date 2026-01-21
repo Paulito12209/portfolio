@@ -12,11 +12,24 @@
     flex: 1;
     height: 100%;
     max-width: 1440px; // <- Inhalt wird nicht größer als 1440px
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .why-me-content {
     padding-top: 196px;
     width: 70%;
+
+    @media (max-width: vars.$mobile) {
+        padding-top: 0;
+        width: 100%;
+        padding: 40px 24px;
+        @include mix.dFlex($fdir: column, $ai: center);
+    }
 
     p {
         font-size: vars.$f-p;
@@ -29,6 +42,11 @@
         color: vars.$neon;
         font-size: vars.$f-h3;
         font-weight: 700;
+
+        @media (max-width: vars.$mobile) {
+            text-align: center;
+            margin-bottom: 24px;
+        }
     }
 }
 
@@ -37,10 +55,27 @@
     width: 100%;
     flex: 1;
 
+    @media (max-width: vars.$mobile) {
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
     .why-me-details {
         @include mix.dFlex($jc: space-around);
         width: 100%;
         padding: 0 40px;
+
+        @media (max-width: vars.$mobile) {
+            flex-direction: column-reverse;
+            gap: 32px;
+            padding: 0;
+
+            // Hide the first detail (Location/Berlin) on mobile
+            app-details:first-child {
+                display: none;
+            }
+        }
     }
 
 }
@@ -85,4 +120,8 @@ app-details {
 
 .why-me-bow {
     padding-top: 900px;
+
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
 }
