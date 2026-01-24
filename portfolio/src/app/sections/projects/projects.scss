@@ -10,8 +10,12 @@
 .projects-container {
     @include mix.dFlex($jc: space-between, $ai: start, $g: 32px);
     width: 100%;
-    // max-width: 1440px;
-    // padding-top: 100px; // Abstand von oben
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .projects-content {
@@ -34,6 +38,10 @@ app-section-content {
 
 .projects-list {
     @include mix.dFlex($ai: stretch, $jc: start, $g: 32px);
-    // flex-wrap: wrap; // Falls der Platz nicht reicht, umbrechen
     width: 100%;
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        align-items: center;
+    }
 }

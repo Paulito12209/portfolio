@@ -27,6 +27,8 @@ h2 {
         padding: 24px 0;
         text-align: left;
         width: 100%;
+        font-size: vars.$f-h2-mb; // Use mobile variable
+        // Also ensure line-height or other props if needed, but size is key
     }
 }
 

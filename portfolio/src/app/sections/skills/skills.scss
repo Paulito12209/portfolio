@@ -40,10 +40,17 @@
         align-items: center;
     }
 
-    // h2 styles here might be redundant if section-content handles it, 
-    // but leaving/resetting them just in case they apply to something else 
-    // or if the projecting works differently.
-    // If h2 is projected, these apply. If part of child component, they don't.
+    p {
+        font-size: vars.$f-p; // Default Desktop
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 48px; // Similar to Why Me
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-p-mb; // Mobile Variable
+            text-align: left;
+        }
+    }
 }
 
 .skills-subcontent {
@@ -51,44 +58,86 @@
     width: 100%;
 
     @media (max-width: vars.$mobile) {
+        display: flex;
+        flex-direction: column; // Lists stack vertically
+        gap: 24px;
         align-items: center;
-        gap: 40px;
+        width: 100%;
     }
 }
 
 .skills-icon-list {
-    @include mix.dFlex($jc: start, $g: 24px);
+    @include mix.dFlex($jc: start, $ai: start, $g: 24px);
     flex-grow: max-content;
 
     @media (max-width: vars.$mobile) {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column; // Rows stack vertically
         align-items: center;
         width: 100%;
+        gap: 24px;
     }
 
     .skills-icons {
         @include mix.dFlex($jc: start, $g: 24px);
 
         @media (max-width: vars.$mobile) {
+            display: flex;
+            flex-direction: row;
             justify-content: center;
-            flex-wrap: wrap; // Allow icons to wrap if needed
+            align-items: start;
+            width: 100%;
+            gap: 8px;
         }
 
-        .challenge-me {
-            @include mix.dFlex();
-            width: 50%;
-            padding: 0 12px;
+        .dummy-icon {
+            display: none;
 
             @media (max-width: vars.$mobile) {
-                width: 100%;
-                text-align: center;
-                margin-top: 16px;
+                display: block;
+                width: 32%; // Match other icons
+                visibility: hidden;
             }
+        }
 
-            p {
-                font-size: vars.$f-subtext;
-                margin: 0;
-            }
+    }
+}
+
+.challenge-me {
+    @include mix.dFlex();
+    width: 50%;
+    padding: 0 12px;
+    align-self: center;
+
+    p {
+        font-size: vars.$f-subtext;
+        margin: 0;
+    }
+}
+
+// Text 1 (Inside Icon List -> Show Desktop, Hide Mobile)
+.skills-icon-list>.challenge-me {
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
+}
+
+// Text 2 (Outside Subcontent -> Hide Desktop, Show Mobile)
+.skills-subcontent+.challenge-me {
+    display: none;
+
+    @media (max-width: vars.$mobile) {
+        display: flex;
+        width: 100%;
+        margin-top: 24px;
+        flex-direction: column; // or row, centered
+        align-items: center;
+        text-align: center;
+        padding: 0;
+
+        p {
+            font-size: vars.$f-p-mb;
+            line-height: normal;
         }
     }
 }
@@ -97,8 +146,9 @@
     display: none; // Standardmäßig ausgeblendet (für Mobile später)
 
     @media (max-width: vars.$mobile) {
-        display: block; // Show button on mobile
-        margin-top: 32px;
+        display: flex; // Show button on mobile
+        margin-top: 40px;
+        width: max-content; // Button only as wide as content
     }
 }
 

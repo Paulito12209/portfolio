@@ -41,7 +41,7 @@
         min-width: 100vw;
         width: 100vw;
         height: auto;
-        min-height: calc(100vh - 80px);
+        min-height: auto; // Passt sich dem Inhalt an
         scroll-snap-align: none;
     }
 }

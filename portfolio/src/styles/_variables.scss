@@ -10,6 +10,15 @@ $f-subtext: 16px; // Stärke 400 & Regular
 $f-button: 14px; // Stärke 400 & Regular
 $nav-links: 30px;
 
+/*==== Mobile Fonts ====*/
+$f-h1-mb: 40px;
+$f-h2-mb: 32px;
+$f-h3-mb: 24px;
+$f-h4-mb: 22px; // Zwischenüberschriften
+$f-sub-headline-mb: 18px;
+$f-p-mb: 16px;
+
+
 /*==== Colours ====*/
 $neon: #B5E93B;
 $black: #000;
@@ -18,4 +27,4 @@ $black: #000;
 $sidebar: 160px;
 
 /*==== Breakpoints ====*/
-$mobile: 768px;
+$mobile: 480px;

@@ -9,4 +9,27 @@
         font-size: vars.$f-p;
         text-align: center;
     }
+
+    @media (max-width: vars.$mobile) {
+        width: 32%;
+
+        img {
+            width: 45px;
+            height: 45px;
+        }
+
+        p {
+            display: none;
+        }
+    }
+
+    &.show-mobile-text {
+        @media (max-width: vars.$mobile) {
+            p {
+                display: block;
+                font-size: vars.$f-p-mb; // Sicherstellen dass Schriftgröße passt
+                margin: 0;
+            }
+        }
+    }
 }

@@ -5,8 +5,8 @@
     </a>
 
     <!-- Burger Menu Button (nur Mobile) -->
-    <button class="burger-btn" (click)="toggleMenu()" aria-label="Menü öffnen">
-        ≡
+    <button class="burger-btn" [class.open-animation]="menuOpen && !isFirstLoad"
+        [class.close-animation]="!menuOpen && !isFirstLoad" (click)="toggleMenu()" aria-label="Menü öffnen">
     </button>
 
     <!-- Sections (Desktop) -->
@@ -19,8 +19,8 @@
 
     <!-- Overlay (nur Mobile, wenn geöffnet) -->
     <div class="mobile-overlay" *ngIf="menuOpen">
-        <button class="close-btn" (click)="toggleMenu()" aria-label="Menü schließen">
-            ✕
+        <button class="close-btn" [class.open-animation]="menuOpen && !isFirstLoad"
+            [class.close-animation]="!menuOpen && !isFirstLoad" (click)="toggleMenu()" aria-label="Menü schließen">
         </button>
         <ul class="overlay-links">
             <li><button type="button" (click)="toggleMenu()">{{ 'NAV.WHY_ME' | translate }}</button></li>
@@ -29,9 +29,9 @@
             <li><button type="button" (click)="toggleMenu()">{{ 'NAV.CONTACT' | translate }}</button></li>
         </ul>
         <div class="overlay-language">
-            <button (click)="changeLanguage('de')">DE</button>
+            <button (click)="changeLanguage('de')" [class.active]="currentLang === 'de'">DE</button>
             <span>|</span>
-            <button (click)="changeLanguage('en')">EN</button>
+            <button (click)="changeLanguage('en')" [class.active]="currentLang === 'en'">EN</button>
         </div>
     </div>
 </nav>

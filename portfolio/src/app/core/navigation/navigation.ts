@@ -11,15 +11,25 @@ import { CommonModule } from '@angular/common';
 })
 export class Navigation {
   menuOpen = false;
+  isFirstLoad = true; // Verhindert Animation beim initialen Laden
+  currentLang = 'de';
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService) {
+    const savedLang = localStorage.getItem('currentLanguage') || 'de';
+    this.translate.setDefaultLang('de');
+    this.translate.use(savedLang);
+    this.currentLang = savedLang;
+  }
 
   toggleMenu() {
+    this.isFirstLoad = false; // Nach erstem Klick Animation erlauben
     this.menuOpen = !this.menuOpen;
   }
 
   changeLanguage(language: string) {
     this.translate.use(language);
+    this.currentLang = language;
+    localStorage.setItem('currentLanguage', language);
   }
 }
 

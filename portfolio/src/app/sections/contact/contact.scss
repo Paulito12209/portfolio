@@ -17,6 +17,12 @@
     max-width: 1440px;
     padding: 0;
     box-sizing: border-box;
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto; // Allow scrolling if content is long
+    }
 }
 
 .contact-content {
@@ -25,6 +31,13 @@
     max-width: 60%;
     padding-top: 10%;
     box-sizing: border-box;
+
+    @media (max-width: vars.$mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 150px; // Space for header/bow
+        justify-content: center;
+    }
 
     ::ng-deep app-section-content {
         h2 {
@@ -39,6 +52,13 @@
     max-width: 40%;
     padding-top: 10%;
     box-sizing: border-box;
+
+    @media (max-width: vars.$mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 40px;
+        align-items: center; // Center content
+    }
 }
 
 .right-bar {
@@ -78,6 +98,10 @@
         color: white;
         font-size: vars.$f-p;
         text-align: right;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-p-mb;
+        }
 
         &:first-child {
             color: vars.$neon;

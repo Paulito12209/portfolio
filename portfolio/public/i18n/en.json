@@ -49,6 +49,7 @@
         "ICON_MATERIAL_DESIGN_DESCRIPTION": "Material Design",
         "ICON_CHALLENGE_ME": "./img/icons/skills/challange-icon.svg",
         "ICON_CHALLENGE_ME_DESCRIPTION": "Challenge Me",
+        "BUTTON": "Let's talk",
         "SUBTEXT": "Show that you are motivated to improve your skills, implement innovative solutions and stay abreast of new technologies."
     },
     "PROJECTS": {

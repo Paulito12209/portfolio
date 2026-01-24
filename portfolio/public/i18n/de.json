@@ -49,6 +49,7 @@
         "ICON_MATERIAL_DESIGN_DESCRIPTION": "Material Design",
         "ICON_CHALLENGE_ME": "./img/icons/skills/challange-icon.svg",
         "ICON_CHALLENGE_ME_DESCRIPTION": "Challenge Me",
+        "BUTTON": "Lass uns reden",
         "SUBTEXT": "Zeigen Sie, dass Sie motiviert sind, Ihre Fähigkeiten zu verbessern, innovative Lösungen umzusetzen und sich über neue Technologien auf dem Laufenden zu halten."
     },
     "PROJECTS": {

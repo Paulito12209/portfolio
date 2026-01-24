@@ -9,6 +9,11 @@
     flex: 1;
     max-width: 1440px;
     margin: 0 auto; // Center host if needed
+
+    @media (max-width: vars.$mobile) {
+        height: auto;
+        flex: unset; // Verhindere Expansion
+    }
 }
 
 .hero-container {
@@ -18,8 +23,10 @@
     width: 100%;
 
     @media (max-width: vars.$mobile) {
-        height: calc(100vh - 80px); // Explicit defined size to prevent squashing
-        min-height: calc(100vh - 80px);
+        height: auto;
+        min-height: auto;
+        flex: unset; // Verhindere Expansion
+        padding-bottom: 48px;
     }
 
     app-header {
@@ -46,11 +53,23 @@
     flex: 1; // <- hero-content nimmt nur verfügbaren Raum ein
     width: 100%;
 
+    @media (max-width: vars.$mobile) {
+        height: auto;
+        flex: unset; // Verhindere Expansion
+    }
+
     .hero-image {
         @include mix.dFlex();
         flex: 1;
         height: 100%; // Nicht löschen!
         width: 100%;
+
+        @media (max-width: vars.$mobile) {
+            flex-direction: column;
+            justify-content: flex-start;
+            flex: unset; // Verhindere Expansion
+            height: auto;
+        }
 
         .hero-image-bg {
             @include mix.dFlex();
@@ -64,11 +83,12 @@
             background-size: cover;
 
             @media (max-width: vars.$mobile) {
-                position: relative; // Needed for absolute positioning of text
-                height: 440px; // Fixed height for image area on mobile
                 flex: unset; // Disable flex expansion
+                height: 440px; // Fixed height for image
+                width: 100%;
             }
 
+            // Desktop Text (inside Image)
             .hero-text {
                 @include mix.dFlex($fdir: column);
                 flex: 1;
@@ -77,26 +97,13 @@
                 padding-top: 40%;
 
                 @media (max-width: vars.$mobile) {
-                    position: absolute; // Float above/below image
-                    bottom: -128px; // Pull text down to overlap/hang out
-                    left: 0;
-                    height: auto;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 0;
-                    z-index: 5; // Ensure text is on top
+                    display: none; // Hide on Mobile
                 }
 
                 h1 {
                     color: vars.$neon;
                     font-size: vars.$f-h1;
                     text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-
-                    @media (max-width: vars.$mobile) {
-                        font-size: 56px;
-                        line-height: 1;
-                        margin: 0;
-                    }
                 }
 
                 h3 {
@@ -104,29 +111,50 @@
                     -webkit-text-stroke: 2px vars.$neon; // Konturbreite + Farbe
                     font-size: vars.$f-h3;
                     text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+                }
 
-                    @media (max-width: vars.$mobile) {
-                        color: vars.$neon;
-                        -webkit-text-stroke: 0;
-                        font-family: vars.$font-quantico;
-                        font-size: 24px;
-                        text-transform: uppercase;
-                        letter-spacing: 1.5px;
-                        margin-bottom: 0;
-                        order: -1;
-                    }
+                // .location {
+                //     display: none;
+                // }
+            }
+        }
+
+        // Mobile Text (below Image)
+        .hero-text-mobile {
+            display: none; // Hide on Desktop
+
+            @media (max-width: vars.$mobile) {
+                @include mix.dFlex($fdir: column, $jc: flex-start, $ai: center);
+                display: flex;
+                width: 100%;
+                padding: 6px 24px;
+                // background-color: black; // Optional: match body bg if needed
+
+                h1 {
+                    color: vars.$neon;
+                    font-size: vars.$f-h1-mb; // 40px
+                    line-height: 1.2;
+                    text-align: center;
+                    order: 2;
+                }
+
+                h3 {
+                    color: vars.$neon;
+                    font-family: vars.$font-quantico;
+                    font-size: vars.$f-h3-mb; // 24px
+                    text-transform: uppercase;
+                    letter-spacing: 1.5px;
+                    text-align: center;
+                    order: 1;
                 }
 
                 .location {
-                    display: none; // Hidden on desktop
-
-                    @media (max-width: vars.$mobile) {
-                        display: block; // Visible on mobile
-                        color: white;
-                        font-family: vars.$font-quantico;
-                        font-size: 24px;
-                        margin-top: 8px;
-                    }
+                    color: white;
+                    font-family: vars.$font-quantico;
+                    font-size: vars.$f-sub-headline-mb; // 18px
+                    margin-top: 8px;
+                    text-align: center;
+                    order: 3;
                 }
             }
         }

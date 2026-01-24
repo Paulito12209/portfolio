@@ -36,6 +36,10 @@
         font-weight: 400;
         line-height: 1.5;
         margin-bottom: 32px;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-p-mb; // Use mobile variable
+        }
     }
 
     h3 {
@@ -44,6 +48,7 @@
         font-weight: 700;
 
         @media (max-width: vars.$mobile) {
+            font-size: vars.$f-h3-mb; // Use mobile variable
             text-align: center;
             margin-bottom: 24px;
         }

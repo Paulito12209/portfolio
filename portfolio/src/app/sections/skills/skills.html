@@ -33,15 +33,20 @@
                     <div class="skills-icons">
                         <app-skill-icon icon="{{ 'SKILLS.ICON_MATERIAL_DESIGN' | translate }}"
                             name="{{ 'SKILLS.ICON_MATERIAL_DESIGN_DESCRIPTION' | translate }}"></app-skill-icon>
-                        <app-skill-icon icon="{{ 'SKILLS.ICON_CHALLENGE_ME' | translate }}"
+                        <app-skill-icon class="show-mobile-text" icon="{{ 'SKILLS.ICON_CHALLENGE_ME' | translate }}"
                             name="{{ 'SKILLS.ICON_CHALLENGE_ME_DESCRIPTION' | translate }}"></app-skill-icon>
-                        <div class="challenge-me">
-                            <p>{{ 'SKILLS.SUBTEXT' | translate }}</p>
-                        </div>
+                        <div class="dummy-icon"></div>
+                    </div>
+                    <div class="challenge-me">
+                        <p>{{ 'SKILLS.SUBTEXT' | translate }}</p>
                     </div>
                 </div>
-                <app-button class="skills-button" title="SKILLS.BUTTON"></app-button>
             </div>
+            <!-- challenge me text outside of icon list -->
+            <div class="challenge-me">
+                <p>{{ 'SKILLS.SUBTEXT' | translate }}</p>
+            </div>
+            <app-button class="skills-button" title="SKILLS.BUTTON"></app-button>
         </app-section-content>
     </div>
     <div class="skills-bow">
