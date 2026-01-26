@@ -10,19 +10,43 @@
                 <h4>{{ 'PROJECTS.ABOUT' | translate }}</h4>
                 <p>{{ description | translate }}</p>
             </li>
+
+            <!-- "Show me more" Button (nur wenn collapsed UND Mobile) -->
+            @if (shouldShowToggle && !isExpanded) {
+            <button class="toggle-btn show-more" (click)="toggleExpand()">
+                <span class="text">Show me more</span> <span class="arrow">▼</span>
+            </button>
+            }
+
+            <!-- Rest: Desktop IMMER, Mobile nur wenn expanded -->
+            @if (shouldShowContent) {
             <li>
                 <h4>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h4>
                 <p>{{ technologies | translate }}</p>
             </li>
+            <li class="mobile-learning">
+                <h4>{{ 'PROJECTS.LEARNING' | translate }}</h4>
+                <p>{{ learning | translate }}</p>
+            </li>
+            }
         </ul>
     </div>
+
+    <!-- Image Section: Desktop IMMER, Mobile nur wenn expanded -->
+    @if (shouldShowContent) {
     <div class="project-details-image">
         <img [src]="image" [alt]="title">
-        <app-button [title]="'PROJECTS.BUTTON_LIVE'"></app-button>
+        <div class="project-details-buttons">
+            <app-button-secondary title="GitHub" class="github-btn"></app-button-secondary>
+            <app-button [title]="'PROJECTS.BUTTON_LIVE'"></app-button>
+        </div>
     </div>
+    }
 </div>
 
-<div class="project-details-list-end">
+<!-- Desktop Learning: Desktop IMMER, Mobile nur wenn expanded -->
+@if (shouldShowContent) {
+<div class="project-details-list-end desktop-learning">
     <ul>
         <li>
             <h4>{{ 'PROJECTS.LEARNING' | translate }}</h4>
@@ -30,3 +54,11 @@
         </li>
     </ul>
 </div>
+}
+
+<!-- "Show me less" Button (nur wenn expanded UND Mobile) -->
+@if (shouldShowToggle && isExpanded) {
+<button class="toggle-btn show-less" (click)="toggleExpand()">
+    <span class="text">Show me less</span> <span class="arrow">▲</span>
+</button>
+}

@@ -4,4 +4,10 @@
 .footer-container {
     @include mix.dFlex($fdir: column, $jc: flex-start, $ai: end, $g: 8px);
     width: 100%;
+
+    @media (max-width: vars.$mobile) {
+        align-items: center;
+        gap: 16px;
+        padding: 40px 16px;
+    }
 }

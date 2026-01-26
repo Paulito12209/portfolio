@@ -26,7 +26,7 @@
         height: auto;
         min-height: auto;
         flex: unset; // Verhindere Expansion
-        padding-bottom: 48px;
+        padding-bottom: 40px;
     }
 
     app-header {
@@ -127,7 +127,7 @@
                 @include mix.dFlex($fdir: column, $jc: flex-start, $ai: center);
                 display: flex;
                 width: 100%;
-                padding: 6px 24px;
+                padding: 6px 16px;
                 // background-color: black; // Optional: match body bg if needed
 
                 h1 {

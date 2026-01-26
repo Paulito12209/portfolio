@@ -38,8 +38,8 @@
     @media (max-width: vars.$mobile) {
         display: flex;
         flex-direction: column;
-        min-width: 100vw;
-        width: 100vw;
+        min-width: 100%; // 100% statt 100vw (keine Scrollbar-Überlappung)
+        width: 100%;
         height: auto;
         min-height: auto; // Passt sich dem Inhalt an
         scroll-snap-align: none;

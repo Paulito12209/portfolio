@@ -5,11 +5,32 @@
     @include mix.dFlex($fdir: column, $ai: start, $jc: start);
     width: 100%;
     max-width: 900px; // Begrenzung auf 1000px
-    background: rgba(181, 233, 59, 0.2); // 20% von #B5E93B
-    border: 1px solid vars.$neon;
+    background: rgba(vars.$neon, 0.2); // 20% der Primärfarbe
+    // border: 1px solid vars.$neon;
     border-radius: 32px;
-    padding: 16px 16px 16px 16px;
+    padding: 16px;
     box-sizing: border-box;
+    position: relative; // Für absolute Positionierung des Buttons
+
+    @media (max-width: vars.$mobile) {
+        padding: 24px 16px 16px 16px;
+        border-radius: 24px;
+        margin-bottom: 48px; // Platz für den Button unter dem Rahmen
+    }
+
+    // Collapsed State (nur Mobile)
+    &.collapsed {
+        // Gradient: 20% Neon oben, 10% Neon unten (letzte 15%)
+        background: linear-gradient(to bottom,
+                rgba(vars.$neon, 0.2) 0%,
+                rgba(vars.$neon, 0.2) 85%,
+                rgba(vars.$neon, 0.125) 100%);
+
+        // Kleinerer Gap in der Liste
+        .project-details-list ul {
+            gap: 16px;
+        }
+    }
 }
 
 .project-details-headline {
@@ -18,12 +39,22 @@
     margin-bottom: 32px;
     padding-left: 12px;
 
+    @media (max-width: vars.$mobile) {
+        margin-bottom: 24px;
+        padding-left: 0px;
+        gap: 12px;
+    }
+
     h1 {
         font-size: vars.$f-h1;
         color: transparent;
         -webkit-text-stroke: 1px vars.$neon;
         margin: 0;
         line-height: 0.8;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-h1-mb;
+        }
     }
 
     h3 {
@@ -32,6 +63,10 @@
         margin: 0;
         line-height: 0.8;
         font-weight: 400;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-h3-mb;
+        }
     }
 }
 
@@ -39,11 +74,21 @@
     @include mix.dFlex($jc: start, $ai: start, $g: 32px);
     width: 100%;
     padding-left: 64px;
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        padding-left: 0px;
+        gap: 24px;
+    }
 }
 
 .project-details-list {
     flex: 1;
     max-width: 400px;
+
+    @media (max-width: vars.$mobile) {
+        max-width: 100%;
+    }
 
     ul {
         @include mix.dFlex($fdir: column, $ai: start, $g: 32px);
@@ -51,11 +96,22 @@
         padding: 0;
         margin: 0;
 
+        @media (max-width: vars.$mobile) {
+            gap: 24px;
+        }
     }
 
     li {
         position: relative;
         padding-left: 24px; // Platz für das Bullet
+
+        &.mobile-learning {
+            display: none;
+
+            @media (max-width: vars.$mobile) {
+                display: list-item;
+            }
+        }
 
         &::before {
             content: '';
@@ -75,25 +131,55 @@
         font-size: vars.$f-h4;
         font-weight: 400;
         margin: 0 0 8px 0;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-h4-mb;
+        }
     }
 
     p {
         font-size: vars.$f-p;
         margin: 0;
         line-height: 1.5;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-p-mb;
+        }
     }
 }
 
 .project-details-image {
-    @include mix.dFlex($fdir: column, $ai: start, $g: 32px);
+    @include mix.dFlex($fdir: column, $g: 32px);
     flex: 1;
     max-width: 350px;
+
+    @media (max-width: vars.$mobile) {
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+    }
 
     img {
         height: 200px;
         max-width: 400px; // Begrenzung für das Bild
         border-radius: 32px;
         border: 1px solid rgba(255, 255, 255, 0.2);
+
+        @media (max-width: vars.$mobile) {
+            height: auto;
+            max-width: 100%;
+            width: 100%;
+            border-radius: 16px;
+        }
+    }
+
+    .project-details-buttons {
+        @include mix.dFlex($jc: start, $g: 16px);
+
+        @media (max-width: vars.$mobile) {
+            justify-content: center;
+            margin-bottom: 40px;
+        }
     }
 }
 
@@ -103,6 +189,10 @@
     width: 100%;
     padding-left: 64px;
     padding-right: 32px;
+
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
 
     ul {
         list-style: none;
@@ -132,11 +222,66 @@
         color: white;
         font-size: vars.$f-h4;
         margin: 0 0 8px 0;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-h4-mb;
+        }
     }
 
     p {
         font-size: vars.$f-p;
         margin: 0;
         line-height: 1.5;
+
+        @media (max-width: vars.$mobile) {
+            font-size: vars.$f-p-mb;
+        }
+    }
+}
+
+// Toggle Buttons für Mobile Expand/Collapse
+.toggle-btn {
+    display: none; // Standardmäßig ausgeblendet (Desktop)
+    background: transparent;
+    border: none;
+    color: vars.$neon;
+    font-size: vars.$f-button;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 16px 0;
+
+    .text {
+        text-decoration: underline;
+    }
+
+    .arrow {
+        margin-left: 8px;
+    }
+
+    @media (max-width: vars.$mobile) {
+        display: flex; // Nur auf Mobile sichtbar
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// "Show me more" Button innerhalb der Liste
+.show-more {
+    // margin-top: 16px;
+}
+
+// "Show me less" Button unter dem Rahmen
+.show-less {
+    @media (max-width: vars.$mobile) {
+        position: absolute;
+        bottom: -48px; // Unter dem Rahmen
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0;
     }
 }

@@ -7,6 +7,12 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: vars.$mobile) {
+        height: auto;
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
 .contact-container {
@@ -21,7 +27,8 @@
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         height: auto;
-        overflow-y: auto; // Allow scrolling if content is long
+        overflow-y: auto;
+        padding: 0 16px;
     }
 }
 
@@ -35,7 +42,7 @@
     @media (max-width: vars.$mobile) {
         flex: 0 0 100%;
         max-width: 100%;
-        padding-top: 150px; // Space for header/bow
+        padding-top: 40px;
         justify-content: center;
     }
 
@@ -57,7 +64,7 @@
         flex: 0 0 100%;
         max-width: 100%;
         padding-top: 40px;
-        align-items: center; // Center content
+        align-items: center;
     }
 }
 
@@ -68,12 +75,20 @@
     box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
     z-index: 1000;
     flex-shrink: 0;
+
+    @media (max-width: vars.$mobile) {
+        display: none; // Ausblenden auf Mobile
+    }
 }
 
 .contact-form-container {
     @include mix.dFlex($fdir: column, $ai: stretch, $g: 16px);
     width: 100%;
     max-width: 500px;
+
+    @media (max-width: vars.$mobile) {
+        max-width: 100%;
+    }
 }
 
 .form-group {
@@ -87,12 +102,21 @@
 .submit-btn-container {
     @include mix.dFlex($jc: center);
     margin-top: 16px;
+
+    @media (max-width: vars.$mobile) {
+        justify-content: flex-end;
+    }
 }
 
 .contact-right-text {
     @include mix.dFlex($fdir: column, $ai: end, $g: 16px);
     width: 100%;
     max-width: 400px;
+
+    @media (max-width: vars.$mobile) {
+        align-items: flex-start;
+        text-align: left;
+    }
 
     p {
         color: white;
@@ -101,6 +125,7 @@
 
         @media (max-width: vars.$mobile) {
             font-size: vars.$f-p-mb;
+            text-align: left;
         }
 
         &:first-child {
@@ -114,6 +139,11 @@
     @include mix.dFlex($jc: end);
     transform: rotate(180deg);
     margin: 120px 0;
+
+    @media (max-width: vars.$mobile) {
+        margin: 60px 0;
+        justify-content: center;
+    }
 }
 
 .footer-content {

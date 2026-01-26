@@ -5,6 +5,11 @@
     @include mix.dFlex();
     height: 100%;
     width: 100%;
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        height: auto;
+    }
 }
 
 .references-container {
@@ -12,6 +17,12 @@
     flex: 1;
     height: 100%;
     max-width: 1440px;
+
+    @media (max-width: vars.$mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .references-content {
@@ -19,14 +30,21 @@
     padding-top: 300px;
     width: 70%;
 
-    // Override h2 alignment specifically for this section if needed, 
-    // but why-me doesn't have this override. 
-    // Keeping it if it was intentional for references, but user asked to be "like why me".
-    // Why-me h2 is handled by app-section-content default.
-    // I will comment out the override to see if it aligns naturally like why-me.
+    @media (max-width: vars.$mobile) {
+        padding-top: 0;
+        width: 100%;
+        padding: 40px 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+
     ::ng-deep app-section-content {
         h2 {
             align-self: flex-end !important;
+
+            @media (max-width: vars.$mobile) {
+                align-self: flex-start !important;
+            }
         }
     }
 }
@@ -34,8 +52,17 @@
 .references-list {
     @include mix.dFlex($fdir: column, $ai: stretch, $g: 16px);
     width: 100%;
+
+    @media (max-width: vars.$mobile) {
+        align-items: center;
+        gap: 24px;
+    }
 }
 
 .references-bow {
-    padding-top: 900px; // Matching why-me-bow padding
+    padding-top: 900px;
+
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
 }

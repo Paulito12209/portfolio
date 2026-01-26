@@ -3,4 +3,9 @@
 p {
     color: white;
     font-size: vars.$f-subtext;
+    text-align: center;
+
+    @media (max-width: vars.$mobile) {
+        font-size: vars.$f-p-mb;
+    }
 }

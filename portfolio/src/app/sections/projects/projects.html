@@ -2,10 +2,10 @@
     <div class="projects-content">
         <app-section-content title="PROJECTS.TITLE">
             <div class="projects-list">
-                <app-project-details *ngFor="let project of projects" [number]="project.number" [title]="project.title"
-                    [description]="project.description" [technologies]="project.technologies"
+                <app-project-details *ngFor="let project of projects; let i = index" [number]="project.number"
+                    [title]="project.title" [description]="project.description" [technologies]="project.technologies"
                     [learning]="project.learning" [image]="project.image" [liveLink]="project.liveLink"
-                    [githubLink]="project.githubLink">
+                    [githubLink]="project.githubLink" [initiallyExpanded]="i === 0">
                 </app-project-details>
             </div>
         </app-section-content>
