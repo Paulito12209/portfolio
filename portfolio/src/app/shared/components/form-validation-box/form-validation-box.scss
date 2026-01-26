@@ -17,62 +17,24 @@
     width: 100%;
 }
 
-.checkbox-wrapper {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
+// Alte Checkbox Styles entfernt (jetzt in form-checkbox Komponente)
 
-    input[type="checkbox"] {
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        cursor: pointer;
-        z-index: 2;
-
-        &:checked+.checkbox-custom {
-            background-color: transparent;
-            border-color: vars.$neon;
-
-            &::after {
-                content: '✓';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: vars.$neon;
-                font-size: 14px;
-                font-weight: bold;
-            }
-        }
-    }
-
-    .checkbox-custom {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 2px solid white;
-        border-radius: 4px;
-        transition: all 0.2s;
-    }
+.policy-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
 }
 
-.privacy-text {
+.policy-text {
     color: vars.$neon;
     font-size: vars.$f-button;
-    flex: 1;
+    font-family: vars.$font-quantico;
+}
 
-    a {
-        color: white;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+.error-trigger-text {
+    color: vars.$error;
+    font-size: 14px; // Kleinere Schrift für Error? Oder gleich? Im Screenshot sieht es klein aus.
 }
 
 .submit-btn-container {
@@ -82,32 +44,24 @@
 }
 
 .validation-btn {
-    background-color: #9E9D9D;
+    background-color: #9E9D9D; // Default Grau (Invalid)
     color: vars.$black;
     font-size: vars.$f-p;
     font-weight: 400;
     padding: 10px 32px;
     border-radius: 24px;
     border: none;
-    cursor: not-allowed;
+    cursor: pointer; // Immer klickbar, damit Error getriggert werden kann
     transition: all 0.3s;
 
-    &:hover {
-        box-shadow: 0 0 15px rgba(vars.$neon, 0.5);
-    }
+    // Kein Hover-Effekt im grauen Zustand (oder minimal?)
+    // User Request impliziert "inaktiv", also eher kein Glow.
 
-    &:not(:disabled) {
+    &.valid-btn {
         background-color: vars.$neon;
-        cursor: pointer;
 
         &:hover {
             box-shadow: 0 0 15px rgba(vars.$neon, 0.5);
         }
-    }
-
-    &:disabled {
-        background-color: #9E9D9D;
-        cursor: not-allowed;
-        color: vars.$black;
     }
 }

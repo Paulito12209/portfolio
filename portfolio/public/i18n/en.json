@@ -67,6 +67,8 @@
     },
     "REFERENCES": {
         "TITLE": "References",
+        "MOBILE_H4": "Need a teamplayer?",
+        "MOBILE_P": "Here what my colleagues said about me",
         "REF_1_PERSON": "Max Muster",
         "REF_1_PROJECT": "Project Kochwelt",
         "REF_1_DESCRIPTION": "\"Paul is a very attentive and talented developer. He can plan and document task distribution well.\"",

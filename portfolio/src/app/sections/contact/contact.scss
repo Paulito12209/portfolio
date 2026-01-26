@@ -108,25 +108,43 @@
     }
 }
 
+// Mobile Text Container (zwischen Titel und Formular)
+.mobile-contact-text {
+    display: none;
+
+    @media (max-width: vars.$mobile) {
+        @include mix.dFlex($fdir: column, $ai: start, $g: 16px);
+        width: 100%;
+        margin-bottom: 32px;
+        text-align: left;
+
+        p {
+            color: white;
+            font-size: vars.$f-p-mb;
+            margin: 0;
+            line-height: 1.5;
+
+            &:first-child {
+                color: vars.$neon;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
 .contact-right-text {
     @include mix.dFlex($fdir: column, $ai: end, $g: 16px);
     width: 100%;
     max-width: 400px;
 
     @media (max-width: vars.$mobile) {
-        align-items: flex-start;
-        text-align: left;
+        display: none; // Mobil ausblenden, da oben eingefügt
     }
 
     p {
         color: white;
         font-size: vars.$f-p;
         text-align: right;
-
-        @media (max-width: vars.$mobile) {
-            font-size: vars.$f-p-mb;
-            text-align: left;
-        }
 
         &:first-child {
             color: vars.$neon;

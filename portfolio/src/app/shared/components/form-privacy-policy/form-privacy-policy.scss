@@ -1,0 +1,18 @@
+@use '../../../../styles/variables' as vars;
+
+:host {
+    display: inline;
+}
+
+a {
+    color: white; // Link ist immer weiß
+    text-decoration: none;
+    font-family: vars.$font-quantico;
+    font-size: vars.$f-button;
+    cursor: pointer;
+
+    &:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}

@@ -5,6 +5,11 @@
     @include mix.dFlex($jc: end, $ai: center, $g: 16px);
     width: 100%;
     margin-top: 24px;
+
+    @media (max-width: vars.$mobile) {
+        justify-content: flex-start;
+        margin-top: 16px;
+    }
 }
 
 a {
@@ -20,4 +25,8 @@ a {
 
 img {
     filter: brightness(0) invert(1);
+    flex-shrink: 0; // Verhindert Stauchen
+    width: auto; // Oder eine angemessene Größe
+    height: 17.5px;
+    object-fit: contain;
 }

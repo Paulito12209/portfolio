@@ -27,7 +27,7 @@
 
         padding-top: 0; // Fix huge padding
         width: 100%;
-        padding: 40px 16px;
+        padding: 40px 16px 0;
         flex-direction: column;
         align-items: center;
 
@@ -54,6 +54,7 @@ app-section-content {
     width: 100%;
 
     @media (max-width: vars.$mobile) {
+        gap: 0px;
         flex-direction: column;
         align-items: center;
     }

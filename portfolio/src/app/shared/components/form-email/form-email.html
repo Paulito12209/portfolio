@@ -1,10 +1,5 @@
 <div class="input-container">
-    <input type="email" [placeholder]="'CONTACT.FORM_EMAIL' | translate" [ngModel]="email"
-        (ngModelChange)="emailChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid" name="email">
-    <span class="error-message" *ngIf="isInvalid">
-        {{ errorMessage | translate }}
-    </span>
+    <input type="email" [placeholder]="isInvalid ? (errorMessage | translate) : ('CONTACT.FORM_EMAIL' | translate)"
+        [ngModel]="email" (ngModelChange)="emailChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid"
+        [class.invalid-placeholder]="isInvalid" name="email">
 </div>
-
-<!-- <input type="email" [placeholder]="'CONTACT.FORM_EMAIL' | translate" [ngModel]="email"
-    (ngModelChange)="emailChange.emit($event)" name="email"> -->

@@ -1,11 +1,21 @@
 <div class="privacy-policy">
     <div class="privacy-row">
-        <app-form-checkbox [checked]="privacyPolicyChecked" (checkedChange)="onCheckboxChange($event)">
+        <app-form-checkbox [checked]="privacyPolicyChecked" (checkedChange)="onCheckboxChange($event)"
+            [error]="submitted && !privacyPolicyChecked">
         </app-form-checkbox>
-        <app-form-privacy-policy></app-form-privacy-policy>
+        <div class="policy-wrapper">
+            <span class="policy-text">
+                {{ 'CONTACT.PRIVACY_TEXT' | translate }}&nbsp;<app-form-privacy-policy
+                    [error]="submitted && !privacyPolicyChecked"></app-form-privacy-policy>&nbsp;{{
+                'CONTACT.PRIVACY_TEXT_2' | translate }}
+            </span>
+            <span class="error-trigger-text" *ngIf="submitted && !privacyPolicyChecked">
+                {{ 'CONTACT.ERROR_PRIVACY' | translate }}
+            </span>
+        </div>
     </div>
     <div class="submit-btn-container">
-        <button class="validation-btn" [disabled]="!formValid" (click)="onSubmitClick()">
+        <button class="validation-btn" [class.valid-btn]="formValid && privacyPolicyChecked" (click)="onSubmitClick()">
             {{ 'CONTACT.BUTTON_SEND' | translate }}
         </button>
     </div>

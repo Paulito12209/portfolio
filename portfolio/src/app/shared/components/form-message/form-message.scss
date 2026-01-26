@@ -1,4 +1,5 @@
 @use '../../../../styles/variables' as vars;
+$error-color: vars.$error;
 
 :host {
     display: block;
@@ -8,7 +9,7 @@
 .input-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    width: 100%;
 }
 
 textarea {
@@ -25,7 +26,7 @@ textarea {
     resize: none;
 
     &::placeholder {
-        color: #9E9D9D;
+        color: rgba(vars.$neon, 0.4);
     }
 
     &:focus {
@@ -33,8 +34,12 @@ textarea {
     }
 
     &.invalid {
-        border-color: #FF3B3B;
-        box-shadow: 0 0 10px rgba(#FF3B3B, 0.3);
+        border-color: $error-color;
+        box-shadow: 0 0 10px rgba($error-color, 0.3);
+
+        &::placeholder {
+            color: $error-color;
+        }
     }
 
     // Autofill styles
@@ -47,48 +52,3 @@ textarea {
         transition: background-color 5000s ease-in-out 0s;
     }
 }
-
-.error-message {
-    color: #FF3B3B;
-    font-size: 14px;
-    padding-left: 24px;
-}
-
-// @use '../../../../styles/variables' as vars;
-
-// :host {
-//     display: block;
-//     width: 100%;
-// }
-
-// textarea {
-//     width: 100%;
-//     background-color: transparent;
-//     border: 1px solid vars.$neon;
-//     border-radius: 30px;
-//     padding: 24px 24px;
-//     color: white;
-//     font-family: vars.$font-quantico;
-//     font-size: vars.$f-p;
-//     outline: none;
-//     transition: all 0.3s ease;
-//     resize: none;
-
-//     &::placeholder {
-//         color: #9E9D9D;
-//     }
-
-//     &:focus {
-//         box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
-//     }
-
-//     // Autofill styles - verhindert weißen Hintergrund
-//     &:-webkit-autofill,
-//     &:-webkit-autofill:hover,
-//     &:-webkit-autofill:focus {
-//         -webkit-text-fill-color: white;
-//         -webkit-box-shadow: 0 0 0px 1000px black inset;
-//         box-shadow: 0 0 0px 1000px black inset;
-//         transition: background-color 5000s ease-in-out 0s;
-//     }
-// }

@@ -1,6 +1,13 @@
 <div class="references-container">
     <div class="references-content">
-        <app-section-content title="REFERENCES.TITLE">
+        <!-- Mobile Header (ersetzt Titel) -->
+        <div class="references-mobile-header">
+            <h4>{{ 'REFERENCES.MOBILE_H4' | translate }}</h4>
+            <div class="horizontal-line"></div>
+            <p>{{ 'REFERENCES.MOBILE_P' | translate }}</p>
+        </div>
+
+        <app-section-content title="REFERENCES.TITLE" class="hide-title-mobile">
             <div class="references-list">
                 <app-reference-details *ngFor="let reference of references" [person]="reference.person"
                     [project]="reference.project" [description]="reference.description">

@@ -4,12 +4,10 @@
 
 :host {
     @include mix.dFlex($jc: end); // Navbar wird nach rechts gedrückt
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100px;
+    height: 80px;
     width: 100%;
-    z-index: 10;
+    max-width: 1440px;
+    // z-index: 10;
 
     /*==== Mobile: Header ausblenden ====*/
     @media (max-width: vars.$mobile) {
@@ -19,8 +17,9 @@
 
 nav {
     @include mix.dFlex($g: 48px);
-    padding: 40px 0 30px 0;
-    margin-right: 10%;
+    padding: 40px 40px 0 0;
+    margin-right: 0; // Kein Margin mehr nötig, da Container begrenzt
+    // padding-right: 16px; // Optional für etwas Abstand zum Rand
 
     >ul {
         @include mix.dFlex($g: 16px);

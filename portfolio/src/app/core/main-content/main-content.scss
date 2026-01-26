@@ -27,7 +27,22 @@
 }
 
 .section {
-    min-width: calc(100vw - #{vars.$sidebar}); // Volle Breite minus Sidebar
+    // Standard-Breite: Füllt den Screen, aber nur bis maximal 1440px (Why Me, Skills, Contact, References)
+    width: calc(100vw - #{vars.$sidebar});
+    max-width: 1440px;
+
+    // Hero spezifisch: Max 1280px
+    &#hero {
+        max-width: 1280px;
+    }
+
+    // Projects spezifisch: Keine Begrenzung (Scrollbar, viel Content)
+    &#projects {
+        max-width: none;
+        width: auto; // Oder min-width behalten, wenn es mindestens Screen füllen soll
+        min-width: calc(100vw - #{vars.$sidebar});
+    }
+
     height: 100vh;
     scroll-snap-align: start;
     scroll-behavior: smooth;

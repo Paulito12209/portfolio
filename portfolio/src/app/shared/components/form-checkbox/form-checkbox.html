@@ -1,9 +1,3 @@
-<div class="checkbox-wrapper">
-    <input 
-        type="checkbox" 
-        id="privacy-checkbox"
-        [ngModel]="checked"
-        (ngModelChange)="onCheckboxChange($event)"
-        name="privacy-checkbox">
-    <label for="privacy-checkbox" class="checkbox-custom"></label>
+<div class="checkbox-wrapper" (mouseenter)="hovered = true" (mouseleave)="hovered = false" (click)="toggleCheckbox()">
+    <img [src]="currentImage" alt="checkbox">
 </div>

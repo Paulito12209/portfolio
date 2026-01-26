@@ -13,16 +13,16 @@
 
     @media (max-width: vars.$mobile) {
         flex-direction: row;
-        min-width: 280px;
-        max-width: 300px;
+        min-width: 320px;
+        max-width: 360px;
         flex-shrink: 0;
-        min-height: auto;
+        height: 100%;
         padding: 16px; // Gleich in alle Richtungen
         gap: 0;
     }
 
     p {
-        width: 60%;
+        width: 55%;
         font-size: vars.$f-p;
         line-height: 1.6;
         text-align: center;
@@ -32,7 +32,7 @@
         margin: 0;
 
         @media (max-width: vars.$mobile) {
-            width: 60%;
+            width: 55%;
             font-size: vars.$f-button;
             text-align: left; // Linksbündig
             border-right: 2px solid vars.$neon;
@@ -50,8 +50,8 @@
 
         @media (max-width: vars.$mobile) {
             min-width: auto;
-            width: 40%; // 40% für Name/Projekt
-            padding-left: 8px;
+            width: 45%; // 40% für Name/Projekt
+            padding-left: 12px;
             align-items: flex-start; // Links bündig
         }
 

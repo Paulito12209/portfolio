@@ -1,10 +1,6 @@
 <div class="input-container">
-    <input type="text" [placeholder]="'CONTACT.FORM_NAME' | translate" [ngModel]="name"
-        (ngModelChange)="nameChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid" name="name">
-    <span class="error-message" *ngIf="isInvalid">
-        {{ 'CONTACT.ERROR_NAME' | translate }}
-    </span>
+    <input type="text"
+        [placeholder]="isInvalid ? ('CONTACT.ERROR_NAME' | translate) : ('CONTACT.FORM_NAME' | translate)"
+        [ngModel]="name" (ngModelChange)="nameChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid"
+        [class.invalid-placeholder]="isInvalid" name="name">
 </div>
-
-<!-- <input type="text" [placeholder]="'CONTACT.FORM_NAME' | translate" [ngModel]="name"
-    (ngModelChange)="nameChange.emit($event)" name="name"> -->
