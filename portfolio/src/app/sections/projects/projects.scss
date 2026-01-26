@@ -44,6 +44,9 @@ app-section-content {
     width: 160px;
     padding-top: 1000px;
 
+    @media (max-width: vars.$mobile) {
+        display: none;
+    }
 }
 
 .projects-list {

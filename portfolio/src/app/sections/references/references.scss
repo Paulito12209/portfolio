@@ -9,6 +9,7 @@
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         height: auto;
+        align-items: flex-start; // Liste links anfangen lassen
     }
 }
 
@@ -39,11 +40,21 @@
     }
 
     ::ng-deep app-section-content {
+        @media (max-width: vars.$mobile) {
+            align-items: flex-start !important; // Überschreibt center
+        }
+
         h2 {
             align-self: flex-end !important;
 
             @media (max-width: vars.$mobile) {
                 align-self: flex-start !important;
+            }
+        }
+
+        .card-content {
+            @media (max-width: vars.$mobile) {
+                align-items: flex-start !important;
             }
         }
     }
@@ -54,8 +65,17 @@
     width: 100%;
 
     @media (max-width: vars.$mobile) {
-        align-items: center;
-        gap: 24px;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 16px;
+        align-items: stretch;
+        justify-content: flex-start; // Überschreibt center aus Mixin
+        max-width: calc(100vw - 32px);
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 
