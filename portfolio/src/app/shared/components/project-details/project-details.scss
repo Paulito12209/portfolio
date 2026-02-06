@@ -224,6 +224,7 @@
     h4 {
         color: white;
         font-size: vars.$f-h4;
+        font-weight: 400; // Konsistent mit anderen Überschriften
         margin: 0 0 8px 0;
 
         @media (max-width: vars.$mobile) {
