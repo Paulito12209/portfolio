@@ -138,3 +138,36 @@
         display: none;
     }
 }
+
+// Karussell-Navigation Punkte (nur Mobile)
+.carousel-dots {
+    display: none; // Auf Desktop verstecken
+
+    @media (max-width: vars.$mobile) {
+        @include mix.dFlex($jc: center, $g: 8px);
+        width: 100%;
+        padding-top: 16px;
+    }
+
+    .dot {
+        width: 9px;
+        height: 6px;
+        border-radius: 6px;
+        border: 1px solid vars.$neon;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(vars.$neon, 0.3);
+        }
+
+        // Aktiver Punkt: verlängert und ausgefüllt
+        &.active {
+            width: 18px;
+            border-radius: 6px;
+            background-color: vars.$neon;
+        }
+    }
+}

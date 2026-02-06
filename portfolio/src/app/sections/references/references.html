@@ -8,7 +8,7 @@
         </div>
 
         <app-section-content title="REFERENCES.TITLE" class="hide-title-mobile">
-            <div class="references-list">
+            <div class="references-list" #referencesList>
                 <app-reference-details [person]="references[0].person" [project]="references[0].project"
                     [description]="references[0].description">
                 </app-reference-details>
@@ -18,6 +18,13 @@
                 <app-reference-details [person]="references[2].person" [project]="references[2].project"
                     [description]="references[2].description" [scrollable]="true">
                 </app-reference-details>
+            </div>
+
+            <!-- Karussell Navigation (nur Mobile) -->
+            <div class="carousel-dots">
+                <button *ngFor="let ref of references; let i = index" class="dot" [class.active]="activeIndex === i"
+                    (click)="scrollToCard(i)" [attr.aria-label]="'Gehe zu Referenz ' + (i + 1)">
+                </button>
             </div>
         </app-section-content>
     </div>
