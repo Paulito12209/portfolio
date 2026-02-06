@@ -4,9 +4,9 @@
 .reference-card {
     @include mix.dFlex($ai: center);
     flex: 1;
-    max-width: 560px;
-    min-height: 200px;
-    padding: 24px 8px;
+    width: 478px;
+    min-height: 200px; // Minimale Höhe, passt sich an Content an
+    padding: 16px 8px;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 24px;
     border: 2px solid rgba(vars.$neon, 0.5);
@@ -16,13 +16,19 @@
         min-width: 320px;
         max-width: 360px;
         flex-shrink: 0;
-        height: 100%;
-        padding: 16px; // Gleich in alle Richtungen
+        height: auto;
+        min-height: 180px;
+        padding: 16px;
         gap: 0;
+
+        &:last-child {
+            min-height: 220px;
+        }
     }
 
-    p {
-        width: 55%;
+    // Bewertungstext - 60% der Breite
+    .description {
+        width: 60%;
         font-size: vars.$f-p;
         line-height: 1.6;
         text-align: center;
@@ -34,7 +40,7 @@
         @media (max-width: vars.$mobile) {
             width: 55%;
             font-size: vars.$f-button;
-            text-align: left; // Linksbündig
+            text-align: left;
             border-right: 2px solid vars.$neon;
             border-bottom: none;
             padding-right: 8px;
@@ -42,17 +48,18 @@
         }
     }
 
+    // Name + Projekt Container - 40% der Breite
     .reference-info {
         @include mix.dFlex($ai: center, $g: 8px, $fdir: column);
-        flex: 1;
-        min-width: 200px;
+        width: 40%;
         padding-left: 8px;
+        text-align: center;
 
         @media (max-width: vars.$mobile) {
-            min-width: auto;
-            width: 45%; // 40% für Name/Projekt
+            width: 45%;
             padding-left: 12px;
-            align-items: flex-start; // Links bündig
+            align-items: flex-start;
+            text-align: left;
         }
 
         h4 {
@@ -66,17 +73,18 @@
             }
         }
 
-        p {
+        // Projektname
+        .project {
+            width: 100%;
             font-size: vars.$f-button;
             color: vars.$neon;
-            border-right: none !important;
-            border-bottom: none !important;
+            border: none;
             margin: 0;
-            padding-bottom: 0;
+            padding: 0;
+            text-align: center;
 
             @media (max-width: vars.$mobile) {
-                width: 100%;
-                border-right: none !important;
+                text-align: left;
             }
         }
     }

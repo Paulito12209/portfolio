@@ -1,62 +1,114 @@
 @use '../../../styles/variables' as vars;
-@use '../../../styles/mixins' as mix; // <- [mixins]
+@use '../../../styles/mixins' as mix;
 
+// ===== Header: fixed, aus dem Flow entfernt =====
+app-header {
+    position: fixed;
+    top: 0;
+    left: vars.$sidebar;
+    right: 100px; // Platz für right-bar, schrumpft bei engem Viewport
+    width: auto; // Überschreibt header's eigenes width: 100%, damit left+right greifen
+    max-width: 1180px; // 1440px - 160px (sidebar) - 100px (right-bar)
+    z-index: 10;
+
+    @media (max-width: vars.$mobile) {
+        position: static;
+    }
+}
+
+// ===== Äußerer Container =====
 .main-container {
-    margin-left: vars.$sidebar; // Platz für Navigation
+    margin-left: vars.$sidebar;
     height: 100vh;
-
-    @include mix.dFlex($jc: start,
-        $ai: start, $fdir: row); // flex-direction: row; ist essenziell
-    overflow-x: hidden; // <- Scrollbar ausgeblendet (war: auto)
-    overflow-y: hidden; // -"-
-    scroll-snap-type: x proximity; // <- [mandatory] ist zu aggressiv
-    scroll-behavior: smooth;
+    min-height: 900px;
+    overflow: hidden;
     color: white;
 
-    /*==== Mobile: vertikales Layout ====*/
     @media (max-width: vars.$mobile) {
         margin-left: 0;
-        margin-top: 80px; // Platz für Top-Bar
+        margin-top: 80px;
         height: auto;
         min-height: calc(100vh - 80px);
+    }
+}
+
+// ===== Sections-Container: horizontales Scrollen, volle Höhe =====
+.sections {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; // right-bar nimmt volle Höhe
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+
+    @media (max-width: vars.$mobile) {
         flex-direction: column;
+        height: auto;
         overflow-x: hidden;
         overflow-y: visible;
         scroll-snap-type: none;
     }
 }
 
+// ===== Einzelne Section =====
 .section {
-    // Standard-Breite: Füllt den Screen, aber nur bis maximal 1440px (Why Me, Skills, Contact, References)
-    width: calc(100vw - #{vars.$sidebar});
+    width: calc(100vw - #{vars.$sidebar} - 100px);
     max-width: 1440px;
+    height: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+    margin-top: 80px; // Platz für fixed header
 
-    // Hero spezifisch: Max 1280px
+    // Section-spezifische max-widths gemäß Figma
     &#hero {
+        max-width: calc(1440px - #{vars.$sidebar}); // 1280px
+    }
+
+    &#why-me {
         max-width: 1280px;
     }
 
-    // Projects spezifisch: Keine Begrenzung (Scrollbar, viel Content)
-    &#projects {
-        max-width: none;
-        width: auto; // Oder min-width behalten, wenn es mindestens Screen füllen soll
-        min-width: calc(100vw - #{vars.$sidebar});
+    &#skills {
+        max-width: 1280px;
     }
 
-    height: 100vh;
-    scroll-snap-align: start;
-    scroll-behavior: smooth;
-    // scroll-snap-stop: always; // <- auskommentiert für flüssigeres Scrollen
-    flex-shrink: 0; // Wichtig: Sections sollen nicht schrumpfen
+    &#projects {
+        max-width: none;
+        width: auto;
+        min-width: calc(100vw - #{vars.$sidebar} - 100px);
+    }
 
-    /*==== Mobile: volle Breite, auto Höhe ====*/
+    &#references {
+        max-width: 900px;
+    }
+
+    &#contact {
+        max-width: 1180px;
+    }
+
     @media (max-width: vars.$mobile) {
         display: flex;
         flex-direction: column;
-        min-width: 100%; // 100% statt 100vw (keine Scrollbar-Überlappung)
+        min-width: 100%;
         width: 100%;
         height: auto;
-        min-height: auto; // Passt sich dem Inhalt an
+        min-height: auto;
         scroll-snap-align: none;
+        padding-top: 0; // Mobile braucht kein padding, header ist static
+    }
+}
+
+// ===== Grüne Säule: letztes Kind in .sections, scrollt mit =====
+.right-bar {
+    width: 100px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
+    box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
+
+    @media (max-width: vars.$mobile) {
+        display: none;
     }
 }

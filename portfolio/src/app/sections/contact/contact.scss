@@ -36,7 +36,7 @@
     @include mix.dFlex($jc: start, $ai: start);
     flex: 0 0 60%;
     max-width: 60%;
-    padding-top: 10%;
+    padding-top: 100px;
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -57,7 +57,8 @@
     @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
     flex: 0 0 40%;
     max-width: 40%;
-    padding-top: 10%;
+    padding-top: 100px;
+    padding-right: 24px;
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -68,18 +69,6 @@
     }
 }
 
-.right-bar {
-    width: 80px;
-    height: 100%;
-    background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
-    box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
-    z-index: 1000;
-    flex-shrink: 0;
-
-    @media (max-width: vars.$mobile) {
-        display: none; // Ausblenden auf Mobile
-    }
-}
 
 .contact-form-container {
     @include mix.dFlex($fdir: column, $ai: stretch, $g: 16px);
@@ -156,7 +145,7 @@
 .contact-right-bow {
     @include mix.dFlex($jc: end);
     transform: rotate(180deg);
-    margin: 120px 0;
+    margin: 160px 0;
 
     @media (max-width: vars.$mobile) {
         margin: 60px 0;

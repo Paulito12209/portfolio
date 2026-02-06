@@ -69,15 +69,15 @@
         "TITLE": "Referenzen",
         "MOBILE_H4": "Brauchst du einen Teamplayer?",
         "MOBILE_P": "Das sagen meine Kollegen über mich",
-        "REF_1_PERSON": "Max Muster",
+        "REF_1_PERSON": "Felix Rabenhold",
         "REF_1_PROJECT": "Projekt Kochwelt",
-        "REF_1_DESCRIPTION": "\"Paul ist ein sehr aufmerksamer und talentierter Entwickler. Er kann die Aufgabenverteilung gut planen und dokumentieren.\"",
-        "REF_2_PERSON": "Eva Elf",
-        "REF_2_PROJECT": "Projekt Kochwelt",
-        "REF_2_DESCRIPTION": "\"Paul bemüht sich immer einen zu unterstützen, wenn man mal ein Problem hat.\"",
-        "REF_3_PERSON": "Noah Nussbaum",
+        "REF_1_DESCRIPTION": "\"Paul arbeitet sehr strukturiert und gewissenhaft. Die Kommunikation im Team verlief reibungslos und unterstützte die Arbeit erheblich.\"",
+        "REF_2_PERSON": "Daniela Schomaker",
+        "REF_2_PROJECT": "Projekt Join",
+        "REF_2_DESCRIPTION": "\"Paul arbeitet sehr organisiert, behält auch in komplexen Projektsituationen stets den Überblick und verfügt über ein breites Tool-Know-how sowie ein bemerkenswert gutes Wissensmanagement.\"",
+        "REF_3_PERSON": "Johannes Wächter",
         "REF_3_PROJECT": "Projekt Join",
-        "REF_3_DESCRIPTION": "\"Paul ist ein sehr aufmerksamer und talentierter Entwickler. Er kann die Aufgabenverteilung gut planen und dokumentieren.\""
+        "REF_3_DESCRIPTION": "\"Paul hat als Scrum Master eine zentrale Rolle in unserem Projekt eingenommen und war eine tragende Säule für das gesamte Team. Durch seine vorausschauende und strukturierte Planung hat er maßgeblich dazu beigetragen, dass wir unsere Sprint-Ziele stets effizient erreichen konnten.\""
     },
     "CONTACT": {
         "TITLE": "Kontaktiere mich",

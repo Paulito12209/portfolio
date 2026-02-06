@@ -28,7 +28,7 @@
 
 .references-content {
     @include mix.dFlex($jc: start);
-    padding-top: 300px;
+    padding-top: 180px;
     width: 70%;
 
     @media (max-width: vars.$mobile) {
@@ -130,7 +130,7 @@
 }
 
 .references-bow {
-    padding-top: 900px;
+    padding-top: 360px;
 
     @media (max-width: vars.$mobile) {
         display: none;

@@ -26,7 +26,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
   constructor(private elementRef: ElementRef) { }
 
   ngAfterViewInit() {
-    this.container = this.elementRef.nativeElement.querySelector('.main-container');
+    this.container = this.elementRef.nativeElement.querySelector('.sections');
     this.container?.addEventListener('wheel', this.wheelHandler, { passive: false });
   }
 

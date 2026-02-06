@@ -14,8 +14,11 @@ body {
     padding: 0;
     background-color: black;
     height: 100vh;
-    overflow: hidden; // <- Das ist der Trick!
+    min-height: 900px;
+    overflow: hidden; // Vertikales Scrollen komplett deaktiviert
     font-family: vars.$font-quantico;
+
+    // KEIN overflow-y: auto bei kleinen Höhen - Content wird abgeschnitten
 
     /*==== Mobile: vertikales Scrollen erlauben ====*/
     @media (max-width: vars.$mobile) {

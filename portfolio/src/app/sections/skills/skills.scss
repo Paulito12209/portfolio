@@ -29,8 +29,8 @@
 
 .skills-content {
     @include mix.dFlex($g: 16px);
-    padding-top: 306px;
-    width: 75%;
+    padding-top: 100px;
+    width: 95%;
 
     @media (max-width: vars.$mobile) {
         padding-top: 0; // Fix huge padding
@@ -156,7 +156,7 @@
     @include mix.dFlex($jc: end, $ai: start);
     height: 80%;
     width: 25%;
-    margin-top: 50%;
+    padding-top: 160px;
 
     @media (max-width: vars.$mobile) {
         display: none; // Hide bow on mobile

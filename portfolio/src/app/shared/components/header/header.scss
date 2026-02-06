@@ -17,7 +17,7 @@
 
 nav {
     @include mix.dFlex($g: 48px);
-    padding: 40px 40px 0 0;
+    padding: 30px 40px 10px 0;
     margin-right: 0; // Kein Margin mehr nötig, da Container begrenzt
     // padding-right: 16px; // Optional für etwas Abstand zum Rand
 
