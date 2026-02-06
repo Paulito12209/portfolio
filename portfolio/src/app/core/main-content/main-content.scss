@@ -28,7 +28,7 @@ app-header {
         margin-left: 0;
         margin-top: 80px;
         height: auto;
-        min-height: calc(100vh - 80px);
+        min-height: unset; // Mobile: Höhe passt sich dem Inhalt an
     }
 }
 
@@ -96,6 +96,7 @@ app-header {
         width: 100%;
         height: auto;
         min-height: auto;
+        margin-top: 0; // Mobile: kein Extra-Margin, da Header static ist
         scroll-snap-align: none;
         padding-top: 0; // Mobile braucht kein padding, header ist static
     }

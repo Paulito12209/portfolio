@@ -5,6 +5,10 @@
     @include mix.dFlex(); // <- Zentriert alles bei größerer Auflösung
     height: 100%;
     width: 100%;
+
+    @media (max-width: vars.$mobile) {
+        height: auto; // Mobile: Höhe passt sich dem Inhalt an
+    }
 }
 
 .why-me-container {
