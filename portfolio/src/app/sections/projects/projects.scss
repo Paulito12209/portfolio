@@ -5,7 +5,7 @@
     @include mix.dFlex($ai: start);
     width: 100%;
     height: 100%;
-    padding-top: 100px;
+    padding-top: 64px;
 }
 
 .projects-container {
@@ -42,7 +42,7 @@ app-section-content {
 .projects-bow {
     @include mix.dFlex();
     width: 160px;
-    padding-top: 780px;
+    padding-top: 675px;
 
     @media (max-width: vars.$mobile) {
         display: none;
