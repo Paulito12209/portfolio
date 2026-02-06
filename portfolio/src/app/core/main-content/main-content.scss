@@ -64,7 +64,11 @@ app-header {
 
     // Section-spezifische max-widths gemäß Figma
     &#hero {
-        max-width: calc(1440px - #{vars.$sidebar}); // 1280px
+        // Hero hat feste Breite von 1280px (= 1440px - sidebar)
+        // Bei 1440px Viewport: füllt den gesamten Bereich (nur Hero sichtbar)
+        // Bei größeren Viewports: why-me beginnt direkt danach (kein leerer Raum)
+        width: calc(1440px - #{vars.$sidebar}); // = 1280px
+        max-width: calc(1440px - #{vars.$sidebar});
     }
 
     &#why-me {
@@ -78,7 +82,7 @@ app-header {
     &#projects {
         max-width: none;
         width: auto;
-        min-width: calc(100vw - #{vars.$sidebar} - 100px);
+        min-width: 3200px; // Größerer Gap zur letzten Projekt-Card
     }
 
     &#references {
