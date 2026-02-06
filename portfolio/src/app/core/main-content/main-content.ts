@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Hero } from '../../sections/hero/hero';
 import { WhyMe } from '../../sections/why-me/why-me';
@@ -11,7 +12,7 @@ import { Header } from '../../shared/components/header/header';
 
 @Component({
   selector: 'app-main-content',
-  imports: [Hero, WhyMe, Skills, Projects, References, Contact, Header],
+  imports: [Hero, WhyMe, Skills, Projects, References, Contact, Header, TranslateModule, RouterLink],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',
 })

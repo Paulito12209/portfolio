@@ -2,10 +2,10 @@
 @use '../../../../styles/mixins.scss' as mix;
 
 .reference-card {
-    @include mix.dFlex($ai: center);
+    @include mix.dFlex($ai: stretch); // stretch damit Divider volle Höhe - 32px hat
     flex: 1;
     width: 478px;
-    min-height: 200px; // Minimale Höhe, passt sich an Content an
+    min-height: 200px;
     padding: 16px 8px;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 24px;
@@ -28,23 +28,60 @@
 
     // Bewertungstext - 60% der Breite
     .description {
+        @include mix.dFlex($ai: center); // Vertikal zentrieren
         width: 60%;
         font-size: vars.$f-p;
         line-height: 1.6;
         text-align: center;
         color: #fff;
-        border-right: 2px solid vars.$neon;
         padding-right: 8px;
         margin: 0;
 
         @media (max-width: vars.$mobile) {
-            width: 55%;
+            width: 60%;
             font-size: vars.$f-button;
             text-align: left;
-            border-right: 2px solid vars.$neon;
-            border-bottom: none;
             padding-right: 8px;
             padding-bottom: 0;
+        }
+    }
+
+    // Scrollbarer Bereich nur für Cards mit langem Text (3. Referenz)
+    // Desktop: Card darf frei wachsen entsprechend dem Content
+    // Mobile: Scrollbarer Bereich mit fester max-height
+    &.scrollable .description {
+        @media (max-width: vars.$mobile) {
+            display: block; // Statt flex, damit Text von oben startet
+            max-height: 184px;
+            overflow-y: scroll;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            -webkit-overflow-scrolling: touch;
+
+            // Scrollbar auf Mobile anzeigen
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                display: block;
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: vars.$neon;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    // Divider - eigenständiges Element mit 16px Abstand oben/unten
+    .divider {
+        width: 2px;
+        background-color: vars.$neon;
+        align-self: stretch; // Volle Höhe des Containers
+        margin: 16px 0; // 16px Abstand oben und unten
+
+        @media (max-width: vars.$mobile) {
+            margin: 16px 0; // Gleicher Abstand auf Mobile
         }
     }
 
@@ -56,24 +93,27 @@
         text-align: center;
 
         @media (max-width: vars.$mobile) {
-            width: 45%;
+            width: 40%;
             padding-left: 12px;
-            align-items: flex-start;
+            align-items: flex-start; // Linksbündig
             text-align: left;
         }
 
+        // Name (kann mehrzeilig sein)
         h4 {
             font-size: vars.$f-h4;
-            font-weight: 700;
+            font-weight: 400; // Reduziert von 700
             color: vars.$neon;
             margin: 0;
+            text-align: center; // Zentriert auf Desktop
 
             @media (max-width: vars.$mobile) {
                 font-size: vars.$f-h4-mb;
+                text-align: left; // Linksbündig auf Mobile
             }
         }
 
-        // Projektname
+        // Projektname - auf einer Linie, zentriert auf Desktop
         .project {
             width: 100%;
             font-size: vars.$f-button;
@@ -81,10 +121,11 @@
             border: none;
             margin: 0;
             padding: 0;
-            text-align: center;
+            text-align: center; // Zentriert auf Desktop
+            white-space: nowrap; // Auf einer Linie
 
             @media (max-width: vars.$mobile) {
-                text-align: left;
+                text-align: left; // Linksbündig auf Mobile
             }
         }
     }

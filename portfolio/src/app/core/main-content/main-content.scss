@@ -102,14 +102,104 @@ app-header {
     }
 }
 
-// ===== Grüne Säule: letztes Kind in .sections, scrollt mit =====
+// ===== Grüne Säule (Desktop) / Mobile Footer =====
 .right-bar {
     width: 100px;
     flex-shrink: 0;
     background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
     box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
 
-    @media (max-width: vars.$mobile) {
+    // Desktop: inneren Content ausblenden
+    .mobile-footer {
         display: none;
+    }
+
+    @media (max-width: vars.$mobile) {
+        width: 100%;
+        background: none;
+        box-shadow: none;
+
+        .mobile-footer {
+            @include mix.dFlex($fdir: column, $ai: center);
+            width: 100%;
+        }
+    }
+}
+
+// ===== Mobile Footer: Pfeil =====
+.mobile-footer-arrow {
+    @include mix.dFlex();
+    width: 100%;
+    padding: 40px 0 20px; // 40px Abstand vom Send-Button
+
+    img {
+        height: 45px;
+        width: 45px; // Width = visuelle Höhe nach Rotation
+        transform: rotate(-90deg); // Pfeil zeigt nach oben
+    }
+}
+
+// ===== Mobile Footer: Social Links =====
+.mobile-footer-socials {
+    @include mix.dFlex($g: 24px);
+    width: 100%;
+    padding: 24px 0 32px;
+
+    // Style wie im Header (ohne Border-Kreis)
+    a {
+        @include mix.dFlex();
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+
+            &:hover {
+                filter: brightness(0) saturate(100%) invert(82%) sepia(35%) saturate(3000%) hue-rotate(35deg) brightness(145%) contrast(104%);
+            }
+        }
+    }
+}
+
+// ===== Mobile Footer: Grüner Balken =====
+.mobile-footer-green-bar {
+    @include mix.dFlex($fdir: column, $ai: center, $g: 8px);
+    width: 100%;
+    height: 160px;
+    padding: 16px 16px 32px;
+    background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
+    box-sizing: border-box;
+
+    .footer-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+
+    .footer-copyright {
+        color: vars.$black;
+        font-size: vars.$f-subtext;
+        font-family: vars.$font-quantico;
+        margin: 0;
+    }
+
+    .footer-legal-links {
+        @include mix.dFlex($g: 16px);
+
+        a {
+            color: vars.$black;
+            font-size: vars.$f-subtext;
+            font-family: vars.$font-quantico;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }

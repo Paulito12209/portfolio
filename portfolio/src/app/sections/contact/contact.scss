@@ -62,12 +62,7 @@
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding-top: 40px;
-        padding-right: 0; // Reset Desktop padding-right
-        align-items: center;
-        width: 100%;
+        display: none; // Bow + Footer wandern in den mobile-footer (main-content)
     }
 }
 

@@ -1,5 +1,6 @@
-<div class="reference-card">
+<div class="reference-card" [ngClass]="{'scrollable': scrollable}">
     <p class="description">{{ description | translate }}</p>
+    <div class="divider"></div>
     <div class="reference-info">
         <h4>{{ person | translate }}</h4>
         <p class="project">{{ project | translate }}</p>

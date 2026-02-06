@@ -9,8 +9,14 @@
 
         <app-section-content title="REFERENCES.TITLE" class="hide-title-mobile">
             <div class="references-list">
-                <app-reference-details *ngFor="let reference of references" [person]="reference.person"
-                    [project]="reference.project" [description]="reference.description">
+                <app-reference-details [person]="references[0].person" [project]="references[0].project"
+                    [description]="references[0].description">
+                </app-reference-details>
+                <app-reference-details [person]="references[1].person" [project]="references[1].project"
+                    [description]="references[1].description">
+                </app-reference-details>
+                <app-reference-details [person]="references[2].person" [project]="references[2].project"
+                    [description]="references[2].description" [scrollable]="true">
                 </app-reference-details>
             </div>
         </app-section-content>
