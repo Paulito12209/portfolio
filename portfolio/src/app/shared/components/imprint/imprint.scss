@@ -41,6 +41,7 @@ app-header {
     width: 100%;
     height: 100%;
     padding: 0;
+    margin-top: 80px; // Abstand für fixed Header in Desktop View
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -48,6 +49,7 @@ app-header {
         height: auto;
         overflow-y: auto;
         padding: 0 16px;
+        margin-top: 0; // Mobile: Header ist static
     }
 }
 
