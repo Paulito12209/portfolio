@@ -97,6 +97,13 @@ export class MainContent implements AfterViewInit, OnDestroy {
       }
     });
   }
+
+  /**
+   * Scrollt zum Seitenanfang (Mobile View)
+   */
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 // import { Component, AfterViewInit, ElementRef } from '@angular/core';

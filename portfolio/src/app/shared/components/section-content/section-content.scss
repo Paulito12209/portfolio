@@ -2,7 +2,7 @@
 @use '../../../../styles/mixins.scss' as mix; // <- [mixins]
 
 :host {
-    @include mix.dFlex($ai: start); // <- Zentriert alles
+    @include mix.dFlex($jc: flex-start, $ai: start); // flex-start damit h2 am linken Rand beginnt
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;

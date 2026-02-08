@@ -1,6 +1,11 @@
 @use '../../../styles/variables' as vars;
 @use '../../../styles/mixins' as mix;
 
+// ===== Host: Block-Element, damit Höhe korrekt berechnet wird =====
+:host {
+    display: block;
+}
+
 // ===== Header: fixed, aus dem Flow entfernt =====
 app-header {
     position: fixed;
@@ -29,6 +34,7 @@ app-header {
         margin-top: 80px;
         height: auto;
         min-height: unset; // Mobile: Höhe passt sich dem Inhalt an
+        overflow: visible; // Mobile: kein Clipping, damit Footer sichtbar ist
     }
 }
 
@@ -131,12 +137,14 @@ app-header {
 
     @media (max-width: vars.$mobile) {
         width: 100%;
+        height: max-content; // Wächst mit dem Inhalt
         background: none;
         box-shadow: none;
 
         .mobile-footer {
             @include mix.dFlex($fdir: column, $ai: center);
             width: 100%;
+            height: max-content; // Container wächst mit dem Inhalt
         }
     }
 }
@@ -185,8 +193,9 @@ app-header {
 .mobile-footer-green-bar {
     @include mix.dFlex($fdir: column, $ai: center, $g: 8px);
     width: 100%;
-    height: 160px;
-    padding: 16px 16px 32px;
+    height: auto; // Dynamische Höhe statt fixer 160px
+    min-height: 160px; // Mindesthöhe beibehalten
+    padding: 16px 16px 40px; // Mehr Padding unten für Safe Area
     background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
     box-sizing: border-box;
 

@@ -102,6 +102,26 @@ export class Contact {
     this.message = '';
     this.privacyPolicyChecked = false;
   }
+
+  /**
+   * Scrollt zur Hero Section.
+   * Desktop: Horizontaler Scroll im .sections Container
+   * Mobile: Vertikaler Scroll zum Seitenanfang
+   */
+  scrollToHero() {
+    const isMobile = window.innerWidth <= 480;
+
+    if (isMobile) {
+      // Mobile: Vertikaler Scroll nach oben
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Desktop: Horizontaler Scroll zur Hero Section
+      const sectionsContainer = document.querySelector('.sections');
+      if (sectionsContainer) {
+        sectionsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    }
+  }
 }
 
 // import { Component } from '@angular/core';
