@@ -60,7 +60,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
   }
 
   private alignBows() {
-    if (window.innerWidth <= 480) return;
+    if (window.innerWidth <= 768) return;
 
     const el = this.elementRef.nativeElement;
 
