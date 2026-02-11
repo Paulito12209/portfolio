@@ -41,5 +41,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Documentation and temporary assets
 documents/
-documents/
+public/img/screenshots/
