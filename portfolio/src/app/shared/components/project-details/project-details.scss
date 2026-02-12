@@ -176,6 +176,11 @@
         }
     }
 
+    .button-link {
+        text-decoration: none;
+        display: inline-flex;
+    }
+
     .project-details-buttons {
         @include mix.dFlex($jc: start, $g: 16px);
 

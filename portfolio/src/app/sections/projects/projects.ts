@@ -26,8 +26,8 @@ export class Projects {
       technologies: 'Angular, TypeScript, HTML, CSS, Firebase',
       learning: 'PROJECTS.JOIN_LEARNING',
       image: './img/Screen_Join.png',
-      liveLink: '#',
-      githubLink: '#'
+      liveLink: 'https://join-1356-2445.developerakademie.net/angular-projects/join/login',
+      githubLink: 'https://github.com/Paulito12209/Join'
     },
     {
       number: '2',
@@ -36,18 +36,18 @@ export class Projects {
       technologies: 'JavaScript, HTML, CSS',
       learning: 'PROJECTS.POLLO_LEARNING',
       image: './img/Screen_Pollo-loco.png',
-      liveLink: '#',
-      githubLink: '#'
+      liveLink: 'https://paulangeles.com/projects/pollo-loco/',
+      githubLink: 'https://github.com/Paulito12209/El-Pollo-Loco'
     },
     {
       number: '3',
-      title: 'Project DA Bubble',
-      description: 'PROJECTS.BUBBLE_DESCRIPTION',
-      technologies: 'JavaScript, HTML, CSS',
-      learning: 'PROJECTS.BUBBLE_LEARNING',
-      image: './img/Screen_DA-Bubble.png',
-      liveLink: '#',
-      githubLink: '#'
+      title: 'Project Pokedex',
+      description: 'PROJECTS.POKEDEX_DESCRIPTION',
+      technologies: 'JavaScript, HTML, CSS, API',
+      learning: 'PROJECTS.POKEDEX_LEARNING',
+      image: './img/Screen_Pokedex.png',
+      liveLink: 'https://paulangeles.com/projects/pokedex/',
+      githubLink: 'https://github.com/Paulito12209/Pokedex'
     }
   ];
 }
