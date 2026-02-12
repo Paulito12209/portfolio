@@ -61,7 +61,8 @@ app-header {
 // ===== Einzelne Section =====
 .section {
     width: 100%;
-    max-width: calc(1440px - #{vars.$sidebar});
+    width: 100%;
+    // max-width: calc(1440px - #{vars.$sidebar}); // Entfernt für volle Breite
     height: 100%;
     flex-shrink: 0;
     overflow: hidden;
@@ -69,7 +70,7 @@ app-header {
     margin-top: 80px;
 
     &.section-footer {
-        max-width: 1180px;
+        // max-width: 1180px; // Entfernt für volle Breite
 
         // In der Footer-Section: Oben bündig ausrichten (nicht zentrieren)
         .pp-section-inner {
