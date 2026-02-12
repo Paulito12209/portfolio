@@ -1,9 +1,10 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SectionContent } from '../../shared/components/section-content/section-content';
 import { SectionBow } from '../../shared/components/section-bow/section-bow';
 import { ReferenceDetails } from '../../shared/components/reference-details/reference-details';
 import { CommonModule } from '@angular/common';
+import { ScrollService } from '../../core/services/scroll.service';
 
 @Component({
   selector: 'app-references',
@@ -12,6 +13,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './references.scss',
 })
 export class References implements AfterViewInit, OnDestroy {
+  private scrollService = inject(ScrollService);
+
+  scrollToContact() {
+    this.scrollService.navigateToSection('contact');
+  }
   @ViewChild('referencesList') referencesList!: ElementRef<HTMLElement>;
 
   references = [

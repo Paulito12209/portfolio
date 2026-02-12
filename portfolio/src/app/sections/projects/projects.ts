@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SectionContent } from '../../shared/components/section-content/section-content';
 import { SectionBow } from '../../shared/components/section-bow/section-bow';
 import { ProjectDetails } from '../../shared/components/project-details/project-details';
+import { ScrollService } from '../../core/services/scroll.service';
 
 @Component({
   selector: 'app-projects',
@@ -12,6 +13,11 @@ import { ProjectDetails } from '../../shared/components/project-details/project-
   styleUrl: './projects.scss',
 })
 export class Projects {
+  private scrollService = inject(ScrollService);
+
+  scrollToReferences() {
+    this.scrollService.navigateToSection('references');
+  }
   projects = [
     {
       number: '1',
