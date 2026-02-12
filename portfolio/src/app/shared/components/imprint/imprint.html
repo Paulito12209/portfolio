@@ -3,25 +3,9 @@
     <div class="imprint-content">
         <app-section-content title="IMPRINT.TITLE">
             <div class="imprint-main">
-                <section class="imprint-section">
-                    <h3>{{ 'IMPRINT.PROVIDER_TITLE' | translate }}</h3>
-                    <p>{{ 'IMPRINT.PROVIDER_NAME' | translate }}</p>
-                    <p>{{ 'IMPRINT.PROVIDER_ADDRESS' | translate }}</p>
-                </section>
-
-                <section class="imprint-section">
-                    <h3>{{ 'IMPRINT.CONTACT_TITLE' | translate }}</h3>
-                    <p>{{ 'IMPRINT.CONTACT_EMAIL' | translate }}</p>
-                </section>
-
-                <section class="imprint-section">
-                    <h3>{{ 'IMPRINT.DISCLAIMER_TITLE' | translate }}</h3>
-                    <p>{{ 'IMPRINT.DISCLAIMER_TEXT' | translate }}</p>
-                </section>
-
-                <section class="imprint-section">
-                    <h3>{{ 'IMPRINT.COPYRIGHT_TITLE' | translate }}</h3>
-                    <p>{{ 'IMPRINT.COPYRIGHT_TEXT' | translate }}</p>
+                <section class="imprint-section" *ngFor="let section of 'IMPRINT.SECTIONS' | translate">
+                    <h3>{{ section.TITLE }}</h3>
+                    <p *ngFor="let line of section.CONTENT">{{ line }}</p>
                 </section>
             </div>
         </app-section-content>

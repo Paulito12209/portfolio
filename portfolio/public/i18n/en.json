@@ -82,7 +82,7 @@
     "CONTACT": {
         "TITLE": "Contact me",
         "HEADING": "Let us work together.",
-        "TEXT": "Encourage people to contact you and describe what role you are interested in. Express confidence in your ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving your skills.",
+        "TEXT": "Are you looking for a frontend developer who thinks along, keeps learning, and drives projects forward through structured planning? Then let's talk.",
         "FORM_NAME": "Your name",
         "FORM_EMAIL": "Your e-mail",
         "FORM_MESSAGE": "Your message",
@@ -103,23 +103,102 @@
     },
     "IMPRINT": {
         "TITLE": "Legal Notice",
-        "PROVIDER_TITLE": "Information according to § 5 TMG",
-        "PROVIDER_NAME": "Paul Angeles Chaquire",
-        "PROVIDER_ADDRESS": "Musterstraße 123, 10115 Berlin",
-        "CONTACT_TITLE": "Contact",
-        "CONTACT_EMAIL": "Email: paul.angeles.chaquire@gmail.com",
-        "DISCLAIMER_TITLE": "Disclaimer",
-        "DISCLAIMER_TEXT": "The contents of this page were created with the greatest care. However, no guarantee can be given for the accuracy, completeness and timeliness of the content. As a service provider, I am responsible for my own content on these pages in accordance with § 7 para.1 TMG under general law.",
-        "COPYRIGHT_TITLE": "Copyright",
-        "COPYRIGHT_TEXT": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator."
+        "SECTIONS": [
+            {
+                "TITLE": "Information according to § 5 TMG",
+                "CONTENT": [
+                    "Paul Angeles Chaquire",
+                    "c/o Online-Impressum.de #5610",
+                    "Europaring 90",
+                    "53757 Sankt Augustin",
+                    "Germany"
+                ]
+            },
+            {
+                "TITLE": "Contact",
+                "CONTENT": [
+                    "Email: kontakt@paulangeles.com"
+                ]
+            },
+            {
+                "TITLE": "Responsible for content according to § 18 (2) MStV",
+                "CONTENT": [
+                    "Paul Angeles Chaquire (address as above)"
+                ]
+            },
+            {
+                "TITLE": "Credits",
+                "CONTENT": [
+                    "Layout based on a Developer Akademie design template."
+                ]
+            },
+            {
+                "TITLE": "Disclaimer",
+                "CONTENT": [
+                    "Despite careful control, I assume no liability for the content of external links. The operators of linked pages are solely responsible for their content."
+                ]
+            },
+            {
+                "TITLE": "Copyright",
+                "CONTENT": [
+                    "The content and works created by the site operator on these pages are subject to German copyright law. Any use outside the limits of copyright requires prior written consent."
+                ]
+            }
+        ]
     },
     "PRIVACY_POLICY": {
         "TITLE": "Privacy Policy",
-        "INTRO_TITLE": "Privacy Policy",
-        "INTRO_TEXT": "The protection of your personal data is of particular concern to me. I therefore process your data exclusively on the basis of legal regulations (GDPR, TKG 2003).",
-        "DATA_COLLECTION_TITLE": "Collection and Processing of Data",
-        "DATA_COLLECTION_TEXT": "If you send me an email or use the contact form, your provided data will be stored for the purpose of processing your request and in case of follow-up questions. I will not share this data without your consent.",
-        "RIGHTS_TITLE": "Your Rights",
-        "RIGHTS_TEXT": "You have the right to information, correction, deletion, restriction, data portability, revocation and objection. If you believe that the processing of your data violates data protection law or your data protection rights have been violated in any other way, you can file a complaint with the supervisory authority."
+        "SECTIONS": [
+            {
+                "TITLE": "1. Controller",
+                "CONTENT": [
+                    "Paul Angeles Chaquire",
+                    "c/o Online-Impressum.de #5610",
+                    "Europaring 90",
+                    "53757 Sankt Augustin",
+                    "Germany",
+                    "Email: kontakt@paulangeles.com"
+                ]
+            },
+            {
+                "TITLE": "2. General information",
+                "CONTENT": [
+                    "I take the protection of personal data seriously. I process personal data in accordance with the GDPR and applicable German data protection laws."
+                ]
+            },
+            {
+                "TITLE": "3. Hosting and server log files",
+                "CONTENT": [
+                    "This website is hosted with Hostinger. When you access the website, technical data may be processed automatically (server log files), in particular: IP address, date and time of access, requested page/file, referrer URL, browser type and operating system.",
+                    "Legal basis: Art. 6(1)(f) GDPR (legitimate interest in the secure and reliable operation of the website)."
+                ]
+            },
+            {
+                "TITLE": "4. Contact form",
+                "CONTENT": [
+                    "When you use the contact form, I process the data you provide (for example, your name, email address and message) solely to handle your request and follow-up communication.",
+                    "Legal basis: Art. 6(1)(b) GDPR (pre-contractual communication) or Art. 6(1)(f) GDPR (legitimate interest in responding).",
+                    "I delete messages once they are no longer required for the purpose of communication, unless legal retention obligations apply."
+                ]
+            },
+            {
+                "TITLE": "5. Cookies and tracking",
+                "CONTENT": [
+                    "This website does not use analytics or tracking tools. Cookies are only used if they are strictly necessary for basic website functionality."
+                ]
+            },
+            {
+                "TITLE": "6. Your rights",
+                "CONTENT": [
+                    "You have the right of access, rectification, erasure, restriction of processing, data portability and the right to object. You also have the right to lodge a complaint with a supervisory authority."
+                ]
+            },
+            {
+                "TITLE": "7. Contact",
+                "CONTENT": [
+                    "For privacy-related questions or requests, please contact: kontakt@paulangeles.com"
+                ]
+            }
+        ]
     }
 }

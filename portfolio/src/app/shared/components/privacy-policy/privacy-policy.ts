@@ -8,9 +8,11 @@ import { Footer } from '../footer/footer';
 import { Email } from '../email/email';
 import { PhoneNumber } from '../phone-number/phone-number';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-privacy-policy',
-  imports: [TranslateModule, Header, SectionBow, SectionContent, Footer, Email, PhoneNumber, RouterLink],
+  imports: [CommonModule, TranslateModule, Header, SectionBow, SectionContent, Footer, Email, PhoneNumber, RouterLink],
   templateUrl: './privacy-policy.html',
   styleUrl: './privacy-policy.scss',
 })

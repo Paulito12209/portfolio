@@ -82,7 +82,7 @@
     "CONTACT": {
         "TITLE": "Kontaktiere mich",
         "HEADING": "Lass uns zusammenarbeiten.",
-        "TEXT": "Ermutigen Sie Menschen, Sie zu kontaktieren und beschreiben Sie, an welcher Rolle Sie interessiert sind. Drücken Sie Ihr Vertrauen in Ihre Fähigkeit aus, durch Ihr Fachwissen und Ihre Begeisterung für die Verbesserung Ihrer Fähigkeiten einen sinnvollen Beitrag zu einem Team zu leisten.",
+        "TEXT": "Du suchst einen Frontend-Entwickler, der mitdenkt, dazulernt und Projekte durch strukturierte Planung zielführend vorantreibt? Dann lass uns sprechen.",
         "FORM_NAME": "Dein Name",
         "FORM_EMAIL": "Deine E-Mail",
         "FORM_MESSAGE": "Deine Nachricht",
@@ -103,23 +103,102 @@
     },
     "IMPRINT": {
         "TITLE": "Impressum",
-        "PROVIDER_TITLE": "Angaben gemäß § 5 TMG",
-        "PROVIDER_NAME": "Paul Angeles Chaquire",
-        "PROVIDER_ADDRESS": "Musterstraße 123, 10115 Berlin",
-        "CONTACT_TITLE": "Kontakt",
-        "CONTACT_EMAIL": "E-Mail: paul.angeles.chaquire@gmail.com",
-        "DISCLAIMER_TITLE": "Haftungsausschluss",
-        "DISCLAIMER_TEXT": "Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.",
-        "COPYRIGHT_TITLE": "Urheberrecht",
-        "COPYRIGHT_TEXT": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+        "SECTIONS": [
+            {
+                "TITLE": "Angaben gemäß § 5 TMG",
+                "CONTENT": [
+                    "Paul Angeles Chaquire",
+                    "c/o Online-Impressum.de #5610",
+                    "Europaring 90",
+                    "53757 Sankt Augustin",
+                    "Deutschland"
+                ]
+            },
+            {
+                "TITLE": "Kontakt",
+                "CONTENT": [
+                    "E-Mail: kontakt@paulangeles.com"
+                ]
+            },
+            {
+                "TITLE": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+                "CONTENT": [
+                    "Paul Angeles Chaquire (Anschrift wie oben)"
+                ]
+            },
+            {
+                "TITLE": "Credits",
+                "CONTENT": [
+                    "Layout basierend auf einer Design-Vorlage der Developer Akademie."
+                ]
+            },
+            {
+                "TITLE": "Haftungsausschluss",
+                "CONTENT": [
+                    "Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
+                ]
+            },
+            {
+                "TITLE": "Urheberrecht",
+                "CONTENT": [
+                    "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedarf der vorherigen schriftlichen Zustimmung."
+                ]
+            }
+        ]
     },
     "PRIVACY_POLICY": {
         "TITLE": "Datenschutz",
-        "INTRO_TITLE": "Datenschutzerklärung",
-        "INTRO_TEXT": "Der Schutz Ihrer persönlichen Daten ist mir ein besonderes Anliegen. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003).",
-        "DATA_COLLECTION_TITLE": "Erhebung und Verarbeitung von Daten",
-        "DATA_COLLECTION_TEXT": "Wenn Sie mir eine E-Mail senden oder das Kontaktformular nutzen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.",
-        "RIGHTS_TITLE": "Ihre Rechte",
-        "RIGHTS_TEXT": "Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren."
+        "SECTIONS": [
+            {
+                "TITLE": "1. Verantwortlicher",
+                "CONTENT": [
+                    "Paul Angeles Chaquire",
+                    "c/o Online-Impressum.de #5610",
+                    "Europaring 90",
+                    "53757 Sankt Augustin",
+                    "Deutschland",
+                    "E-Mail: kontakt@paulangeles.com"
+                ]
+            },
+            {
+                "TITLE": "2. Allgemeine Informationen",
+                "CONTENT": [
+                    "Ich nehme den Schutz personenbezogener Daten ernst. Ich verarbeite personenbezogene Daten gemäß der DSGVO und den geltenden deutschen Datenschutzgesetzen."
+                ]
+            },
+            {
+                "TITLE": "3. Hosting und Server-Log-Dateien",
+                "CONTENT": [
+                    "Diese Website wird bei Hostinger gehostet. Wenn Sie auf die Website zugreifen, können technische Daten automatisch verarbeitet werden (Server-Log-Dateien), insbesondere: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite/Datei, Referrer-URL, Browsertyp und Betriebssystem.",
+                    "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren und zuverlässigen Betrieb der Website)."
+                ]
+            },
+            {
+                "TITLE": "4. Kontaktformular",
+                "CONTENT": [
+                    "Wenn Sie das Kontaktformular nutzen, verarbeite ich die von Ihnen angegebenen Daten (z. B. Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage und der anschließenden Kommunikation.",
+                    "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Kommunikation) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung).",
+                    "Ich lösche Nachrichten, sobald sie für den Zweck der Kommunikation nicht mehr erforderlich sind, es sei denn, es bestehen gesetzliche Aufbewahrungspflichten."
+                ]
+            },
+            {
+                "TITLE": "5. Cookies und Tracking",
+                "CONTENT": [
+                    "Diese Website verwendet keine Analyse- oder Tracking-Tools. Cookies werden nur verwendet, wenn sie für die grundlegende Funktionalität der Website unbedingt erforderlich sind."
+                ]
+            },
+            {
+                "TITLE": "6. Ihre Rechte",
+                "CONTENT": [
+                    "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und das Recht auf Widerspruch. Sie haben außerdem das Recht, eine Beschwerde bei einer Aufsichtsbehörde einzureichen."
+                ]
+            },
+            {
+                "TITLE": "7. Kontakt",
+                "CONTENT": [
+                    "Bei datenschutzrechtlichen Fragen oder Anfragen wenden Sie sich bitte an: kontakt@paulangeles.com"
+                ]
+            }
+        ]
     }
 }

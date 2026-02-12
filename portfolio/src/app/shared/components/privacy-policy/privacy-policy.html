@@ -3,19 +3,9 @@
     <div class="privacy-policy-content">
         <app-section-content title="PRIVACY_POLICY.TITLE">
             <div class="privacy-policy-main">
-                <section class="privacy-policy-section">
-                    <h3>{{ 'PRIVACY_POLICY.INTRO_TITLE' | translate }}</h3>
-                    <p>{{ 'PRIVACY_POLICY.INTRO_TEXT' | translate }}</p>
-                </section>
-
-                <section class="privacy-policy-section">
-                    <h3>{{ 'PRIVACY_POLICY.DATA_COLLECTION_TITLE' | translate }}</h3>
-                    <p>{{ 'PRIVACY_POLICY.DATA_COLLECTION_TEXT' | translate }}</p>
-                </section>
-
-                <section class="privacy-policy-section">
-                    <h3>{{ 'PRIVACY_POLICY.RIGHTS_TITLE' | translate }}</h3>
-                    <p>{{ 'PRIVACY_POLICY.RIGHTS_TEXT' | translate }}</p>
+                <section class="privacy-policy-section" *ngFor="let section of 'PRIVACY_POLICY.SECTIONS' | translate">
+                    <h3>{{ section.TITLE }}</h3>
+                    <p *ngFor="let line of section.CONTENT">{{ line }}</p>
                 </section>
             </div>
         </app-section-content>
