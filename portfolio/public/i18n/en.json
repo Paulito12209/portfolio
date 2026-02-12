@@ -26,7 +26,7 @@
     },
     "SKILLS": {
         "TITLE": "My Skill Set",
-        "TEXT": "A short introduction of your skills. Highlight your experience of working on different projects using different front-end technologies and emphasise your openness to learning and adapting to new technologies.",
+        "TEXT": "In over 12 projects – including a task management app like Join – I have learned to apply various frontend technologies in practice and combine them effectively. Discovering new tools and frameworks drives me. Next up: React.",
         "ICON_ANGULAR": "./img/icons/skills/angular-icon.svg",
         "ICON_ANGULAR_DESCRIPTION": "Angular",
         "ICON_TYPESCRIPT": "./img/icons/skills/typescript-icon.svg",
@@ -50,7 +50,7 @@
         "ICON_CHALLENGE_ME": "./img/icons/skills/challange-icon.svg",
         "ICON_CHALLENGE_ME_DESCRIPTION": "Challenge Me",
         "BUTTON": "Let's talk",
-        "SUBTEXT": "Show that you are motivated to improve your skills, implement innovative solutions and stay abreast of new technologies."
+        "SUBTEXT": "I actively follow the frontend scene, document my knowledge, and teach myself new solutions independently – such as the horizontal scrolling for this portfolio, which went beyond the scope of my training."
     },
     "PROJECTS": {
         "TITLE": "My Work",

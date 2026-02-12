@@ -26,7 +26,7 @@
     },
     "SKILLS": {
         "TITLE": "Meine Fähigkeiten",
-        "TEXT": "Eine kurze Vorstellung Ihrer Fähigkeiten. Heben Sie Ihre Erfahrung bei der Arbeit an verschiedenen Projekten mit unterschiedlichen Front-End-Technologien hervor und betonen Sie Ihre Offenheit für das Lernen und die Anpassung an neue Technologien.",
+        "TEXT": "In über 12 Projekten – darunter eine Task-Management-App wie Join – habe ich gelernt, verschiedene Frontend-Technologien praxisnah einzusetzen und miteinander zu verbinden. Neue Tools und Frameworks zu entdecken treibt mich an. Als Nächstes: React.",
         "ICON_ANGULAR": "./img/icons/skills/angular-icon.svg",
         "ICON_ANGULAR_DESCRIPTION": "Angular",
         "ICON_TYPESCRIPT": "./img/icons/skills/typescript-icon.svg",
@@ -50,7 +50,7 @@
         "ICON_CHALLENGE_ME": "./img/icons/skills/challange-icon.svg",
         "ICON_CHALLENGE_ME_DESCRIPTION": "Challenge Me",
         "BUTTON": "Lass uns reden",
-        "SUBTEXT": "Zeigen Sie, dass Sie motiviert sind, Ihre Fähigkeiten zu verbessern, innovative Lösungen umzusetzen und sich über neue Technologien auf dem Laufenden zu halten."
+        "SUBTEXT": "Ich verfolge aktiv die Frontend-Szene, dokumentiere mein Wissen und bringe mir neue Lösungen eigenständig bei – wie das horizontale Scrolling für dieses Portfolio, das über die Inhalte meiner Ausbildung hinausging."
     },
     "PROJECTS": {
         "TITLE": "Meine Arbeit",
