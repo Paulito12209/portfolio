@@ -1,5 +1,5 @@
-// @use '../../../../styles/variables' as vars; // <- [_variables]
-@use '../../../../styles/mixins.scss' as mix; // <- [mixins]
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
 
 .hero-bow {
     @include mix.dFlex($ai: end);
@@ -9,5 +9,37 @@
         background: transparent;
         border: none;
         cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // Feste Dimensionen des größten Bildes (Hover-PNG), um Layout-Shifts zu vermeiden
+        width: 147px;
+        height: 49px;
+        padding: 0;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .arrow-hover {
+            display: none;
+            transform: rotate(180deg);
+        }
+
+        // Desktop-Hover (ab 769px) - Getestet für nahtlosen Übergang ohne Layout-Shift
+        @media (min-width: 769px) {
+            &:hover {
+                .arrow-default {
+                    display: none;
+                }
+
+                .arrow-hover {
+                    display: block;
+                }
+            }
+        }
     }
 }
