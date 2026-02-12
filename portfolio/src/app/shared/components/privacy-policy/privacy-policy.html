@@ -1,53 +1,87 @@
 <app-header></app-header>
-<div class="privacy-policy-container">
-    <div class="privacy-policy-content">
-        <app-section-content title="PRIVACY_POLICY.TITLE">
-            <div class="privacy-policy-main">
-                <section class="privacy-policy-section" *ngFor="let section of 'PRIVACY_POLICY.SECTIONS' | translate">
-                    <h3>{{ section.TITLE }}</h3>
-                    <p *ngFor="let line of section.CONTENT">{{ line }}</p>
-                </section>
+<main class="main-container">
+    <div class="sections">
+        <!-- Section 1: Title + first portion of text -->
+        <section class="section section-text">
+            <div class="pp-section-inner">
+                <div class="pp-content">
+                    <app-section-content title="PRIVACY_POLICY.TITLE">
+                        <div class="privacy-policy-main">
+                            <section class="privacy-policy-section"
+                                *ngFor="let section of $any('PRIVACY_POLICY.SECTIONS' | translate | slice:0:3)">
+                                <h3>{{ section.TITLE }}</h3>
+                                <div class="text-content">
+                                    <p *ngFor="let line of $any(section.CONTENT)">{{ line }}</p>
+                                </div>
+                            </section>
+                        </div>
+                    </app-section-content>
+                </div>
+                <div class="pp-bow">
+                    <app-section-bow (arrowClick)="scrollToNext()"></app-section-bow>
+                </div>
             </div>
-        </app-section-content>
-    </div>
+        </section>
 
-    <div class="privacy-policy-right">
-        <div class="privacy-policy-right-spacer"></div>
-        <app-email></app-email>
-        <app-phone-number></app-phone-number>
-        <div class="privacy-policy-bow">
-            <app-section-bow></app-section-bow>
-        </div>
-        <div class="footer-content">
-            <app-footer></app-footer>
-        </div>
-    </div>
-</div>
-<div class="right-bar">
-    <!-- Mobile footer (hidden on desktop) -->
-    <div class="mobile-footer">
-        <div class="mobile-footer-arrow" (click)="scrollToTop()" style="cursor: pointer;">
-            <img src="img/arrow-right.svg" alt="Scroll nach oben">
-        </div>
-        <div class="mobile-footer-socials">
-            <a href="mailto:paul.angeles.chaquire@gmail.com" class="social-circle">
-                <img src="img/icons/hero/mail-icon.svg" alt="Email">
-            </a>
-            <a href="https://www.linkedin.com/in/paul-angeles-chaquire-654b34137" target="_blank"
-                rel="noopener noreferrer" class="social-circle">
-                <img src="img/icons/hero/linkedin-icon.svg" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/Paulito12209" target="_blank" rel="noopener noreferrer" class="social-circle">
-                <img src="img/icons/hero/github-icon.svg" alt="GitHub">
-            </a>
-        </div>
-        <div class="mobile-footer-green-bar">
-            <img src="img/pa-logo.png" alt="PA Logo" class="footer-logo">
-            <p class="footer-copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
-            <div class="footer-legal-links">
-                <a routerLink="/imprint">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
-                <a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
+        <!-- Section 2: Remaining text + contact info + footer -->
+        <section class="section section-footer">
+            <div class="pp-section-inner">
+                <div class="pp-footer-text">
+                    <app-section-content class="no-title">
+                        <div class="privacy-policy-main">
+                            <section class="privacy-policy-section"
+                                *ngFor="let section of $any('PRIVACY_POLICY.SECTIONS' | translate | slice:3)">
+                                <h3>{{ section.TITLE }}</h3>
+                                <div class="text-content">
+                                    <p *ngFor="let line of $any(section.CONTENT)">{{ line }}</p>
+                                </div>
+                            </section>
+                        </div>
+                    </app-section-content>
+                </div>
+                <div class="pp-right">
+                    <div class="pp-right-contact">
+                        <app-email></app-email>
+                        <app-phone-number></app-phone-number>
+                    </div>
+                    <div class="pp-right-bow">
+                        <app-section-bow (arrowClick)="scrollToStart()"></app-section-bow>
+                    </div>
+                    <div class="footer-content">
+                        <app-footer></app-footer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Green right bar + mobile footer -->
+        <div class="right-bar">
+            <div class="mobile-footer">
+                <div class="mobile-footer-arrow" (click)="scrollToTop()" style="cursor: pointer;">
+                    <img src="img/arrow-right.svg" alt="Scroll nach oben">
+                </div>
+                <div class="mobile-footer-socials">
+                    <a href="mailto:paul.angeles.chaquire@gmail.com" class="social-circle">
+                        <img src="img/icons/hero/mail-icon.svg" alt="Email">
+                    </a>
+                    <a href="https://www.linkedin.com/in/paul-angeles-chaquire-654b34137" target="_blank"
+                        rel="noopener noreferrer" class="social-circle">
+                        <img src="img/icons/hero/linkedin-icon.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/Paulito12209" target="_blank" rel="noopener noreferrer"
+                        class="social-circle">
+                        <img src="img/icons/hero/github-icon.svg" alt="GitHub">
+                    </a>
+                </div>
+                <div class="mobile-footer-green-bar">
+                    <img src="img/pa-logo.png" alt="PA Logo" class="footer-logo">
+                    <p class="footer-copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
+                    <div class="footer-legal-links">
+                        <a routerLink="/imprint">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
+                        <a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</main>

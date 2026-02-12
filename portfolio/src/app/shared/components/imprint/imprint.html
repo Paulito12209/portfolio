@@ -1,53 +1,61 @@
 <app-header></app-header>
-<div class="imprint-container">
-    <div class="imprint-content">
-        <app-section-content title="IMPRINT.TITLE">
-            <div class="imprint-main">
-                <section class="imprint-section" *ngFor="let section of 'IMPRINT.SECTIONS' | translate">
-                    <h3>{{ section.TITLE }}</h3>
-                    <p *ngFor="let line of section.CONTENT">{{ line }}</p>
-                </section>
+<main class="main-container">
+    <div class="sections" #sectionsContainer>
+        <section class="section">
+            <div class="imp-section-inner">
+                <div class="imp-content">
+                    <app-section-content title="IMPRINT.TITLE">
+                        <div class="imprint-main">
+                            <section class="imprint-section"
+                                *ngFor="let section of $any('IMPRINT.SECTIONS' | translate)">
+                                <h3>{{ section.TITLE }}</h3>
+                                <div class="text-content">
+                                    <p *ngFor="let line of $any(section.CONTENT)">{{ line }}</p>
+                                </div>
+                            </section>
+                        </div>
+                    </app-section-content>
+                </div>
+                <!-- Impressum-Right Column -->
+                <div class="imp-right">
+                    <div class="imp-right-spacer"></div>
+                    <app-email></app-email>
+                    <app-phone-number></app-phone-number>
+                    <div class="footer-content">
+                        <app-footer></app-footer>
+                    </div>
+                </div>
             </div>
-        </app-section-content>
-    </div>
+        </section>
 
-    <div class="imprint-right">
-        <div class="imprint-right-spacer"></div>
-        <app-email></app-email>
-        <app-phone-number></app-phone-number>
-        <div class="imprint-bow">
-            <app-section-bow></app-section-bow>
-        </div>
-        <div class="footer-content">
-            <app-footer></app-footer>
-        </div>
-    </div>
-</div>
-<div class="right-bar">
-    <!-- Mobile footer (hidden on desktop) -->
-    <div class="mobile-footer">
-        <div class="mobile-footer-arrow" (click)="scrollToTop()" style="cursor: pointer;">
-            <img src="img/arrow-right.svg" alt="Scroll nach oben">
-        </div>
-        <div class="mobile-footer-socials">
-            <a href="mailto:paul.angeles.chaquire@gmail.com" class="social-circle">
-                <img src="img/icons/hero/mail-icon.svg" alt="Email">
-            </a>
-            <a href="https://www.linkedin.com/in/paul-angeles-chaquire-654b34137" target="_blank"
-                rel="noopener noreferrer" class="social-circle">
-                <img src="img/icons/hero/linkedin-icon.svg" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/Paulito12209" target="_blank" rel="noopener noreferrer" class="social-circle">
-                <img src="img/icons/hero/github-icon.svg" alt="GitHub">
-            </a>
-        </div>
-        <div class="mobile-footer-green-bar">
-            <img src="img/pa-logo.png" alt="PA Logo" class="footer-logo">
-            <p class="footer-copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
-            <div class="footer-legal-links">
-                <a routerLink="/imprint">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
-                <a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
+        <!-- Green right bar + mobile footer -->
+        <div class="right-bar">
+            <div class="mobile-footer">
+                <div class="mobile-footer-arrow" (click)="scrollToTop()" style="cursor: pointer;">
+                    <img src="img/arrow-right.svg" alt="Scroll nach oben">
+                </div>
+                <div class="mobile-footer-socials">
+                    <a href="mailto:paul.angeles.chaquire@gmail.com" class="social-circle">
+                        <img src="img/icons/hero/mail-icon.svg" alt="Email">
+                    </a>
+                    <a href="https://www.linkedin.com/in/paul-angeles-chaquire-654b34137" target="_blank"
+                        rel="noopener noreferrer" class="social-circle">
+                        <img src="img/icons/hero/linkedin-icon.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/Paulito12209" target="_blank" rel="noopener noreferrer"
+                        class="social-circle">
+                        <img src="img/icons/hero/github-icon.svg" alt="GitHub">
+                    </a>
+                </div>
+                <div class="mobile-footer-green-bar">
+                    <img src="img/pa-logo.png" alt="PA Logo" class="footer-logo">
+                    <p class="footer-copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
+                    <div class="footer-legal-links">
+                        <a routerLink="/imprint">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
+                        <a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</main>

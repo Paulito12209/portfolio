@@ -4,11 +4,9 @@
 :host {
     @include mix.dFlex($jc: end, $ai: center, $g: 16px);
     width: 100%;
-    margin-top: 24px;
 
     @media (max-width: vars.$mobile) {
         justify-content: flex-start;
-        margin-top: 16px;
     }
 }
 
