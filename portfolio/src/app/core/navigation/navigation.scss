@@ -64,6 +64,7 @@
     width: vars.$sidebar;
     min-height: 900px;
     background-color: vars.$neon;
+    background: linear-gradient(90deg, vars.$neon 90%, #89b02b 100%);
 
     @include mix.dFlex($jc: stretch, $fdir: column, $g: 16px);
     padding: 40px 0;
@@ -78,6 +79,7 @@
         align-items: center;
         padding: 0 16px;
         z-index: 10;
+        background: vars.$neon; // Gradient auf Mobile entfernen
     }
 
     // Logo
