@@ -18,4 +18,8 @@ export class WhyMe {
   scrollToSkills() {
     this.scrollService.navigateToSection('skills');
   }
+
+  scrollToContact() {
+    this.scrollService.navigateToSection('contact');
+  }
 }
