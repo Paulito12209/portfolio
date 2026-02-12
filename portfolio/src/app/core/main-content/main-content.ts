@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, OnDestroy, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -9,6 +9,7 @@ import { Projects } from '../../sections/projects/projects';
 import { Contact } from '../../sections/contact/contact';
 import { References } from '../../sections/references/references';
 import { Header } from '../../shared/components/header/header';
+import { ScrollService } from '../services/scroll.service';
 
 @Component({
   selector: 'app-main-content',
@@ -34,6 +35,8 @@ export class MainContent implements AfterViewInit, OnDestroy {
     this.resizeTimeout = setTimeout(() => this.alignBows(), 150);
   };
 
+  private scrollService = inject(ScrollService);
+
   constructor(
     private elementRef: ElementRef,
     private translate: TranslateService
@@ -50,6 +53,8 @@ export class MainContent implements AfterViewInit, OnDestroy {
     setTimeout(() => this.alignBows(), 100);
 
     window.addEventListener('resize', this.resizeHandler);
+
+    this.scrollService.startObserving();
   }
 
   ngOnDestroy() {
@@ -57,6 +62,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
     this.langSub?.unsubscribe();
     window.removeEventListener('resize', this.resizeHandler);
     clearTimeout(this.resizeTimeout);
+    this.scrollService.stopObserving();
   }
 
   private alignBows() {
@@ -105,34 +111,3 @@ export class MainContent implements AfterViewInit, OnDestroy {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
-
-// import { Component, AfterViewInit, ElementRef } from '@angular/core';
-// import { Hero } from '../../sections/hero/hero';
-// import { WhyMe } from '../../sections/why-me/why-me';
-// import { Skills } from '../../sections/skills/skills';
-// import { Projects } from '../../sections/projects/projects';
-// import { Contact } from '../../sections/contact/contact';
-// import { References } from '../../sections/references/references';
-
-// @Component({
-//   selector: 'app-main-content',
-//   imports: [Hero, WhyMe, Skills, Projects, References, Contact],
-//   templateUrl: './main-content.html',
-//   styleUrl: './main-content.scss',
-// })
-// export class MainContent implements AfterViewInit {
-//   constructor(private elementRef: ElementRef) { }
-
-//   ngAfterViewInit() {
-//     const container = this.elementRef.nativeElement.querySelector('.main-container');
-
-//     container.addEventListener('wheel', (event: WheelEvent) => {
-//       event.preventDefault(); // Stoppt vertikales Scrollen
-
-//       // Scroll-Wert verstärken (statt nur deltaY)
-//       const scrollAmount = event.deltaY * 3; // <- 3x stärker!
-//       container.scrollLeft += scrollAmount;
-
-//     }, { passive: false }); // <- Wichtig für preventDefault()
-//   }
-// }

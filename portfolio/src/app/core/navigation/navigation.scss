@@ -133,9 +133,15 @@
             cursor: pointer;
             padding: 10px 0;
             text-align: center;
+            transition: color 0.3s ease-in-out;
 
             &:hover {
                 color: white;
+            }
+
+            &.active {
+                color: transparent;
+                -webkit-text-stroke: 1px vars.$black;
             }
 
             @media (max-width: vars.$mobile) {
@@ -207,6 +213,7 @@
                 font-size: 24px;
                 color: vars.$black;
                 cursor: pointer;
+                transition: color 0.3s ease-in-out;
 
                 &:hover {
                     color: white;

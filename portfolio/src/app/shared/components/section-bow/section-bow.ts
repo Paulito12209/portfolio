@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-section-bow',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './section-bow.scss',
 })
 export class SectionBow {
-
+  @Output() arrowClick = new EventEmitter<void>();
 }
