@@ -16,6 +16,9 @@ export class ScrollService {
     navigateToSection(sectionId: string) {
         const isOnHomePage = this.router.url === '/' || this.router.url === '' || this.router.url.startsWith('/#');
 
+        // Aktive Sektion sofort setzen (wichtig für Mobile, wo kein Observer läuft)
+        this.activeSection.set(sectionId);
+
         if (isOnHomePage) {
             this.scrollToSection(sectionId);
         } else {

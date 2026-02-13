@@ -220,6 +220,12 @@
                 &:hover {
                     color: white;
                 }
+
+                // Aktiver Nav-Link: Nur Konturen sichtbar (wie Desktop)
+                &.active {
+                    color: transparent;
+                    -webkit-text-stroke: 1px vars.$black;
+                }
             }
         }
 

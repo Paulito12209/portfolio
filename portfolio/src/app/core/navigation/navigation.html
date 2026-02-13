@@ -32,13 +32,17 @@
         <!-- Unterer Bereich: Schräger Gradient -->
         <div class="overlay-content">
             <ul class="overlay-links">
-                <li><button type="button" (click)="navigateToSection('why-me')">{{ 'NAV.WHY_ME' | translate }}</button>
+                <li><button type="button" [class.active]="scrollService.activeSection() === 'why-me'"
+                        (click)="navigateToSection('why-me')">{{ 'NAV.WHY_ME' | translate }}</button>
                 </li>
-                <li><button type="button" (click)="navigateToSection('skills')">{{ 'NAV.SKILLS' | translate }}</button>
+                <li><button type="button" [class.active]="scrollService.activeSection() === 'skills'"
+                        (click)="navigateToSection('skills')">{{ 'NAV.SKILLS' | translate }}</button>
                 </li>
-                <li><button type="button" (click)="navigateToSection('projects')">{{ 'NAV.MY_WORK' | translate
+                <li><button type="button" [class.active]="scrollService.activeSection() === 'projects'"
+                        (click)="navigateToSection('projects')">{{ 'NAV.MY_WORK' | translate
                         }}</button></li>
-                <li><button type="button" (click)="navigateToSection('contact')">{{ 'NAV.CONTACT' | translate
+                <li><button type="button" [class.active]="scrollService.activeSection() === 'contact'"
+                        (click)="navigateToSection('contact')">{{ 'NAV.CONTACT' | translate
                         }}</button></li>
             </ul>
             <div class="overlay-language">
