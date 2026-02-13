@@ -1,4 +1,5 @@
 <div class="contact-container">
+    <app-toast-message [show]="showToast" (closed)="onToastClosed()"></app-toast-message>
     <div class="contact-content">
         <app-section-content title="CONTACT.TITLE">
             <div class="mobile-contact-text">
@@ -25,7 +26,6 @@
     </div>
 
     <div class="contact-right-content">
-        <app-toast-message [show]="showToast" (closed)="onToastClosed()"></app-toast-message>
         <div class="contact-right-text">
             <p>{{ 'CONTACT.HEADING' | translate }}</p>
             <p>{{ 'CONTACT.TEXT' | translate }}</p>

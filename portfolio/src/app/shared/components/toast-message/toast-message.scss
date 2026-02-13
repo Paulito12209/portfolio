@@ -8,6 +8,15 @@
     right: 24px;
     z-index: 100;
     pointer-events: none;
+
+    @media (max-width: vars.$mobile) {
+        position: fixed;
+        top: 96px; // 80px Navbar + 16px Abstand
+        right: 0;
+        left: 0;
+        padding: 0 16px;
+        z-index: 9999; // Über allem anderen (außer Overlay)
+    }
 }
 
 // Wrapper für die Toast-Nachricht
@@ -28,6 +37,11 @@
     transform: translateX(calc(100% + 50px));
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
+
+    @media (max-width: vars.$mobile) {
+        background: #000; // Sicherstellen, dass Hintergrund dunkel ist
+        width: 100%; // Volle Breite des Containers nutzen
+    }
 
     // Slide-In-Animation
     &.slide-in {
