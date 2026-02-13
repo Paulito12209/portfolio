@@ -3,30 +3,33 @@
 
 :host {
     @include mix.dFlex($jc: flex-start, $ai: start); // flex-start damit Content direkt an Sidebar beginnt
-    width: 100%;
+    width: fit-content; // Hug content instead of 100% width
     height: 100%;
     padding-top: 64px;
 
     @media (max-width: vars.$mobile) {
         height: auto; // Mobile: Höhe passt sich dem Inhalt an
         padding-top: 0;
+        width: 100%; // Make sure mobile is full width
     }
 }
 
 .projects-container {
-    @include mix.dFlex($jc: space-between, $ai: start, $g: 64px);
-    width: 100%;
+    @include mix.dFlex($jc: start, $ai: start, $g: 64px); // Start alignment with gap
+    width: fit-content; // Hug content instead of 100% width
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100%; // Mobile full width
     }
 }
 
 .projects-content {
     @include mix.dFlex($ai: start);
-    flex: 1;
+    // flex: 1; // Removed to allow hugging content
+    width: fit-content; // Hug content width
 
     @media (max-width: vars.$mobile) {
 
@@ -56,7 +59,7 @@ app-section-content {
 
 .projects-list {
     @include mix.dFlex($ai: stretch, $jc: start, $g: 32px);
-    width: 100%;
+    width: fit-content; // Hug content instead of 100% width
 
     @media (max-width: vars.$mobile) {
         gap: 0px;

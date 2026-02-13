@@ -3,8 +3,9 @@
 
 :host {
     @include mix.dFlex($fdir: column, $ai: start, $jc: start);
-    width: 100%;
-    max-width: 900px; // Begrenzung auf 1000px
+    // width: 100%; // Removed 100% to prevent collapse in fit-content container
+    width: clamp(600px, 75vw, 1000px); // Explicit width drives container size
+    // max-width: 900px; // Replaced by clamp above
     background: rgba(vars.$neon, 0.2); // 20% der Primärfarbe
     // border: 1px solid vars.$neon;
     border-radius: 32px;
@@ -13,9 +14,15 @@
     position: relative; // Für absolute Positionierung des Buttons
 
     @media (max-width: vars.$mobile) {
+        width: 100%; // Mobile full width
         padding: 24px 16px 16px 16px;
         border-radius: 24px;
         margin-bottom: 80px; // Standard (Expanded): 48px + 32px für "Show me less" Button
+    }
+
+    // Optimization for 1025px - 1440px: Dynamic width to prevent too much height
+    @media (min-width: 1025px) and (max-width: 1440px) {
+        max-width: clamp(600px, 75vw, 1000px);
     }
 
     // Collapsed State (nur Mobile)
@@ -81,6 +88,10 @@
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         padding-left: 0px;
+        gap: 24px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1440px) {
         gap: 24px;
     }
 }
@@ -152,7 +163,7 @@
 }
 
 .project-details-image {
-    @include mix.dFlex($fdir: column, $g: 32px);
+    @include mix.dFlex($fdir: column, $g: clamp(16px, 3.9vw - 24px, 32px)); // Gap shrinks dynamically to 16px at 1025px
     flex: 1;
     max-width: 350px;
 
@@ -163,8 +174,10 @@
     }
 
     img {
-        height: 200px;
-        max-width: 400px; // Begrenzung für das Bild
+        height: auto; // Verhältnis beibehalten
+        // max-width: 400px; // Begrenzung für das Bild
+        max-width: clamp(300px, 24vw + 54px, 400px); // 300px (1025px) -> 400px (1440px)
+        width: 100%; // Up to max-width
         border-radius: 32px;
         border: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -173,6 +186,10 @@
             max-width: 100%;
             width: 100%;
             border-radius: 16px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            max-width: clamp(250px, 20vw + 50px, 350px); // Scale image down slightly
         }
     }
 
