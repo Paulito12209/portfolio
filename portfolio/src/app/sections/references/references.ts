@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, ChangeDetectorRef, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { SectionContent } from '../../shared/components/section-content/section-content';
 import { SectionBow } from '../../shared/components/section-bow/section-bow';
@@ -14,6 +14,7 @@ import { ScrollService } from '../../core/services/scroll.service';
 })
 export class References implements AfterViewInit, OnDestroy {
   private scrollService = inject(ScrollService);
+  private cdr = inject(ChangeDetectorRef);
 
   scrollToContact() {
     this.scrollService.navigateToSection('contact');
@@ -39,21 +40,39 @@ export class References implements AfterViewInit, OnDestroy {
   ];
 
   activeIndex = 0;
-  private scrollListener: (() => void) | null = null;
+  private observer: IntersectionObserver | null = null;
 
   ngAfterViewInit(): void {
-    if (this.referencesList?.nativeElement) {
-      this.scrollListener = this.onScroll.bind(this);
-      this.referencesList.nativeElement.addEventListener('scroll', this.scrollListener);
-    }
+    this.setupObserver();
   }
 
   ngOnDestroy(): void {
-    if (this.referencesList?.nativeElement && this.scrollListener) {
-      this.referencesList.nativeElement.removeEventListener('scroll', this.scrollListener);
-    }
+    this.observer?.disconnect();
   }
 
+  private setupObserver(): void {
+    const container = this.referencesList?.nativeElement;
+    if (!container) return;
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const cards = container.querySelectorAll('app-reference-details');
+            const index = Array.from(cards).indexOf(entry.target as HTMLElement);
+            if (index !== -1) {
+              this.activeIndex = index;
+              this.cdr.detectChanges();
+            }
+          }
+        }
+      },
+      { root: container, threshold: 0.6 }
+    );
+
+    const cards = container.querySelectorAll('app-reference-details');
+    cards.forEach((card) => this.observer!.observe(card));
+  }
 
   scrollToCard(index: number): void {
     this.activeIndex = index;
@@ -64,7 +83,6 @@ export class References implements AfterViewInit, OnDestroy {
     if (cards[index]) {
       const card = cards[index] as HTMLElement;
 
-      // Berechne Scroll-Position basierend auf Index
       if (index === 0) {
         container.scrollTo({ left: 0, behavior: 'smooth' });
       } else if (index === this.references.length - 1) {
@@ -75,29 +93,5 @@ export class References implements AfterViewInit, OnDestroy {
         container.scrollTo({ left: cardCenter - containerCenter, behavior: 'smooth' });
       }
     }
-  }
-
-  private onScroll(): void {
-    const container = this.referencesList?.nativeElement;
-    if (!container) return;
-
-    const cards = container.querySelectorAll('app-reference-details');
-    const containerCenter = container.scrollLeft + container.clientWidth / 2;
-
-    let closestIndex = 0;
-    let minDistance = Infinity;
-
-    cards.forEach((card, index) => {
-      const cardElement = card as HTMLElement;
-      const cardCenter = cardElement.offsetLeft + cardElement.clientWidth / 2;
-      const distance = Math.abs(containerCenter - cardCenter);
-
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    this.activeIndex = closestIndex;
   }
 }
