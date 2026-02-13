@@ -1,5 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ScrollService {
@@ -8,6 +9,18 @@ export class ScrollService {
 
     /** Aktuell sichtbare Section (Signal für reaktive Nutzung im Template) */
     activeSection = signal<string>('hero');
+
+    constructor() {
+        // Bei Navigation zu Nicht-Home-Seiten: activeSection zurücksetzen
+        this.router.events.pipe(
+            filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+        ).subscribe((event) => {
+            const isHomePage = event.urlAfterRedirects === '/' || event.urlAfterRedirects.startsWith('/#');
+            if (!isHomePage) {
+                this.activeSection.set('');
+            }
+        });
+    }
 
     /**
      * Navigiert zur Section - scrollt horizontal im .sections Container.
