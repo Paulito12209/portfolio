@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
 export class PrivacyPolicy implements AfterViewInit, OnDestroy {
   private container: HTMLElement | null = null;
   private wheelHandler = (event: WheelEvent) => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
       event.preventDefault();
       const scrollAmount = event.deltaY * 4;
       this.container!.scrollLeft += scrollAmount;

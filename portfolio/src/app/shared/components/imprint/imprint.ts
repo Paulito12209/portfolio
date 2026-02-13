@@ -21,7 +21,7 @@ export class Imprint implements AfterViewInit, OnDestroy {
 
   private container: HTMLElement | null = null;
   private wheelHandler = (e: WheelEvent) => {
-    if (this.container && window.innerWidth > 768) {
+    if (this.container && window.innerWidth > 1024) {
       e.preventDefault();
       this.container.scrollLeft += e.deltaY * 4;
     }

@@ -134,7 +134,7 @@ export class Contact {
    * Mobile: Vertikaler Scroll zum Seitenanfang
    */
   scrollToHero() {
-    const isMobile = window.innerWidth <= 480;
+    const isMobile = window.innerWidth <= 1024;
 
     if (isMobile) {
       // Mobile: Vertikaler Scroll nach oben

@@ -23,7 +23,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
   private resizeTimeout: any;
 
   private wheelHandler = (event: WheelEvent) => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
       event.preventDefault();
       const scrollAmount = event.deltaY * 4;
       this.container!.scrollLeft += scrollAmount;
@@ -67,7 +67,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
   }
 
   private alignBows() {
-    if (window.innerWidth <= 768) return;
+    if (window.innerWidth <= 1024) return;
 
     const el = this.elementRef.nativeElement;
 

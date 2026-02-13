@@ -52,7 +52,7 @@ export class ScrollService {
 
         // Mobile: Vertikales Scrollen (Sektionen sind untereinander)
         // Offset für die fixierte Navigation (exakt 80px Höhe, kein Puffer)
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
             const navOffset = 80;
             const sectionTop = section.getBoundingClientRect().top + window.scrollY - navOffset;
             window.scrollTo({ top: sectionTop, behavior: 'smooth' });
@@ -79,7 +79,7 @@ export class ScrollService {
         if (!container) return;
 
         const updateActive = () => {
-            if (window.innerWidth <= 768) return;
+            if (window.innerWidth <= 1024) return;
 
             const sections = container.querySelectorAll('.section[id]');
             const containerRect = container.getBoundingClientRect();

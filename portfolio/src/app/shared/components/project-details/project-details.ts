@@ -26,7 +26,7 @@ export class ProjectDetails implements OnInit {
   isExpanded: boolean = true;
 
   // Mobile Breakpoint (muss mit SCSS Variable übereinstimmen)
-  private mobileBreakpoint: number = 480;
+  private mobileBreakpoint: number = 1024;
 
   // Prüft ob Mobile View aktiv ist
   isMobile: boolean = false;

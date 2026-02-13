@@ -24,9 +24,11 @@ app-header {
 // ===== Äußerer Container =====
 .main-container {
     margin-left: vars.$sidebar;
+    margin-left: vars.$sidebar;
     height: 100vh;
-    min-height: 900px;
-    overflow: hidden;
+    // min-height: 900px; // Removed to allow scroll on small screens
+    overflow-y: auto; // Allow vertical scrolling against global body hidden
+    overflow-x: hidden;
     color: white;
 
     @media (max-width: vars.$mobile) {
@@ -44,8 +46,9 @@ app-header {
     flex-direction: row;
     align-items: stretch;
     height: 100%;
+    min-height: 900px; // Ensure content is at least 900px high
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: visible; // Allow content to overflow vertically if needed
     scroll-snap-type: x proximity;
     scroll-behavior: smooth;
 
@@ -67,7 +70,7 @@ app-header {
     flex-shrink: 0;
     overflow: hidden;
     scroll-snap-align: start;
-    margin-top: 80px;
+    margin-top: clamp(40px, 7vh, 80px);
 
     &.section-footer {
         // max-width: 1180px; // Entfernt für volle Breite
@@ -106,7 +109,7 @@ app-header {
 .pp-content {
     flex: 1;
     align-self: flex-start;
-    padding-top: 100px;
+    padding-top: clamp(40px, 8vh, 100px);
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -132,7 +135,7 @@ app-header {
 .pp-footer-text {
     flex: 1;
     align-self: flex-start;
-    padding-top: 100px;
+    padding-top: clamp(40px, 8vh, 100px);
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -154,9 +157,8 @@ app-header {
 .pp-right {
     @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
     width: 400px;
-    // height: 100%; // Entfernt, damit Margins den Abstand bestimmen
     flex-shrink: 0;
-    padding-top: 100px;
+    padding-top: clamp(40px, 8vh, 100px);
     padding-right: 24px;
     box-sizing: border-box;
 
@@ -172,7 +174,7 @@ app-header {
 .pp-right-bow {
     @include mix.dFlex($jc: end);
     transform: rotate(180deg);
-    margin: 200px 0;
+    margin: clamp(80px, 16vh, 200px) 0;
 }
 
 .footer-content {
@@ -181,7 +183,7 @@ app-header {
 
 // ===== Text Content Styles =====
 .privacy-policy-main {
-    @include mix.dFlex($fdir: column, $ai: start, $g: 24px);
+    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(8px, 2vh, 24px));
     width: 100%;
 
     @media (max-width: vars.$mobile) {
@@ -190,7 +192,7 @@ app-header {
 
     h3 {
         color: vars.$neon;
-        font-size: vars.$f-h4;
+        font-size: clamp(14px, 2.4vh, 24px);
         font-weight: 700;
         margin: 0;
 
@@ -201,8 +203,8 @@ app-header {
 
     p {
         color: white;
-        font-size: vars.$f-p;
-        line-height: 1.6;
+        font-size: clamp(12px, 1.8vh, 18px);
+        line-height: 1.5;
         margin: 0;
 
         @media (max-width: vars.$mobile) {
@@ -212,7 +214,7 @@ app-header {
 }
 
 .privacy-policy-section {
-    @include mix.dFlex($fdir: column, $ai: start, $g: 12px);
+    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(4px, 1vh, 12px));
     width: 100%;
 
     @media (max-width: vars.$mobile) {

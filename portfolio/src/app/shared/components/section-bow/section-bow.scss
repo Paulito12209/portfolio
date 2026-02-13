@@ -26,11 +26,12 @@
 
         .arrow-hover {
             display: none;
-            transform: rotate(180deg);
+            // Der PNG-Pfeil hat transparenten Rand, daher skaliere ich ihn hoch
+            transform: rotate(180deg) scale(1.3);
         }
 
         // Desktop-Hover (ab 769px) - Getestet für nahtlosen Übergang ohne Layout-Shift
-        @media (min-width: 769px) {
+        @media (min-width: 1025px) {
             &:hover {
                 .arrow-default {
                     display: none;

@@ -24,9 +24,9 @@ app-header {
 // ===== Äußerer Container =====
 .main-container {
     margin-left: vars.$sidebar;
-    min-height: 100vh;
-    height: auto;
-    overflow: visible; // Natürliches Scrollen
+    height: 100vh;
+    overflow-y: auto; // Allow this container to scroll internally
+    overflow-x: hidden;
     color: white;
 
     @media (max-width: vars.$mobile) {
@@ -44,7 +44,7 @@ app-header {
     flex-direction: row; // Horizontal für Desktop (Content + RightBar)
     width: 100%;
     height: auto;
-    min-height: 100vh; // Fix: 100% greift nicht bei parent min-height, daher vh erzwingen
+    min-height: 900px; // Ensure inner content is at least 900px tall
     overflow: visible;
     scroll-behavior: smooth;
 
@@ -64,7 +64,7 @@ app-header {
     height: auto; // Inhalt bestimmt Höhe
     flex-shrink: 0;
     overflow: visible;
-    margin-top: 80px;
+    margin-top: clamp(40px, 7vh, 80px);
 
     &.section-footer {
         max-width: 1180px;
@@ -97,7 +97,7 @@ app-header {
 // ===== Section 1: Content =====
 .imp-content {
     flex: 1;
-    padding-top: 100px;
+    padding-top: clamp(40px, 8vh, 100px);
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -136,7 +136,7 @@ app-header {
     @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
     width: 400px;
     flex-shrink: 0;
-    padding-top: 100px;
+    padding-top: clamp(40px, 8vh, 100px);
     padding-right: 24px;
     box-sizing: border-box;
 
@@ -147,7 +147,7 @@ app-header {
 
 .imp-right-contact {
     @include mix.dFlex($fdir: column, $ai: end, $g: 16px);
-    margin-bottom: 450px; // Simuliert den Platz des Pfeils (ca. 200px + Puffer)
+    margin-bottom: clamp(200px, 40vh, 450px);
 }
 
 .imp-right-bow {
@@ -162,7 +162,7 @@ app-header {
 
 // ===== Text Content Styles =====
 .imprint-main {
-    @include mix.dFlex($fdir: column, $ai: start, $g: 24px);
+    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(8px, 2vh, 24px));
     width: 100%;
 
     @media (max-width: vars.$mobile) {
@@ -171,7 +171,7 @@ app-header {
 
     h3 {
         color: vars.$neon;
-        font-size: vars.$f-h4;
+        font-size: clamp(14px, 2.4vh, 24px);
         font-weight: 700;
         margin: 0;
 
@@ -182,8 +182,8 @@ app-header {
 
     p {
         color: white;
-        font-size: vars.$f-p;
-        line-height: 1.6;
+        font-size: clamp(12px, 1.8vh, 18px);
+        line-height: 1.5;
         margin: 0;
 
         @media (max-width: vars.$mobile) {
@@ -193,7 +193,7 @@ app-header {
 }
 
 .imprint-section {
-    @include mix.dFlex($fdir: column, $ai: start, $g: 12px);
+    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(4px, 1vh, 12px));
     width: 100%;
 
     @media (max-width: vars.$mobile) {
