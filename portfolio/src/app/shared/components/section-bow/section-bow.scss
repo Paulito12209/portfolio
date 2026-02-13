@@ -14,8 +14,8 @@
         justify-content: center;
         align-items: center;
 
-        // Dynamische Dimensionen: skaliert von 64px bis 147px Breite
-        width: clamp(64px, 10vw, 107px);
+        // Dynamische Dimensionen: skaliert von 64px bis 107px (ab 1440px Breite)
+        width: clamp(64px, 7.5vw, 107px);
         height: clamp(21px, 3.4vw, 49px);
         padding: 0;
 

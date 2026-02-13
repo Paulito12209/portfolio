@@ -29,7 +29,7 @@
 
 .skills-content {
     @include mix.dFlex($g: 16px);
-    padding-top: clamp(80px, 18vw, 220px);
+    padding-top: clamp(40px, 8vh, 160px);
     width: 95%;
 
     @media (max-width: vars.$mobile) {
@@ -54,7 +54,7 @@
 }
 
 .skills-subcontent {
-    @include mix.dFlex($fdir: column, $ai: start, $g: 32px);
+    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(8px, 2vmin, 32px));
     width: 100%;
 
     @media (max-width: vars.$mobile) {
@@ -67,7 +67,7 @@
 }
 
 .skills-icon-list {
-    @include mix.dFlex($jc: start, $ai: start, $g: 24px);
+    @include mix.dFlex($jc: start, $ai: start, $g: clamp(8px, 1.5vmin, 24px));
     flex-grow: max-content;
 
     @media (max-width: vars.$mobile) {
@@ -79,7 +79,7 @@
     }
 
     .skills-icons {
-        @include mix.dFlex($jc: start, $g: 24px);
+        @include mix.dFlex($jc: start, $g: clamp(8px, 1.5vmin, 24px));
 
         @media (max-width: vars.$mobile) {
             display: flex;
@@ -155,7 +155,7 @@
 .skills-bow {
     @include mix.dFlex($jc: end, $ai: start);
     height: 80%;
-    width: 25%;
+    width: 15%;
     padding-top: clamp(60px, 15vh, 154px);
 
     @media (max-width: vars.$mobile) {

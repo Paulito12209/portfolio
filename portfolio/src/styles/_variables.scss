@@ -1,13 +1,13 @@
 /*==== Fonts (dynamisch mit clamp: Mobile → Desktop) ====*/
 $font-quantico: "Quantico", Arial, sans-serif;
 
-$f-h1: clamp(40px, 5vw + 20px, 100px); // 40px ↔ 100px – Stärke 700 & Bold
-$f-h2: clamp(32px, 3vw + 12px, 54px); // 32px ↔ 54px – Stärke 700 & Bold
-$f-h3: clamp(24px, 2.5vw + 8px, 48px); // 24px ↔ 48px – Stärke 700 & Bold
-$f-h4: clamp(18px, 1.2vw + 8px, 24px); // 18px ↔ 24px – Stärke 400 & Regular
-$f-p: clamp(16px, 0.5vw + 12px, 18px); // 16px ↔ 18px – Stärke 400 & Regular
-$f-subtext: 16px; // Stärke 400 & Regular (bleibt fix)
-$f-button: 14px; // Stärke 400 & Regular (bleibt fix)
+$f-h1: clamp(40px, 5vw + 20px, 100px); // 40px ↔ 100px (1200px+)
+$f-h2: clamp(28px, 3vw + 18px, 54px); // 28px ↔ 54px (1200px trigger)
+$f-h3: clamp(20px, 3.2vw + 10px, 48px); // 20px ↔ 48px (1200px trigger)
+$f-h4: clamp(14px, 1.1vw + 10px, 24px); // 14px ↔ 24px (1200px trigger)
+$f-p: clamp(10px, 0.9vw + 7px, 18px); // 10px ↔ 18px (1200px trigger, 10px min)
+$f-subtext: clamp(10px, 0.7vw + 8px, 16px); // 10px ↔ 16px (1200px+)
+$f-button: clamp(10px, 0.5vw + 9px, 14px); // 10px ↔ 14px (1200px+)
 $nav-links: clamp(20px, 3vh, 30px); // 20px ↔ 30px (vh-basiert für Höhen-Responsiveness)
 
 /*==== Mobile Fonts ====*/
