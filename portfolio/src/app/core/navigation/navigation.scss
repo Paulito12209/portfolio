@@ -49,13 +49,11 @@
 }
 
 .open-animation {
-    // animation: openAnimation 400ms ease-in-out forwards;
-    animation: openAnimation 225ms ease-in-out forwards; // Smoother and faster
+    animation: openAnimation 225ms ease-in-out forwards;
 }
 
 .close-animation {
-    // animation: closeAnimation 400ms ease-in-out forwards;
-    animation: closeAnimation 225ms ease-in-out forwards; // Smoother and faster
+    animation: closeAnimation 225ms ease-in-out forwards;
 }
 
 /*==== Navigation Component ====*/
@@ -64,7 +62,7 @@
     position: fixed;
     inset: 0 auto 0 0;
     width: vars.$sidebar;
-    min-height: 100vh; // Sidebar füllt den Viewport, statt fixe 900px
+    min-height: 100vh;
     background-color: vars.$neon;
     background: linear-gradient(90deg, vars.$neon 90%, #89b02b 100%);
 
@@ -75,13 +73,13 @@
         inset: 0 0 auto 0;
         width: 100%;
         height: 80px;
-        min-height: unset; // Reset Desktop min-height für Mobile
+        min-height: unset;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0 16px;
         z-index: 10;
-        background: vars.$neon; // Gradient auf Mobile entfernen
+        background: vars.$neon;
     }
 
     // Logo
@@ -114,7 +112,7 @@
 
     // Sections (Desktop)
     .nav-sections {
-        @include mix.dFlex($fdir: column, $g: clamp(12px, 3vh, 32px)); // Dynamischer Gap
+        @include mix.dFlex($fdir: column, $g: clamp(12px, 3vh, 32px));
         list-style: none;
         margin: 0;
         padding: 0;
@@ -168,7 +166,7 @@
             z-index: 999;
         }
 
-        // Oberer Bereich: Einheitliche $neon Farbe
+        // Top Area
         .overlay-header {
             @include mix.dFlex($jc: flex-end, $ai: center);
             width: 100%;
@@ -192,12 +190,11 @@
             }
         }
 
-        // Unterer Bereich mit Gradient (startet bei 70%)
+        // Bottom Area
         .overlay-content {
             @include mix.dFlex($fdir: column, $jc: center, $ai: center, $g: 40px);
             flex: 1;
             width: 100%;
-            // Gradient startet erst bei 70% (wie bei Project Cards)
             background: linear-gradient(165deg, vars.$neon 40%, color.adjust(vars.$neon, $lightness: -25%) 100%);
             border-bottom-left-radius: 60px;
             border-bottom-right-radius: 60px;
@@ -223,7 +220,7 @@
                     color: white;
                 }
 
-                // Aktiver Nav-Link: Nur Konturen sichtbar (wie Desktop)
+                // Active Nav Link
                 &.active {
                     color: transparent;
                     -webkit-text-stroke: 1px vars.$black;
@@ -247,7 +244,7 @@
                     color: white;
                 }
 
-                // Aktive Sprache: Nur Konturen sichtbar
+                // Active Link
                 &.active {
                     color: transparent;
                     -webkit-text-stroke: 1px vars.$black;

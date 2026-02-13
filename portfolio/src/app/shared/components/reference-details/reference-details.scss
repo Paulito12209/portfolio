@@ -2,7 +2,7 @@
 @use '../../../../styles/mixins.scss' as mix;
 
 .reference-card {
-    @include mix.dFlex($ai: stretch); // stretch damit Divider volle Höhe - 32px hat
+    @include mix.dFlex($ai: stretch);
     flex: 1;
     width: 478px;
     min-height: 200px;
@@ -26,9 +26,9 @@
         }
     }
 
-    // Bewertungstext - 60% der Breite
+    // Rating Text - 60% Width
     .description {
-        @include mix.dFlex($ai: center); // Vertikal zentrieren
+        @include mix.dFlex($ai: center);
         width: 60%;
         font-size: vars.$f-p;
         line-height: 1.6;
@@ -37,7 +37,7 @@
         padding-right: 8px;
         margin: 0;
 
-        // Bei niedrigen Fensterhöhen: 2px kleinere Schrift, aber min. 12px
+        // At low window heights: 2px smaller font, but min 12px
         @media (max-height: 900px) {
             font-size: max(12px, calc(#{vars.$f-p} - 2px));
         }
@@ -51,19 +51,17 @@
         }
     }
 
-    // Scrollbarer Bereich nur für Cards mit langem Text (3. Referenz)
-    // Desktop: Card darf frei wachsen entsprechend dem Content
-    // Mobile: Scrollbarer Bereich mit fester max-height
+    // Scrollable area for cards with long text
     &.scrollable .description {
         @media (max-width: vars.$mobile) {
-            display: block; // Statt flex, damit Text von oben startet
+            display: block;
             max-height: 184px;
             overflow-y: scroll;
             overscroll-behavior: contain;
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
 
-            // Scrollbar auf Mobile anzeigen
+            // Show scrollbar on mobile
             scrollbar-width: thin;
 
             &::-webkit-scrollbar {
@@ -78,19 +76,19 @@
         }
     }
 
-    // Divider - eigenständiges Element mit 16px Abstand oben/unten
+    // Divider - Independent element with 16px padding
     .divider {
         width: 2px;
         background-color: vars.$neon;
-        align-self: stretch; // Volle Höhe des Containers
-        margin: 16px 0; // 16px Abstand oben und unten
+        align-self: stretch;
+        margin: 16px 0;
 
         @media (max-width: vars.$mobile) {
-            margin: 16px 0; // Gleicher Abstand auf Mobile
+            margin: 16px 0;
         }
     }
 
-    // Name + Projekt Container - 40% der Breite
+    // Name + Project Container - 40% Width
     .reference-info {
         @include mix.dFlex($ai: center, $g: 8px, $fdir: column);
         width: 40%;
@@ -100,25 +98,25 @@
         @media (max-width: vars.$mobile) {
             width: 40%;
             padding-left: 12px;
-            align-items: flex-start; // Linksbündig
+            align-items: flex-start;
             text-align: left;
         }
 
-        // Name (kann mehrzeilig sein)
+        // Name
         h4 {
             font-size: vars.$f-h4;
-            font-weight: 400; // Reduziert von 700
+            font-weight: 400;
             color: vars.$neon;
             margin: 0;
-            text-align: center; // Zentriert auf Desktop
+            text-align: center;
 
             @media (max-width: vars.$mobile) {
                 font-size: vars.$f-h4-mb;
-                text-align: left; // Linksbündig auf Mobile
+                text-align: left;
             }
         }
 
-        // Projektname - auf einer Linie, zentriert auf Desktop
+        // Project Name
         .project {
             width: 100%;
             font-size: vars.$f-button;
@@ -126,11 +124,11 @@
             border: none;
             margin: 0;
             padding: 0;
-            text-align: center; // Zentriert auf Desktop
-            white-space: nowrap; // Auf einer Linie
+            text-align: center;
+            white-space: nowrap;
 
             @media (max-width: vars.$mobile) {
-                text-align: left; // Linksbündig auf Mobile
+                text-align: left;
             }
         }
     }

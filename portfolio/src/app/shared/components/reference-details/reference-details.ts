@@ -12,5 +12,5 @@ export class ReferenceDetails {
   @Input() person: string = '';
   @Input() project: string = '';
   @Input() description: string = '';
-  @Input() scrollable: boolean = false; // Nur für Karten mit zu langem Text
+  @Input() scrollable: boolean = false;
 }

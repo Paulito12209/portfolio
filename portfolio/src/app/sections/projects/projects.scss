@@ -2,38 +2,37 @@
 @use '../../../styles/mixins.scss' as mix;
 
 :host {
-    @include mix.dFlex($jc: flex-start, $ai: start); // flex-start damit Content direkt an Sidebar beginnt
-    width: fit-content; // Hug content instead of 100% width
+    @include mix.dFlex($jc: flex-start, $ai: start);
+    width: fit-content;
     height: 100%;
     padding-top: 64px;
 
     @media (max-width: vars.$mobile) {
-        height: auto; // Mobile: Höhe passt sich dem Inhalt an
+        height: auto;
         padding-top: 0;
-        width: 100%; // Make sure mobile is full width
+        width: 100%;
     }
 }
 
 .projects-container {
-    @include mix.dFlex($jc: start, $ai: start, $g: 64px); // Start alignment with gap
-    width: fit-content; // Hug content instead of 100% width
+    @include mix.dFlex($jc: start, $ai: start, $g: 64px);
+    width: fit-content;
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%; // Mobile full width
+        width: 100%;
     }
 }
 
 .projects-content {
     @include mix.dFlex($ai: start);
-    // flex: 1; // Removed to allow hugging content
-    width: fit-content; // Hug content width
+    width: fit-content;
 
     @media (max-width: vars.$mobile) {
 
-        padding-top: 0; // Fix huge padding
+        padding-top: 0;
         width: 100%;
         padding: 40px 16px 0;
         flex-direction: column;
@@ -44,7 +43,6 @@
 
 app-section-content {
     flex: 1;
-    // padding-right: 40px; // Nicht mehr nötig wegen gap
 }
 
 .projects-bow {
@@ -59,7 +57,7 @@ app-section-content {
 
 .projects-list {
     @include mix.dFlex($ai: stretch, $jc: start, $g: 32px);
-    width: fit-content; // Hug content instead of 100% width
+    width: fit-content;
 
     @media (max-width: vars.$mobile) {
         gap: 0px;

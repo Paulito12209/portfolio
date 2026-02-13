@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as vars;
 @use '../../../styles/mixins.scss' as mix;
 
-// ... global imports
+
 
 :host {
     @include mix.dFlex();
@@ -33,21 +33,22 @@
     width: 95%;
 
     @media (max-width: vars.$mobile) {
-        padding-top: 0; // Fix huge padding
+        padding-top: 0;
         width: 100%;
         padding: 40px 16px;
         flex-direction: column;
         align-items: center;
     }
 
+
     p {
-        font-size: vars.$f-p; // Default Desktop
+        font-size: vars.$f-p;
         font-weight: 400;
         line-height: 1.5;
-        margin-bottom: 48px; // Similar to Why Me
+        margin-bottom: 48px;
 
         @media (max-width: vars.$mobile) {
-            font-size: vars.$f-p-mb; // Mobile Variable
+            font-size: vars.$f-p-mb;
             text-align: left;
         }
     }
@@ -59,7 +60,7 @@
 
     @media (max-width: vars.$mobile) {
         display: flex;
-        flex-direction: column; // Lists stack vertically
+        flex-direction: column;
         gap: 24px;
         align-items: center;
         width: 100%;
@@ -72,7 +73,7 @@
 
     @media (max-width: vars.$mobile) {
         display: flex;
-        flex-direction: column; // Rows stack vertically
+        flex-direction: column;
         align-items: center;
         width: 100%;
         gap: 24px;
@@ -95,7 +96,7 @@
 
             @media (max-width: vars.$mobile) {
                 display: block;
-                width: 32%; // Match other icons
+                width: 32%;
                 visibility: hidden;
             }
         }
@@ -130,7 +131,7 @@
         display: flex;
         width: 100%;
         margin-top: 24px;
-        flex-direction: column; // or row, centered
+        flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 0;
@@ -143,12 +144,12 @@
 }
 
 .skills-button {
-    display: none; // Standardmäßig ausgeblendet (für Mobile später)
+    display: none;
 
     @media (max-width: vars.$mobile) {
-        display: flex; // Show button on mobile
+        display: flex;
         margin-top: 40px;
-        width: max-content; // Button only as wide as content
+        width: max-content;
     }
 }
 
@@ -159,7 +160,7 @@
     padding-top: clamp(60px, 15vh, 154px);
 
     @media (max-width: vars.$mobile) {
-        display: none; // Hide bow on mobile
+        display: none;
     }
 
     button {

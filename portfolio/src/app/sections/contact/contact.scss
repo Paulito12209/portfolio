@@ -64,7 +64,7 @@
     overflow: visible;
 
     @media (max-width: vars.$mobile) {
-        display: none; // Bow + Footer wandern in den mobile-footer (main-content)
+        display: none;
     }
 }
 
@@ -96,7 +96,7 @@
     }
 }
 
-// Mobile Text Container (zwischen Titel und Formular)
+// Mobile Text Container (between Title and Form)
 .mobile-contact-text {
     display: none;
 
@@ -126,7 +126,7 @@
     max-width: 400px;
 
     @media (max-width: vars.$mobile) {
-        display: none; // Mobil ausblenden, da oben eingefügt
+        display: none;
     }
 
     p {
@@ -157,6 +157,6 @@
     width: 100%;
 
     @media (max-width: vars.$mobile) {
-        @include mix.dFlex($jc: center); // Footer auf Mobile zentrieren
+        @include mix.dFlex($jc: center);
     }
 }

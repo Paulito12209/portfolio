@@ -1,19 +1,19 @@
 @use '../../../styles/variables' as vars;
 @use '../../../styles/mixins' as mix;
 
-// ===== Host: Block-Element, damit Höhe korrekt berechnet wird =====
+// ===== Host: Block Element =====
 :host {
     display: block;
 }
 
-// ===== Header: fixed, aus dem Flow entfernt =====
+// ===== Header =====
 app-header {
     position: fixed;
     top: 0;
     left: vars.$sidebar;
-    right: 100px; // Platz für right-bar, schrumpft bei engem Viewport
-    width: auto; // Überschreibt header's eigenes width: 100%, damit left+right greifen
-    max-width: 1180px; // 1440px - 160px (sidebar) - 100px (right-bar)
+    right: 100px;
+    width: auto;
+    max-width: 1180px;
     z-index: 10;
 
     @media (max-width: vars.$mobile) {
@@ -21,7 +21,7 @@ app-header {
     }
 }
 
-// ===== Äußerer Container =====
+// ===== Main Container =====
 .main-container {
     margin-left: vars.$sidebar;
     height: 100vh;
@@ -33,16 +33,16 @@ app-header {
         margin-left: 0;
         margin-top: 80px;
         height: auto;
-        min-height: unset; // Mobile: Höhe passt sich dem Inhalt an
-        overflow: visible; // Mobile: kein Clipping, damit Footer sichtbar ist
+        min-height: unset;
+        overflow: visible;
     }
 }
 
-// ===== Sections-Container: horizontales Scrollen, volle Höhe =====
+// ===== Sections Container =====
 .sections {
     display: flex;
     flex-direction: row;
-    align-items: stretch; // right-bar nimmt volle Höhe
+    align-items: stretch;
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -58,26 +58,22 @@ app-header {
     }
 }
 
-// ===== Einzelne Section =====
-// Responsive: Füllt den sichtbaren Bereich (= .sections Container = Viewport - Sidebar).
-// 100% statt vw-Units: 100vw kann Scrollbar-Breite einschließen und ist dann breiter
-// als der tatsächliche Container, wodurch die nächste Section am Rand sichtbar wird.
-// Bei >= 1440px: max 1280px. Bei kleinerem Viewport: schrumpft mit.
+// ===== Single Section =====
 .section {
-    width: 100%; // = .sections Container-Breite = Viewport - Sidebar
-    max-width: calc(1440px - #{vars.$sidebar}); // = 1280px
+    width: 100%;
+    max-width: calc(1440px - #{vars.$sidebar});
     height: 100%;
     flex-shrink: 0;
-    overflow: hidden; // Verhindert, dass Content über die Section-Grenze hinausragt
+    overflow: hidden;
     scroll-snap-align: start;
     scroll-behavior: smooth;
-    margin-top: 80px; // Platz für fixed header
+    margin-top: 80px;
 
-    // Projects: breiter als Viewport, eigenes Scroll-Verhalten
+    // Projects Section
     &#projects {
         max-width: none;
-        width: fit-content; // Width hugs content
-        min-width: auto; // Remove 3200px constraint
+        width: fit-content;
+        min-width: auto;
 
         @media (max-width: vars.$mobile) {
             width: 100%;
@@ -86,7 +82,7 @@ app-header {
         }
     }
 
-    // References: engere max-width (Content ist schmaler)
+    // References Section
     &#references {
         max-width: 900px;
 
@@ -95,7 +91,7 @@ app-header {
         }
     }
 
-    // Contact: eigene max-width
+    // Contact Section
     &#contact {
         max-width: 1180px;
 
@@ -112,48 +108,47 @@ app-header {
         max-width: 100%;
         height: auto;
         min-height: auto;
-        margin-top: 0; // Mobile: kein Extra-Margin, da Header static ist
+        margin-top: 0;
         scroll-snap-align: none;
-        padding-top: 0; // Mobile braucht kein padding, header ist static
+        padding-top: 0;
     }
 }
 
-// ===== Grüne Säule (Desktop) / Mobile Footer =====
+// ===== Green Bar (Desktop) / Mobile Footer =====
 .right-bar {
     width: 100px;
     flex-shrink: 0;
     background: linear-gradient(165deg, vars.$neon 0%, #7aa619 100%);
     box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
 
-    // Desktop: inneren Content ausblenden
     .mobile-footer {
         display: none;
     }
 
     @media (max-width: vars.$mobile) {
         width: 100%;
-        height: max-content; // Wächst mit dem Inhalt
+        height: max-content;
         background: none;
         box-shadow: none;
 
         .mobile-footer {
             @include mix.dFlex($fdir: column, $ai: center);
             width: 100%;
-            height: max-content; // Container wächst mit dem Inhalt
+            height: max-content;
         }
     }
 }
 
-// ===== Mobile Footer: Pfeil =====
+// ===== Mobile Footer: Arrow =====
 .mobile-footer-arrow {
     @include mix.dFlex();
     width: 100%;
-    padding: 40px 0 20px; // 40px Abstand vom Send-Button
+    padding: 40px 0 20px;
 
     img {
         height: 45px;
-        width: 45px; // Width = visuelle Höhe nach Rotation
-        transform: rotate(-90deg); // Pfeil zeigt nach oben
+        width: 45px;
+        transform: rotate(-90deg);
     }
 }
 
@@ -163,7 +158,6 @@ app-header {
     width: 100%;
     padding: 24px 0 32px;
 
-    // Style wie im Header (ohne Border-Kreis)
     a {
         @include mix.dFlex();
         text-decoration: none;
@@ -184,17 +178,16 @@ app-header {
     }
 }
 
-// ===== Mobile Footer: Grüner Balken =====
+// ===== Mobile Footer: Green Bar =====
 .mobile-footer-green-bar {
     @include mix.dFlex($fdir: column, $ai: center, $g: 8px);
     width: 100%;
-    height: auto; // Dynamische Höhe statt fixer 160px
-    min-height: 160px; // Mindesthöhe beibehalten
-    padding: 16px 16px 40px; // Mehr Padding unten für Safe Area
+    height: auto;
+    min-height: 160px;
+    padding: 16px 16px 40px;
     background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
     box-sizing: border-box;
 
-    // Logo-Link: Kein Unterstrich, klickbar
     .footer-logo-link {
         display: inline-block;
         text-decoration: none;

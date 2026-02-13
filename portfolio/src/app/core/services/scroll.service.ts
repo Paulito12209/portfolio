@@ -7,11 +7,9 @@ export class ScrollService {
     private router = inject(Router);
     private scrollListener?: () => void;
 
-    /** Aktuell sichtbare Section (Signal für reaktive Nutzung im Template) */
     activeSection = signal<string>('hero');
 
     constructor() {
-        // Bei Navigation zu Nicht-Home-Seiten: activeSection zurücksetzen
         this.router.events.pipe(
             filter((event): event is NavigationEnd => event instanceof NavigationEnd)
         ).subscribe((event) => {
@@ -22,14 +20,11 @@ export class ScrollService {
         });
     }
 
-    /**
-     * Navigiert zur Section - scrollt horizontal im .sections Container.
-     * Funktioniert sowohl auf der Startseite als auch von anderen Seiten aus.
-     */
+
     navigateToSection(sectionId: string) {
         const isOnHomePage = this.router.url === '/' || this.router.url === '' || this.router.url.startsWith('/#');
 
-        // Aktive Sektion sofort setzen (wichtig für Mobile, wo kein Observer läuft)
+
         this.activeSection.set(sectionId);
 
         if (isOnHomePage) {
@@ -41,17 +36,13 @@ export class ScrollService {
         }
     }
 
-    /**
-     * Scrollt zur Section – horizontal auf Desktop, vertikal auf Mobile.
-     */
+
     scrollToSection(sectionId: string) {
         const section = document.getElementById(sectionId);
         const sectionsContainer = document.querySelector('.sections');
 
         if (!section) return;
 
-        // Mobile: Vertikales Scrollen (Sektionen sind untereinander)
-        // Offset für die fixierte Navigation (exakt 80px Höhe, kein Puffer)
         if (window.innerWidth <= 1024) {
             const navOffset = 80;
             const sectionTop = section.getBoundingClientRect().top + window.scrollY - navOffset;
@@ -59,7 +50,7 @@ export class ScrollService {
             return;
         }
 
-        // Desktop: Horizontales Scrollen im .sections Container
+
         if (sectionsContainer) {
             const sectionElement = section.closest('.section') || section;
             const containerRect = sectionsContainer.getBoundingClientRect();
@@ -70,10 +61,6 @@ export class ScrollService {
         }
     }
 
-    /**
-     * Startet die Beobachtung, welche Section gerade sichtbar ist.
-     * Wird von MainContent in ngAfterViewInit aufgerufen.
-     */
     startObserving() {
         const container = document.querySelector('.sections');
         if (!container) return;

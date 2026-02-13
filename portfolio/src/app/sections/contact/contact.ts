@@ -37,7 +37,7 @@ import { ToastMessage } from '../../shared/components/toast-message/toast-messag
 export class Contact {
   private http = inject(HttpClient);
 
-  // Referenzen auf die Child-Komponenten für das Zurücksetzen
+
   @ViewChild(FormName) formNameComponent!: FormName;
   @ViewChild(FormEmail) formEmailComponent!: FormEmail;
   @ViewChild(FormMessage) formMessageComponent!: FormMessage;
@@ -109,38 +109,31 @@ export class Contact {
     }
   }
 
-  // Setzt alle Formularfelder und deren ngModel-State zurück
+
   resetForm() {
     this.name = '';
     this.email = '';
     this.message = '';
     this.privacyPolicyChecked = false;
 
-    // Child-Komponenten direkt zurücksetzen (ngModel-State)
+
     if (this.formNameComponent) this.formNameComponent.reset();
     if (this.formEmailComponent) this.formEmailComponent.reset();
     if (this.formMessageComponent) this.formMessageComponent.reset();
     if (this.formValidationBox) this.formValidationBox.submitted = false;
   }
 
-  // Wird aufgerufen wenn die Toast-Message geschlossen wird
+
   onToastClosed() {
     this.showToast = false;
   }
 
-  /**
-   * Scrollt zur Hero Section.
-   * Desktop: Horizontaler Scroll im .sections Container
-   * Mobile: Vertikaler Scroll zum Seitenanfang
-   */
   scrollToHero() {
     const isMobile = window.innerWidth <= 1024;
 
     if (isMobile) {
-      // Mobile: Vertikaler Scroll nach oben
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Desktop: Horizontaler Scroll zur Hero Section
       const sectionsContainer = document.querySelector('.sections');
       if (sectionsContainer) {
         sectionsContainer.scrollTo({ left: 0, behavior: 'smooth' });
@@ -149,33 +142,4 @@ export class Contact {
   }
 }
 
-// import { Component } from '@angular/core';
-// import { TranslateModule } from '@ngx-translate/core';
-// import { SectionContent } from '../../shared/components/section-content/section-content';
-// import { CommonModule } from '@angular/common';
-// import { FormsModule } from '@angular/forms';
-// import { SectionBow } from '../../shared/components/section-bow/section-bow';
-// import { FormName } from '../../shared/components/form-name/form-name';
-// import { FormMessage } from '../../shared/components/form-message/form-message';
-// import { FormEmail } from '../../shared/components/form-email/form-email';
-// import { FormValidationBox } from '../../shared/components/form-validation-box/form-validation-box';
-// import { Email } from '../../shared/components/email/email';
-// import { PhoneNumber } from '../../shared/components/phone-number/phone-number';
-// import { Footer } from '../../shared/components/footer/footer';
 
-// @Component({
-//   selector: 'app-contact',
-//   imports: [CommonModule, FormsModule, TranslateModule, SectionContent, SectionBow, FormName, FormEmail, FormMessage, FormValidationBox, Email, PhoneNumber, Footer],
-//   templateUrl: './contact.html',
-//   styleUrl: './contact.scss',
-// })
-// export class Contact {
-//   name: string = '';
-//   email: string = '';
-//   message: string = '';
-//   privacyPolicyChecked: boolean = false;
-
-//   onSubmit() {
-//     console.log('Form submitted', { name: this.name, email: this.email, message: this.message });
-//   }
-// }

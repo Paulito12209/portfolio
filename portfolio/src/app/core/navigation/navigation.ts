@@ -11,7 +11,7 @@ import { ScrollService } from '../services/scroll.service';
 })
 export class Navigation {
   menuOpen = false;
-  isFirstLoad = true; // Verhindert Animation beim initialen Laden
+  isFirstLoad = true;
   currentLang = 'de';
 
   private translate = inject(TranslateService);
@@ -25,7 +25,7 @@ export class Navigation {
   }
 
   toggleMenu() {
-    this.isFirstLoad = false; // Nach erstem Klick Animation erlauben
+    this.isFirstLoad = false;
     this.menuOpen = !this.menuOpen;
   }
 

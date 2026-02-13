@@ -23,8 +23,8 @@ a {
 
 img {
     filter: brightness(0) invert(1);
-    flex-shrink: 0; // Verhindert Stauchen
-    width: auto; // Oder eine angemessene Größe
+    flex-shrink: 0;
+    width: auto;
     height: 17.5px;
     object-fit: contain;
 }

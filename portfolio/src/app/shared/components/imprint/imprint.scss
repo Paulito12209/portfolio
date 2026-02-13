@@ -1,12 +1,12 @@
 @use '../../../../styles/variables' as vars;
 @use '../../../../styles/mixins.scss' as mix;
 
-// ===== Host: Block-Element wie main-content =====
+// ===== Host: Block Element (like main-content) =====
 :host {
     display: block;
 }
 
-// ===== Header: fixed (wie main-content) =====
+// ===== Header: Fixed (like main-content) =====
 app-header {
     position: fixed;
     top: 0;
@@ -21,16 +21,16 @@ app-header {
     }
 }
 
-// ===== Äußerer Container =====
+// ===== Outer Container =====
 .main-container {
     margin-left: vars.$sidebar;
     height: 100vh;
-    overflow-y: auto; // Allow this container to scroll internally
-    scrollbar-width: none; // Hide scrollbar (Firefox)
-    -ms-overflow-style: none; // Hide scrollbar (IE/Edge)
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
-        display: none; // Hide scrollbar (Chrome/safari/Opera)
+        display: none;
     }
 
     overflow-x: hidden;
@@ -44,18 +44,17 @@ app-header {
     }
 }
 
-// ===== Sections-Container: horizontales Scrollen =====
-// ===== Sections-Container =====
+// ===== Sections Container: Horizontal Scrolling =====
 .sections {
     display: flex;
-    flex-direction: row; // Horizontal für Desktop (Content + RightBar)
+    flex-direction: row;
     width: 100%;
     height: auto;
-    min-height: 100%; // Ensure at least fill container
-    // min-height: 900px;
-    overflow-x: hidden; // Hide scrollbar but allow JS scrollLeft
+    min-height: 100%;
+
+    overflow-x: hidden;
     overflow-y: hidden;
-    // padding-bottom: 80px; // Moved to inner to allow right-bar stretch
+
     scroll-behavior: smooth;
     align-items: stretch;
 
@@ -68,11 +67,11 @@ app-header {
     }
 }
 
-// ===== Einzelne Section =====
+// ===== Single Section =====
 .section {
-    width: auto; // Flex bestimmt Breite
-    flex: 1; // Nimmt den Platz neben der RightBar ein
-    height: auto; // Inhalt bestimmt Höhe
+    width: auto;
+    flex: 1;
+    height: auto;
     min-height: 100%;
     flex-shrink: 0;
     overflow: visible;
@@ -97,11 +96,11 @@ app-header {
 
 // ===== Section Inner Layout =====
 .imp-section-inner {
-    @include mix.dFlex($jc: space-between, $ai: start); // Start alignment wie bei Privacy Policy Footer
+    @include mix.dFlex($jc: space-between, $ai: start);
     width: 100%;
     height: auto;
     min-height: 100%;
-    padding-bottom: 80px; // Add padding here so right-bar stretches to match
+    padding-bottom: 80px;
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;
@@ -185,7 +184,7 @@ app-header {
 
     h3 {
         color: vars.$neon;
-        font-size: clamp(16px, 1.7vw, 24px); // Shrink 24px -> ~17px at 1025px
+        font-size: clamp(16px, 1.7vw, 24px);
         font-weight: 700;
         margin: 0;
 
@@ -196,7 +195,7 @@ app-header {
 
     p {
         color: white;
-        font-size: clamp(10px, -9px + 1.9vw, 18px); // Scale 18px (1440) -> ~10px (1025)
+        font-size: clamp(10px, -9px + 1.9vw, 18px);
         line-height: 1.5;
         margin: 0;
 

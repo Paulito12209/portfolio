@@ -42,7 +42,6 @@ export class References implements AfterViewInit, OnDestroy {
   private scrollListener: (() => void) | null = null;
 
   ngAfterViewInit(): void {
-    // Scroll-Event-Listener hinzufügen für automatische Aktualisierung des aktiven Index
     if (this.referencesList?.nativeElement) {
       this.scrollListener = this.onScroll.bind(this);
       this.referencesList.nativeElement.addEventListener('scroll', this.scrollListener);
@@ -50,13 +49,12 @@ export class References implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Event-Listener entfernen
     if (this.referencesList?.nativeElement && this.scrollListener) {
       this.referencesList.nativeElement.removeEventListener('scroll', this.scrollListener);
     }
   }
 
-  // Zur entsprechenden Card scrollen
+
   scrollToCard(index: number): void {
     this.activeIndex = index;
     const container = this.referencesList?.nativeElement;
@@ -68,13 +66,10 @@ export class References implements AfterViewInit, OnDestroy {
 
       // Berechne Scroll-Position basierend auf Index
       if (index === 0) {
-        // Erste Card: Links beginnen
         container.scrollTo({ left: 0, behavior: 'smooth' });
       } else if (index === this.references.length - 1) {
-        // Letzte Card: Rechts enden
         container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
       } else {
-        // Mittlere Card: Zentrieren
         const containerCenter = container.clientWidth / 2;
         const cardCenter = card.offsetLeft + card.clientWidth / 2;
         container.scrollTo({ left: cardCenter - containerCenter, behavior: 'smooth' });
@@ -82,7 +77,6 @@ export class References implements AfterViewInit, OnDestroy {
     }
   }
 
-  // Aktiven Index basierend auf Scroll-Position aktualisieren
   private onScroll(): void {
     const container = this.referencesList?.nativeElement;
     if (!container) return;

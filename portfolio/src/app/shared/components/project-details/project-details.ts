@@ -19,19 +19,14 @@ export class ProjectDetails implements OnInit {
   @Input() githubLink: string = '';
   @Input() liveLink: string = '';
 
-  // Steuert den Startzustand (true = alles sichtbar)
   @Input() initiallyExpanded: boolean = true;
 
-  // Aktueller Zustand
   isExpanded: boolean = true;
 
-  // Mobile Breakpoint (muss mit SCSS Variable übereinstimmen)
   private mobileBreakpoint: number = 1024;
 
-  // Prüft ob Mobile View aktiv ist
   isMobile: boolean = false;
 
-  // HostBinding für collapsed Klasse auf :host
   @HostBinding('class.collapsed')
   get isCollapsed(): boolean {
     return this.isMobile && !this.isExpanded;
@@ -51,12 +46,10 @@ export class ProjectDetails implements OnInit {
     this.isMobile = window.innerWidth <= this.mobileBreakpoint;
   }
 
-  // Content wird angezeigt, wenn: Desktop ODER (Mobile UND expanded)
   get shouldShowContent(): boolean {
     return !this.isMobile || this.isExpanded;
   }
 
-  // Toggle Buttons werden angezeigt, wenn: Mobile
   get shouldShowToggle(): boolean {
     return this.isMobile;
   }

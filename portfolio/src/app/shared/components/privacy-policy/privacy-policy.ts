@@ -56,7 +56,7 @@ export class PrivacyPolicy implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Navigiert zur Startseite und scrollt zum Hero-Bereich (ganz oben)
+   * Navigates to the home page and scrolls to the Hero section (top).
    */
   private router = inject(Router);
   goHome() {
@@ -66,7 +66,7 @@ export class PrivacyPolicy implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Navigiert zu einer beliebigen Route und scrollt zum Anfang der Seite
+   * Navigates to any route and scrolls to the top of the page.
    */
   navigateTo(route: string) {
     this.router.navigate([route]).then(() => {

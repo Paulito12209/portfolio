@@ -93,10 +93,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
     requestAnimationFrame(() => {
       for (const { bowEl, titleEl } of items) {
         const bowTop = bowEl.getBoundingClientRect().top;
-        // h2 hat writing-mode: vertical-rl + rotate(180deg),
-        // daher ist der erste Buchstabe am UNTEREN Ende (.bottom)
         const titleBottom = titleEl.getBoundingClientRect().bottom;
-        // Unteres Ende des Pfeils auf den ersten Buchstaben ausrichten
         const arrowImg = bowEl.querySelector('img');
         const arrowH = arrowImg ? arrowImg.getBoundingClientRect().height : 0;
         const offset = Math.max(0, (titleBottom - bowTop - arrowH / 2) - 18);
@@ -105,25 +102,16 @@ export class MainContent implements AfterViewInit, OnDestroy {
     });
   }
 
-  /**
-   * Scrollt zum Seitenanfang (Mobile View)
-   */
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  /**
-   * Navigiert zur Startseite und scrollt zum Hero-Bereich (ganz oben)
-   */
   goHome() {
     this.router.navigate(['/']).then(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  /**
-   * Navigiert zu einer beliebigen Route und scrollt zum Anfang der Seite
-   */
   navigateTo(route: string) {
     this.router.navigate([route]).then(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });

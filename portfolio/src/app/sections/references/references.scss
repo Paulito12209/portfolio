@@ -9,7 +9,7 @@
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         height: auto;
-        align-items: flex-start; // Liste links anfangen lassen
+        align-items: flex-start;
     }
 }
 
@@ -41,12 +41,12 @@
 
     ::ng-deep app-section-content {
         @media (max-width: vars.$mobile) {
-            align-items: flex-start !important; // Überschreibt center
+            align-items: flex-start !important;
         }
 
         h2 {
             align-self: flex-end !important;
-            font-weight: 400; // Reduziert von 700
+            font-weight: 400;
 
             @media (max-width: vars.$mobile) {
                 align-self: flex-start !important;
@@ -74,29 +74,29 @@
 
         h4 {
             color: vars.$neon;
-            font-size: vars.$f-h4-mb; // 22px
-            font-weight: 400; // Reduziert von 700
+            font-size: vars.$f-h4-mb;
+            font-weight: 400;
             margin: 0;
             line-height: 1.2;
         }
 
         .horizontal-line {
-            width: 50px; // Kleine Linie zur Trennung?
+            width: 50px;
             height: 2px;
             background-color: vars.$neon;
-            display: none; // Erstmal ausblenden, falls nicht gewünscht
+            display: none;
         }
 
         p {
             color: white;
-            font-size: vars.$f-p-mb; // 16px
+            font-size: vars.$f-p-mb;
             margin: 0;
             line-height: 1.5;
         }
     }
 }
 
-// Titel mobil ausblenden
+// Hide Mobile Title
 :host ::ng-deep .hide-title-mobile h2 {
     @media (max-width: vars.$mobile) {
         display: none !important;
@@ -120,7 +120,7 @@
             display: none;
         }
 
-        // Erstes und letztes Kind: Abstand zum Rand
+        // First and Last Child Spacing
         > :first-child {
             padding-left: 16px;
         }
@@ -139,9 +139,9 @@
     }
 }
 
-// Karussell-Navigation Punkte (nur Mobile)
+// Carousel Navigation Dots (Mobile Only)
 .carousel-dots {
-    display: none; // Auf Desktop verstecken
+    display: none;
 
     @media (max-width: vars.$mobile) {
         @include mix.dFlex($jc: center, $g: 8px);
@@ -163,7 +163,7 @@
             background-color: rgba(vars.$neon, 0.3);
         }
 
-        // Aktiver Punkt: verlängert und ausgefüllt
+        // Active Dot
         &.active {
             width: 18px;
             border-radius: 6px;

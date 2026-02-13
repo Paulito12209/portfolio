@@ -1,15 +1,14 @@
-@use '../../../../styles/variables' as vars; // <- [_variables]
-@use '../../../../styles/mixins.scss' as mix; // <- [mixins]
+@use '../../../../styles/variables' as vars;
+@use '../../../../styles/mixins.scss' as mix;
 
 
 :host {
-    @include mix.dFlex($jc: end); // Navbar wird nach rechts gedrückt
+    @include mix.dFlex($jc: end);
     height: 80px;
     width: 100%;
     max-width: 1440px;
-    // z-index: 10;
 
-    /*==== Mobile: Header ausblenden ====*/
+    /*==== Mobile: Hide Header ====*/
     @media (max-width: vars.$mobile) {
         display: none;
     }
@@ -18,8 +17,8 @@
 nav {
     @include mix.dFlex($g: 48px);
     padding: 30px 40px 10px 0;
-    margin-right: 0; // Kein Margin mehr nötig, da Container begrenzt
-    // padding-right: 16px; // Optional für etwas Abstand zum Rand
+    padding: 30px 40px 10px 0;
+    margin-right: 0;
 
     >ul {
         @include mix.dFlex($g: 16px);
@@ -35,7 +34,8 @@ a {
     @include mix.dFlex();
     text-decoration: none;
     cursor: pointer;
-    // transition: transform 0.2s ease;  // <- Später Einlesen
+    text-decoration: none;
+    cursor: pointer;
 
     &:hover {
         transform: scale(1.1);
@@ -53,7 +53,7 @@ a {
 
 .language-toggle {
     @include mix.dFlex();
-    color: white; // Für den Trennstrich "|"
+    color: white;
 
     button {
         @include mix.dFlex();

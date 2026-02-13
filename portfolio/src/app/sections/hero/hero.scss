@@ -1,20 +1,17 @@
-@use '../../../styles/variables' as vars; // <- [_variables]
-@use '../../../styles/mixins.scss' as mix; // <- [mixins]
+@use '../../../styles/variables' as vars;
+@use '../../../styles/mixins.scss' as mix;
 
 :host {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%; // Volle Breite für Host (Background)
+    width: 100%;
     flex: 1;
-    // max-width: 1440px; // Entfernt
-    margin: 0; // Kein Auto-Margin (Linksbündig)
+    margin: 0;
 
     @media (max-width: vars.$mobile) {
-        // Fallback für Browser ohne dvh
         height: calc(100vh - 80px);
         min-height: calc(100vh - 80px);
-        // Dynamic Viewport Height (Pixel etc.)
         height: calc(100dvh - 80px);
         min-height: calc(100dvh - 80px);
 
@@ -30,16 +27,16 @@
     max-width: 1280px;
 
     @media (max-width: vars.$mobile) {
-        height: 100%; // Fülle Host
+        height: 100%;
         width: 100%;
         min-height: auto;
         flex: unset;
-        padding-bottom: 0; // Padding entfernt, Platz durch Flex verteilt
-        max-width: 100%; // Reset Mobile
+        padding-bottom: 0;
+        max-width: 100%;
     }
 
     app-header {
-        width: 100%; // Ensure header takes full width
+        width: 100%;
 
         @media (max-width: vars.$mobile) {
             display: none;
@@ -53,31 +50,31 @@
     margin-top: clamp(80px, 25vh, 240px);
 
     @media (max-width: vars.$mobile) {
-        display: none; // Pfeile in Mobile View ausblenden
+        display: none;
     }
 }
 
 .hero-content {
     @include mix.dFlex($jc: space-between, $ai: start);
-    flex: 1; // <- hero-content nimmt nur verfügbaren Raum ein
+    flex: 1;
     width: 100%;
 
     @media (max-width: vars.$mobile) {
-        height: 100%; // Fülle Container
-        flex: unset; // Verhindere Expansion
+        height: 100%;
+        flex: unset;
     }
 
     .hero-image {
         @include mix.dFlex();
         flex: 1;
-        height: 100%; // Nicht löschen!
+        height: 100%;
         width: 100%;
 
         @media (max-width: vars.$mobile) {
             flex-direction: column;
             justify-content: flex-start;
-            flex: unset; // Verhindere Expansion
-            height: 100%; // Fülle Content
+            flex: unset;
+            height: 100%;
         }
 
         .hero-image-bg {
@@ -92,15 +89,12 @@
             background-size: cover;
 
             @media (max-width: vars.$mobile) {
-                // FLEXBOX: Bild füllt den restlichen Platz
-                flex: 1 1 auto; // Grow, Shrink, Auto base
+                flex: 1 1 auto;
                 width: 100%;
 
-                // Reset explicit heights
                 height: auto;
-                min-height: 0; // Wichtig für Flexbox-Scrolling/Shrinking
+                min-height: 0;
 
-                // Bildpositionierung
                 background-position: center top;
             }
 
@@ -113,7 +107,7 @@
                 padding-top: 40%;
 
                 @media (max-width: vars.$mobile) {
-                    display: none; // Hide on Mobile
+                    display: none;
                 }
 
                 h1 {
@@ -123,35 +117,29 @@
                 }
 
                 h3 {
-                    color: transparent; // Füllfarbe ausblenden
-                    -webkit-text-stroke: 2px vars.$neon; // Konturbreite + Farbe
+                    color: transparent;
+                    -webkit-text-stroke: 2px vars.$neon;
                     font-size: vars.$f-h3;
                     text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
                 }
-
-                // .location {
-                //     display: none;
-                // }
             }
         }
 
         // Mobile Text (below Image)
         .hero-text-mobile {
-            display: none; // Hide on Desktop
+            display: none;
 
             @media (max-width: vars.$mobile) {
                 @include mix.dFlex($fdir: column, $jc: flex-start, $ai: center);
                 display: flex;
                 width: 100%;
-                padding: 16px 16px 40px 16px; // Padding inklusive Bottom Space
-                // background-color: black; // Optional: match body bg if needed
+                padding: 16px 16px 40px 16px;
 
-                // Flex: Nicht schrumpfen, nimm Platz den du brauchst
                 flex: 0 0 auto;
 
                 h1 {
                     color: vars.$neon;
-                    font-size: vars.$f-h1-mb; // 40px
+                    font-size: vars.$f-h1-mb;
                     line-height: 1.2;
                     text-align: center;
                     order: 2;
@@ -160,7 +148,7 @@
                 h3 {
                     color: vars.$neon;
                     font-family: vars.$font-quantico;
-                    font-size: vars.$f-h3-mb; // 24px
+                    font-size: vars.$f-h3-mb;
                     text-transform: uppercase;
                     letter-spacing: 1.5px;
                     text-align: center;
@@ -170,7 +158,7 @@
                 .location {
                     color: white;
                     font-family: vars.$font-quantico;
-                    font-size: vars.$f-sub-headline-mb; // 18px
+                    font-size: vars.$f-sub-headline-mb;
                     margin-top: 8px;
                     text-align: center;
                     order: 3;

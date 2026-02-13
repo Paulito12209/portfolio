@@ -17,7 +17,7 @@
     width: 100%;
 }
 
-// Alte Checkbox Styles entfernt (jetzt in form-checkbox Komponente)
+
 
 .policy-wrapper {
     display: flex;
@@ -34,7 +34,7 @@
 
 .error-trigger-text {
     color: vars.$error;
-    font-size: 14px; // Kleinere Schrift für Error? Oder gleich? Im Screenshot sieht es klein aus.
+    font-size: 14px;
 }
 
 .submit-btn-container {
@@ -44,18 +44,15 @@
 }
 
 .validation-btn {
-    background-color: #9E9D9D; // Default Grau (Invalid)
+    background-color: #9E9D9D;
     color: vars.$black;
     font-size: vars.$f-p;
     font-weight: 400;
     padding: 10px 32px;
     border-radius: 24px;
     border: none;
-    cursor: pointer; // Immer klickbar, damit Error getriggert werden kann
+    cursor: pointer;
     transition: all 0.3s;
-
-    // Kein Hover-Effekt im grauen Zustand (oder minimal?)
-    // User Request impliziert "inaktiv", also eher kein Glow.
 
     &.valid-btn {
         background-color: vars.$neon;
