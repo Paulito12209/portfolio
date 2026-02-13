@@ -71,7 +71,7 @@
 
 .contact-form-container {
     @include mix.dFlex($fdir: column, $ai: stretch, $g: 16px);
-    width: 100%;
+    width: 95%;
     max-width: 500px;
 
     @media (max-width: vars.$mobile) {

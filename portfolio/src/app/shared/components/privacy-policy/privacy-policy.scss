@@ -28,6 +28,13 @@ app-header {
     height: 100vh;
     // min-height: 900px; // Removed to allow scroll on small screens
     overflow-y: auto; // Allow vertical scrolling against global body hidden
+    scrollbar-width: none; // Hide scrollbar (Firefox)
+    -ms-overflow-style: none; // Hide scrollbar (IE/Edge)
+
+    &::-webkit-scrollbar {
+        display: none; // Hide scrollbar (Chrome/safari/Opera)
+    }
+
     overflow-x: hidden;
     color: white;
 
@@ -45,10 +52,11 @@ app-header {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    height: 100%;
-    min-height: 900px; // Ensure content is at least 900px high
+    height: auto; // Allow growth
+    min-height: 100%; // Ensure at least fill container
+    // min-height: 900px;
     overflow-x: hidden;
-    overflow-y: visible; // Allow content to overflow vertically if needed
+    overflow-y: visible;
     scroll-snap-type: x proximity;
     scroll-behavior: smooth;
 
@@ -66,9 +74,10 @@ app-header {
     width: 100%;
     width: 100%;
     // max-width: calc(1440px - #{vars.$sidebar}); // Entfernt für volle Breite
-    height: 100%;
+    height: auto; // Allow growth
+    min-height: 100%; // Fill space
     flex-shrink: 0;
-    overflow: hidden;
+    overflow: visible; // Allow overflow (no clipping)
     scroll-snap-align: start;
     margin-top: clamp(40px, 7vh, 80px);
 
@@ -98,7 +107,8 @@ app-header {
 .pp-section-inner {
     @include mix.dFlex($jc: space-between, $ai: center);
     width: 100%;
-    height: 100%;
+    height: auto; // Allow growth
+    min-height: 100%;
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;
