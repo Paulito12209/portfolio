@@ -26,13 +26,25 @@ export class ScrollService {
     }
 
     /**
-     * Scrollt horizontal zur Section im .sections Container.
+     * Scrollt zur Section – horizontal auf Desktop, vertikal auf Mobile.
      */
     scrollToSection(sectionId: string) {
         const section = document.getElementById(sectionId);
         const sectionsContainer = document.querySelector('.sections');
 
-        if (section && sectionsContainer) {
+        if (!section) return;
+
+        // Mobile: Vertikales Scrollen (Sektionen sind untereinander)
+        // Offset für die fixierte Navigation (exakt 80px Höhe, kein Puffer)
+        if (window.innerWidth <= 768) {
+            const navOffset = 80;
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY - navOffset;
+            window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+            return;
+        }
+
+        // Desktop: Horizontales Scrollen im .sections Container
+        if (sectionsContainer) {
             const sectionElement = section.closest('.section') || section;
             const containerRect = sectionsContainer.getBoundingClientRect();
             const sectionRect = (sectionElement as HTMLElement).getBoundingClientRect();
