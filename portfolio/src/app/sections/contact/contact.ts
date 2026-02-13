@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { SectionContent } from '../../shared/components/section-content/section-content';
@@ -34,6 +34,12 @@ import { Footer } from '../../shared/components/footer/footer';
 })
 export class Contact {
   private http = inject(HttpClient);
+
+  // Referenzen auf die Child-Komponenten für das Zurücksetzen
+  @ViewChild(FormName) formNameComponent!: FormName;
+  @ViewChild(FormEmail) formEmailComponent!: FormEmail;
+  @ViewChild(FormMessage) formMessageComponent!: FormMessage;
+  @ViewChild(FormValidationBox) formValidationBox!: FormValidationBox;
 
   name: string = '';
   email: string = '';
@@ -90,17 +96,25 @@ export class Contact {
           },
           error: (error) => {
             console.error('Fehler beim Senden:', error);
+            this.resetForm();
           },
           complete: () => console.info('E-Mail gesendet!')
         });
     }
   }
 
+  // Setzt alle Formularfelder und deren ngModel-State zurück
   resetForm() {
     this.name = '';
     this.email = '';
     this.message = '';
     this.privacyPolicyChecked = false;
+
+    // Child-Komponenten direkt zurücksetzen (ngModel-State)
+    if (this.formNameComponent) this.formNameComponent.reset();
+    if (this.formEmailComponent) this.formEmailComponent.reset();
+    if (this.formMessageComponent) this.formMessageComponent.reset();
+    if (this.formValidationBox) this.formValidationBox.submitted = false;
   }
 
   /**

@@ -1,7 +1,7 @@
 <div class="input-container">
     <textarea [placeholder]="isInvalid ? ('CONTACT.ERROR_MESSAGE' | translate) : ('CONTACT.FORM_MESSAGE' | translate)"
-        [ngModel]="message" (ngModelChange)="messageChange.emit($event)" (blur)="onBlur()" [class.invalid]="isInvalid"
-        [class.invalid-placeholder]="isInvalid" name="message" rows="10">
+        [ngModel]="message" (ngModelChange)="onInputChange($event)" #messageModel="ngModel" (blur)="onBlur()"
+        [class.invalid]="isInvalid" [class.invalid-placeholder]="isInvalid" name="message" rows="10">
     </textarea>
 </div>
 

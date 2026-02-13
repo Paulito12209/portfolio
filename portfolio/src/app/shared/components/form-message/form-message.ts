@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,10 +10,27 @@ import { CommonModule } from '@angular/common';
   styleUrl: './form-message.scss',
 })
 export class FormMessage {
+  @ViewChild('messageModel') messageModel!: NgModel;
+
   @Input() message: string = '';
   @Output() messageChange = new EventEmitter<string>();
 
   touched: boolean = false;
+
+  // Aktualisiert den lokalen Wert und emittiert die Änderung an den Parent
+  onInputChange(value: string) {
+    this.message = value;
+    this.messageChange.emit(value);
+  }
+
+  // Setzt das Eingabefeld und den ngModel-State zurück
+  reset() {
+    this.message = '';
+    this.touched = false;
+    if (this.messageModel) {
+      this.messageModel.control.reset('');
+    }
+  }
 
   onBlur() {
     this.touched = true;

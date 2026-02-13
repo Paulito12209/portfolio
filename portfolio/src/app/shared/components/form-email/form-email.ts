@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,10 +10,27 @@ import { CommonModule } from '@angular/common';
   styleUrl: './form-email.scss',
 })
 export class FormEmail {
+  @ViewChild('emailModel') emailModel!: NgModel;
+
   @Input() email: string = '';
   @Output() emailChange = new EventEmitter<string>();
 
   touched: boolean = false;
+
+  // Aktualisiert den lokalen Wert und emittiert die Änderung an den Parent
+  onInputChange(value: string) {
+    this.email = value;
+    this.emailChange.emit(value);
+  }
+
+  // Setzt das Eingabefeld und den ngModel-State zurück
+  reset() {
+    this.email = '';
+    this.touched = false;
+    if (this.emailModel) {
+      this.emailModel.control.reset('');
+    }
+  }
 
   onBlur() {
     this.touched = true;

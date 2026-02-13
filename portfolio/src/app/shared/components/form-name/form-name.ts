@@ -1,6 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -10,6 +10,8 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './form-name.scss',
 })
 export class FormName {
+  @ViewChild('nameModel') nameModel!: NgModel;
+
   @Input() name: string = '';
   @Output() nameChange = new EventEmitter<string>();
 
@@ -17,6 +19,21 @@ export class FormName {
 
   get isInvalid(): boolean {
     return this.touched && (!this.name || this.name.trim().length === 0);
+  }
+
+  // Aktualisiert den lokalen Wert und emittiert die Änderung an den Parent
+  onInputChange(value: string) {
+    this.name = value;
+    this.nameChange.emit(value);
+  }
+
+  // Setzt das Eingabefeld und den ngModel-State zurück
+  reset() {
+    this.name = '';
+    this.touched = false;
+    if (this.nameModel) {
+      this.nameModel.control.reset('');
+    }
   }
 
   onBlur(): void {
