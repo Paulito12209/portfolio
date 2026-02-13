@@ -25,6 +25,7 @@
     </div>
 
     <div class="contact-right-content">
+        <app-toast-message [show]="showToast" (closed)="onToastClosed()"></app-toast-message>
         <div class="contact-right-text">
             <p>{{ 'CONTACT.HEADING' | translate }}</p>
             <p>{{ 'CONTACT.TEXT' | translate }}</p>

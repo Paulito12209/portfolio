@@ -1,0 +1,23 @@
+<div class="toast-wrapper" [ngClass]="animationState" *ngIf="animationState !== 'hidden'">
+    <div class="toast-content">
+        <!-- Häkchen-Icon: Kreis in Neon, Haken transparent mit Stroke -->
+        <div class="toast-icon">
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+                <!-- Kreis: Nur Outline -->
+                <circle cx="23" cy="23" r="21" stroke="#B5E93B" stroke-width="2" fill="none" />
+                <!-- Haken: Geschlossener Pfad für Outline-Effekt -->
+                <path d="M12 24L20 32L34 16L31 13L20 25L15 20Z" stroke="#B5E93B" stroke-width="2" fill="none" />
+            </svg>
+        </div>
+        <div class="toast-text">
+            <span class="toast-title">{{ 'CONTACT.TOAST_TITLE' | translate }}</span>
+            <span class="toast-subtitle">{{ 'CONTACT.TOAST_SUBTITLE' | translate }}</span>
+        </div>
+    </div>
+    <!-- Schließen-Button -->
+    <button class="toast-close" (click)="onClose()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </button>
+</div>

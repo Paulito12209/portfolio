@@ -1,0 +1,116 @@
+@use '../../../../styles/variables' as vars;
+
+// Host-Element: Absolut positioniert innerhalb von contact-right-content
+:host {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+// Wrapper für die Toast-Nachricht
+.toast-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 20px;
+    max-height: 100px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid vars.$neon;
+    border-radius: 12px;
+    pointer-events: all;
+
+    // Animation: Startzustand rechts außerhalb
+    transform: translateX(calc(100% + 50px));
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+
+    // Slide-In-Animation
+    &.slide-in {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    // Slide-Out-Animation
+    &.slide-out {
+        transform: translateX(calc(100% + 50px));
+        opacity: 0;
+    }
+}
+
+// Inhalt: Icon + Text nebeneinander
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+// Häkchen-Icon
+.toast-icon {
+    flex-shrink: 0;
+
+    svg {
+        display: block;
+
+        // Kreis: Nur Outline, keine Füllung
+        circle {
+            fill: none;
+            stroke: vars.$neon;
+        }
+
+        // Haken: Nur Outline, keine Füllung
+        path {
+            fill: none;
+            stroke: vars.$neon;
+        }
+    }
+}
+
+// Text-Bereich
+.toast-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.toast-title {
+    color: vars.$neon;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: vars.$font-quantico;
+}
+
+.toast-subtitle {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: vars.$font-quantico;
+}
+
+// Schließen-Button mit kreisförmigem Hover-Effekt
+.toast-close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: -2px;
+
+    &:hover {
+        background: rgba(181, 233, 59, 0.2);
+    }
+
+    svg {
+        display: block;
+    }
+}

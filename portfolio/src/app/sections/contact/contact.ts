@@ -12,6 +12,7 @@ import { FormValidationBox } from '../../shared/components/form-validation-box/f
 import { Email } from '../../shared/components/email/email';
 import { PhoneNumber } from '../../shared/components/phone-number/phone-number';
 import { Footer } from '../../shared/components/footer/footer';
+import { ToastMessage } from '../../shared/components/toast-message/toast-message';
 
 @Component({
   selector: 'app-contact',
@@ -27,7 +28,8 @@ import { Footer } from '../../shared/components/footer/footer';
     FormValidationBox,
     Email,
     PhoneNumber,
-    Footer
+    Footer,
+    ToastMessage
   ],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
@@ -47,6 +49,7 @@ export class Contact {
   privacyPolicyChecked: boolean = false;
 
   mailTest = false;
+  showToast = false;
 
   post = {
     endPoint: 'https://paulangeles.com/projects/portfolio/sendMail.php',
@@ -83,6 +86,7 @@ export class Contact {
         email: this.email,
         message: this.message
       });
+      this.showToast = true;
       this.resetForm();
     } else {
       this.http.post(this.post.endPoint, this.post.body({
@@ -92,10 +96,12 @@ export class Contact {
       }))
         .subscribe({
           next: () => {
+            this.showToast = true;
             this.resetForm();
           },
           error: (error) => {
             console.error('Fehler beim Senden:', error);
+            this.showToast = true;
             this.resetForm();
           },
           complete: () => console.info('E-Mail gesendet!')
@@ -115,6 +121,11 @@ export class Contact {
     if (this.formEmailComponent) this.formEmailComponent.reset();
     if (this.formMessageComponent) this.formMessageComponent.reset();
     if (this.formValidationBox) this.formValidationBox.submitted = false;
+  }
+
+  // Wird aufgerufen wenn die Toast-Message geschlossen wird
+  onToastClosed() {
+    this.showToast = false;
   }
 
   /**
