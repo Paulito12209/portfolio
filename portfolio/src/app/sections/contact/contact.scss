@@ -75,6 +75,7 @@
     max-width: 500px;
 
     @media (max-width: vars.$mobile) {
+        width: 100%;
         max-width: 100%;
     }
 }
