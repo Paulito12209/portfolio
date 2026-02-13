@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ElementRef, OnDestroy, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Hero } from '../../sections/hero/hero';
 import { WhyMe } from '../../sections/why-me/why-me';
@@ -36,6 +36,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
   };
 
   private scrollService = inject(ScrollService);
+  private router = inject(Router);
 
   constructor(
     private elementRef: ElementRef,
@@ -109,5 +110,14 @@ export class MainContent implements AfterViewInit, OnDestroy {
    */
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /**
+   * Navigiert zur Startseite und scrollt zum Hero-Bereich (ganz oben)
+   */
+  goHome() {
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }

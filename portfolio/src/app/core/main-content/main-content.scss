@@ -194,6 +194,18 @@ app-header {
     background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
     box-sizing: border-box;
 
+    // Logo-Link: Kein Unterstrich, klickbar
+    .footer-logo-link {
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
     .footer-logo {
         width: 48px;
         height: 48px;

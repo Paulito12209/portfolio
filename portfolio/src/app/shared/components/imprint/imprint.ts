@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Header } from '../header/header';
 import { SectionBow } from '../section-bow/section-bow';
@@ -54,5 +54,15 @@ export class Imprint implements AfterViewInit, OnDestroy {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /**
+   * Navigiert zur Startseite und scrollt zum Hero-Bereich (ganz oben)
+   */
+  private router = inject(Router);
+  goHome() {
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }
