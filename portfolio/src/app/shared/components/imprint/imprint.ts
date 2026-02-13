@@ -65,4 +65,13 @@ export class Imprint implements AfterViewInit, OnDestroy {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  /**
+   * Navigiert zu einer beliebigen Route und scrollt zum Anfang der Seite
+   */
+  navigateTo(route: string) {
+    this.router.navigate([route]).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
