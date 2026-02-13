@@ -19,7 +19,7 @@ h2 {
     font-size: vars.$f-h2;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
     flex-shrink: 0; // <- H2 soll nicht schrumpfen
-    padding: 0 40px;
+    padding: 0 clamp(16px, 3vw, 40px);
 
     @media (max-width: vars.$mobile) {
         transform: none;

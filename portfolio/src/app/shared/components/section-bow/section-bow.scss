@@ -3,7 +3,7 @@
 
 .hero-bow {
     @include mix.dFlex($ai: end);
-    padding-right: 40px;
+    padding-right: clamp(16px, 3vw, 40px);
 
     button {
         background: transparent;
@@ -14,13 +14,13 @@
         justify-content: center;
         align-items: center;
 
-        // Feste Dimensionen des größten Bildes (Hover-PNG), um Layout-Shifts zu vermeiden
-        width: 147px;
-        height: 49px;
+        // Dynamische Dimensionen: skaliert von 64px bis 147px Breite
+        width: clamp(64px, 10vw, 107px);
+        height: clamp(21px, 3.4vw, 49px);
         padding: 0;
 
         img {
-            max-width: 100%;
+            width: 100%; // Bild füllt den gesamten Button-Container → skaliert dynamisch mit clamp()
             height: auto;
         }
 

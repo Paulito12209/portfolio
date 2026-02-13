@@ -50,7 +50,7 @@
 
 
 .hero-bow {
-    margin-top: 240px;
+    margin-top: clamp(80px, 25vh, 240px);
 
     @media (max-width: vars.$mobile) {
         display: none; // Pfeile in Mobile View ausblenden

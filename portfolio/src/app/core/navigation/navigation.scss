@@ -62,7 +62,7 @@
     position: fixed;
     inset: 0 auto 0 0;
     width: vars.$sidebar;
-    min-height: 900px;
+    min-height: 100vh; // Sidebar füllt den Viewport, statt fixe 900px
     background-color: vars.$neon;
     background: linear-gradient(90deg, vars.$neon 90%, #89b02b 100%);
 
@@ -112,7 +112,7 @@
 
     // Sections (Desktop)
     .nav-sections {
-        @include mix.dFlex($fdir: column, $g: 32px);
+        @include mix.dFlex($fdir: column, $g: clamp(12px, 3vh, 32px)); // Dynamischer Gap
         list-style: none;
         margin: 0;
         padding: 0;

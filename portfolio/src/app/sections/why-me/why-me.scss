@@ -26,7 +26,7 @@
 }
 
 .why-me-content {
-    padding-top: 80px;
+    padding-top: clamp(40px, 6vh, 80px);
     width: 70%;
 
     @media (max-width: vars.$mobile) {
@@ -129,7 +129,7 @@ app-details {
 }
 
 .why-me-bow {
-    padding-top: 680px;
+    padding-top: clamp(200px, 70vh, 680px);
 
     @media (max-width: vars.$mobile) {
         display: none;

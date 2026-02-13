@@ -47,7 +47,7 @@ app-section-content {
 .projects-bow {
     @include mix.dFlex();
     width: 160px;
-    padding-top: 675px;
+    padding-top: clamp(200px, 70vh, 675px);
 
     @media (max-width: vars.$mobile) {
         display: none;

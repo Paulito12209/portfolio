@@ -37,6 +37,11 @@
         padding-right: 8px;
         margin: 0;
 
+        // Bei niedrigen Fensterhöhen: 2px kleinere Schrift
+        @media (max-height: 900px) {
+            font-size: calc(#{vars.$f-p} - 2px);
+        }
+
         @media (max-width: vars.$mobile) {
             width: 60%;
             font-size: vars.$f-button;
