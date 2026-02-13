@@ -49,11 +49,13 @@
 }
 
 .open-animation {
-    animation: openAnimation 400ms ease-in-out forwards;
+    // animation: openAnimation 400ms ease-in-out forwards;
+    animation: openAnimation 225ms ease-in-out forwards; // Smoother and faster
 }
 
 .close-animation {
-    animation: closeAnimation 400ms ease-in-out forwards;
+    // animation: closeAnimation 400ms ease-in-out forwards;
+    animation: closeAnimation 225ms ease-in-out forwards; // Smoother and faster
 }
 
 /*==== Navigation Component ====*/
