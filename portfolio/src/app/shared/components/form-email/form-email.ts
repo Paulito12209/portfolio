@@ -50,7 +50,7 @@ export class FormEmail {
     return '';
   }
 
-  private isValidEmail(): boolean {
+  isValidEmail(): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(this.email);
   }

@@ -2,4 +2,8 @@
     <input type="email" [placeholder]="isInvalid ? (errorMessage | translate) : ('CONTACT.FORM_EMAIL' | translate)"
         [ngModel]="email" (ngModelChange)="onInputChange($event)" #emailModel="ngModel" (blur)="onBlur()"
         [class.invalid]="isInvalid" [class.invalid-placeholder]="isInvalid" name="email">
+
+    <img src="img/icons/contact/check-form.svg" alt="Valid" class="status-icon"
+        *ngIf="!isInvalid && email.length > 0 && isValidEmail()">
+    <img src="img/icons/contact/exclamation-form.svg" alt="Invalid" class="status-icon" *ngIf="isInvalid">
 </div>

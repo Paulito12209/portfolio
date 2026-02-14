@@ -1,8 +1,13 @@
 <div class="input-container">
     <textarea [placeholder]="isInvalid ? ('CONTACT.ERROR_MESSAGE' | translate) : ('CONTACT.FORM_MESSAGE' | translate)"
         [ngModel]="message" (ngModelChange)="onInputChange($event)" #messageModel="ngModel" (blur)="onBlur()"
-        [class.invalid]="isInvalid" [class.invalid-placeholder]="isInvalid" name="message" rows="10">
+        (input)="adjustHeight($event)" [class.invalid]="isInvalid" [class.invalid-placeholder]="isInvalid"
+        name="message" rows="10">
     </textarea>
+
+    <img src="img/icons/contact/check-form.svg" alt="Valid" class="status-icon"
+        *ngIf="!isInvalid && message.length > 3">
+    <img src="img/icons/contact/exclamation-form.svg" alt="Invalid" class="status-icon" *ngIf="isInvalid">
 </div>
 
 <!-- <textarea [placeholder]="'CONTACT.FORM_MESSAGE' | translate" [ngModel]="message"

@@ -63,11 +63,12 @@
     padding: 10px 32px;
     border-radius: 24px;
     border: none;
-    cursor: pointer;
+    cursor: not-allowed;
     transition: all vars.$transition-duration;
 
     &.valid-btn {
         background-color: vars.$neon;
+        cursor: pointer;
 
         &:hover {
             box-shadow: 0 0 15px rgba(vars.$neon, 0.5);

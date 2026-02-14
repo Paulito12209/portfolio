@@ -23,12 +23,22 @@ export class FormMessage {
     this.messageChange.emit(value);
   }
 
+  // Passt die Höhe der Textarea automatisch an den Inhalt an
+  adjustHeight(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
+
   // Setzt das Eingabefeld und den ngModel-State zurück
   reset() {
     this.message = '';
     this.touched = false;
     if (this.messageModel) {
       this.messageModel.control.reset('');
+      // Reset height manually if needed, or rely on binding
+      const textarea = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+      if (textarea) textarea.style.height = 'auto'; // Reset height
     }
   }
 

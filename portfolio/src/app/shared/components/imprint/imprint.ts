@@ -7,12 +7,13 @@ import { SectionContent } from '../section-content/section-content';
 import { Footer } from '../footer/footer';
 import { Email } from '../email/email';
 import { PhoneNumber } from '../phone-number/phone-number';
+import { MobileFooter } from '../mobile-footer/mobile-footer';
 
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-imprint',
-  imports: [CommonModule, TranslateModule, Header, SectionContent, Footer, Email, PhoneNumber, RouterLink],
+  imports: [CommonModule, TranslateModule, Header, SectionContent, Footer, Email, PhoneNumber, RouterLink, MobileFooter],
   templateUrl: './imprint.html',
   styleUrl: './imprint.scss',
 })

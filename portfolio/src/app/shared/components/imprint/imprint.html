@@ -31,34 +31,7 @@
 
         <!-- Green right bar + mobile footer -->
         <div class="right-bar">
-            <div class="mobile-footer">
-                <div class="mobile-footer-arrow" (click)="scrollToTop()" style="cursor: pointer;">
-                    <img src="img/arrow-right.svg" alt="Scroll nach oben">
-                </div>
-                <div class="mobile-footer-socials">
-                    <a href="mailto:paul.angeles.chaquire@gmail.com" class="social-circle">
-                        <img src="img/icons/hero/mail-icon.svg" alt="Email">
-                    </a>
-                    <a href="https://www.linkedin.com/in/paul-angeles-chaquire-654b34137" target="_blank"
-                        rel="noopener noreferrer" class="social-circle">
-                        <img src="img/icons/hero/linkedin-icon.svg" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/Paulito12209" target="_blank" rel="noopener noreferrer"
-                        class="social-circle">
-                        <img src="img/icons/hero/github-icon.svg" alt="GitHub">
-                    </a>
-                </div>
-                <div class="mobile-footer-green-bar">
-                    <a (click)="goHome()" class="footer-logo-link">
-                        <img src="img/pa-logo.png" alt="PA Logo" class="footer-logo">
-                    </a>
-                    <p class="footer-copyright">{{ 'FOOTER.COPYRIGHT' | translate }}</p>
-                    <div class="footer-legal-links">
-                        <a routerLink="/imprint">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
-                        <a routerLink="/privacy-policy">{{ 'FOOTER.PRIVACY_POLICY' | translate }}</a>
-                    </div>
-                </div>
-            </div>
+            <app-mobile-footer></app-mobile-footer>
         </div>
     </div>
 </main>

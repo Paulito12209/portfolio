@@ -96,7 +96,7 @@
         "ERROR_EMAIL_REQUIRED": "Bitte gib deine E-Mail ein",
         "ERROR_EMAIL_INVALID": "Bitte gib eine gültige E-Mail ein",
         "ERROR_MESSAGE": "Bitte gib eine Nachricht ein",
-        "ERROR_PRIVACY": "Bitte akzeptiere die Datenschutzerklärung",
+        "ERROR_PRIVACY": "Bitte akzeptiere die Datenschutzerklärung.",
         "TOAST_TITLE": "Nachricht erfolgreich gesendet.",
         "TOAST_SUBTITLE": "Vielen Dank für deine Nachricht."
     },

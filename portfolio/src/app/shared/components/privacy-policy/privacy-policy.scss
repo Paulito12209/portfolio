@@ -253,7 +253,7 @@ app-header {
     background: linear-gradient(165deg, vars.$neon 0%, #7aa619 100%);
     box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
 
-    .mobile-footer {
+    app-mobile-footer {
         display: none;
     }
 
@@ -263,99 +263,9 @@ app-header {
         background: none;
         box-shadow: none;
 
-        .mobile-footer {
-            @include mix.dFlex($fdir: column, $ai: center);
+        app-mobile-footer {
+            display: block;
             width: 100%;
-            height: max-content;
-        }
-    }
-}
-
-// ===== Mobile Footer Styles =====
-.mobile-footer-arrow {
-    @include mix.dFlex();
-    width: 100%;
-    padding: 40px 0 20px;
-
-    img {
-        height: 45px;
-        width: 45px;
-        transform: rotate(-90deg);
-    }
-}
-
-.mobile-footer-socials {
-    @include mix.dFlex($g: 24px);
-    width: 100%;
-    padding: 24px 0 32px;
-
-    a {
-        @include mix.dFlex();
-        text-decoration: none;
-        cursor: pointer;
-        transition: transform vars.$transition-duration ease;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-
-        img {
-            width: 30px;
-            height: 30px;
-            transition: filter vars.$transition-duration ease;
-
-            &:hover {
-                filter: brightness(0) saturate(100%) invert(82%) sepia(35%) saturate(3000%) hue-rotate(35deg) brightness(145%) contrast(104%);
-            }
-        }
-    }
-}
-
-.mobile-footer-green-bar {
-    @include mix.dFlex($fdir: column, $ai: center, $g: 8px);
-    width: 100%;
-    height: auto;
-    min-height: 160px;
-    padding: 16px 16px 40px;
-    background: linear-gradient(180deg, vars.$neon 0%, #8db82b 100%);
-    box-sizing: border-box;
-
-    .footer-logo-link {
-        display: inline-block;
-        text-decoration: none;
-        cursor: pointer;
-        transition: transform vars.$transition-duration ease;
-
-        &:hover {
-            transform: scale(1.02);
-        }
-    }
-
-    .footer-logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-    }
-
-    .footer-copyright {
-        color: vars.$black;
-        font-size: vars.$f-button-mb;
-        font-family: vars.$font-quantico;
-        margin: 0;
-    }
-
-    .footer-legal-links {
-        @include mix.dFlex($g: 16px);
-
-        a {
-            color: vars.$black;
-            font-size: vars.$f-button-mb;
-            font-family: vars.$font-quantico;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
     }
 }

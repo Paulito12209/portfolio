@@ -3,4 +3,7 @@
         [placeholder]="isInvalid ? ('CONTACT.ERROR_NAME' | translate) : ('CONTACT.FORM_NAME' | translate)"
         [ngModel]="name" (ngModelChange)="onInputChange($event)" #nameModel="ngModel" (blur)="onBlur()"
         [class.invalid]="isInvalid" [class.invalid-placeholder]="isInvalid" name="name">
+
+    <img src="img/icons/contact/check-form.svg" alt="Valid" class="status-icon" *ngIf="!isInvalid && name.length > 0">
+    <img src="img/icons/contact/exclamation-form.svg" alt="Invalid" class="status-icon" *ngIf="isInvalid">
 </div>

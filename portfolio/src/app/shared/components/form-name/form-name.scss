@@ -10,6 +10,7 @@ $error-color: vars.$error;
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
 }
 
 input {
@@ -17,19 +18,28 @@ input {
     background-color: transparent;
     border: 1px solid vars.$neon;
     border-radius: 30px;
-    padding: 16px 24px;
+    padding: 16px 50px 16px 24px; // Mehr padding-right für Icon
     color: white;
     font-family: vars.$font-quantico;
     font-size: vars.$f-p;
     outline: none;
     transition: all vars.$transition-duration ease;
 
+    @media (max-width: vars.$mobile) {
+        font-size: 14px;
+    }
+
     &::placeholder {
         color: rgba(vars.$neon, 0.4);
+        transition: color vars.$transition-duration ease;
     }
 
     &:focus {
         box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
+
+        &::placeholder {
+            color: transparent;
+        }
     }
 
     &.invalid {
@@ -38,6 +48,10 @@ input {
 
         &::placeholder {
             color: $error-color;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
         }
     }
 
@@ -50,4 +64,14 @@ input {
         box-shadow: 0 0 0px 1000px black inset;
         transition: background-color 5000s ease-in-out 0s;
     }
+}
+
+.status-icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
 }

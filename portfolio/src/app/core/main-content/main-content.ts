@@ -10,10 +10,11 @@ import { Contact } from '../../sections/contact/contact';
 import { References } from '../../sections/references/references';
 import { Header } from '../../shared/components/header/header';
 import { ScrollService } from '../services/scroll.service';
+import { MobileFooter } from '../../shared/components/mobile-footer/mobile-footer';
 
 @Component({
   selector: 'app-main-content',
-  imports: [Hero, WhyMe, Skills, Projects, References, Contact, Header, TranslateModule, RouterLink],
+  imports: [Hero, WhyMe, Skills, Projects, References, Contact, Header, TranslateModule, MobileFooter],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',
 })

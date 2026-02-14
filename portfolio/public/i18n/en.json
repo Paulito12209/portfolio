@@ -96,7 +96,7 @@
         "ERROR_EMAIL_REQUIRED": "Your email is required",
         "ERROR_EMAIL_INVALID": "Please enter a valid email",
         "ERROR_MESSAGE": "Your message is required",
-        "ERROR_PRIVACY": "Please accept the privacy policy",
+        "ERROR_PRIVACY": "Please accept the privacy policy.",
         "TOAST_TITLE": "Message sent successfully.",
         "TOAST_SUBTITLE": "Thank you for your message."
     },

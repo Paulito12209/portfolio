@@ -10,6 +10,16 @@ $error-color: vars.$error;
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
+}
+
+.status-icon {
+    position: absolute;
+    right: 24px;
+    bottom: 24px; // Bei Textarea unten rechts, unter dem Textblock
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
 }
 
 textarea {
@@ -17,20 +27,30 @@ textarea {
     background-color: transparent;
     border: 1px solid vars.$neon;
     border-radius: 30px;
-    padding: 24px 24px;
+    padding: 16px 24px 52px 24px; // Mehr padding-bottom (Icon 24px + 24px Abstand + 4px Puffer)
     color: white;
     font-family: vars.$font-quantico;
     font-size: vars.$f-p;
     outline: none;
     transition: all vars.$transition-duration ease;
     resize: none;
+    overflow: hidden; // Important for auto-resize to work smoothly without scrollbar flickering
+
+    @media (max-width: vars.$mobile) {
+        font-size: 14px;
+    }
 
     &::placeholder {
         color: rgba(vars.$neon, 0.4);
+        transition: color vars.$transition-duration ease;
     }
 
     &:focus {
         box-shadow: 0 0 10px rgba(vars.$neon, 0.3);
+
+        &::placeholder {
+            color: transparent;
+        }
     }
 
     &.invalid {
@@ -39,6 +59,10 @@ textarea {
 
         &::placeholder {
             color: $error-color;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
         }
     }
 
