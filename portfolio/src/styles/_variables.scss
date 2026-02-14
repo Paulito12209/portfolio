@@ -31,3 +31,7 @@ $sidebar: clamp(100px, 14.4vw - 47px, 160px); // Schrumpft von 160px (ab 1440px)
 
 /*==== Breakpoints ====*/
 $mobile: 1024px;
+
+
+/*==== Animations ====*/
+$transition-duration: 125ms;

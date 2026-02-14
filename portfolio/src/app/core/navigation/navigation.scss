@@ -138,7 +138,7 @@
             cursor: pointer;
             padding: 10px 0;
             text-align: center;
-            transition: color 0.3s ease-in-out;
+            transition: color vars.$transition-duration ease-in-out;
 
             &:hover {
                 color: white;
@@ -217,7 +217,7 @@
                 font-size: 24px;
                 color: vars.$black;
                 cursor: pointer;
-                transition: color 0.3s ease-in-out;
+                transition: color vars.$transition-duration ease-in-out;
 
                 &:hover {
                     color: white;

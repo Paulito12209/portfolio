@@ -22,7 +22,7 @@ input {
     font-family: vars.$font-quantico;
     font-size: vars.$f-p;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all vars.$transition-duration ease;
 
     &::placeholder {
         color: rgba(vars.$neon, 0.4);

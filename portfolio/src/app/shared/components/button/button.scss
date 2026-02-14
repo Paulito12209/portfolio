@@ -12,7 +12,7 @@ button {
     border-radius: 24px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all vars.$transition-duration;
 
     &:not(:disabled) {
         &:hover {

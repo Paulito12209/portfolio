@@ -157,7 +157,7 @@ app-header {
             height: 100%;
             width: 100%;
             object-fit: contain;
-            transition: opacity 0.3s ease;
+            transition: opacity vars.$transition-duration ease;
         }
 
         .default-arrow {
@@ -223,7 +223,7 @@ app-header {
         display: inline-block;
         text-decoration: none;
         cursor: pointer;
-        transition: transform 0.2s ease;
+        transition: transform vars.$transition-duration ease;
 
         &:hover {
             transform: scale(1.05);

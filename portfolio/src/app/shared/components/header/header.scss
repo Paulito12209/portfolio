@@ -36,6 +36,7 @@ a {
     cursor: pointer;
     text-decoration: none;
     cursor: pointer;
+    transition: transform vars.$transition-duration ease-in-out;
 
     &:hover {
         transform: scale(1.1);
@@ -62,6 +63,7 @@ a {
         font-size: 18px;
         border: none;
         padding: 0 8px;
+        transition: color vars.$transition-duration ease-in-out;
 
         &:hover {
             cursor: pointer;
