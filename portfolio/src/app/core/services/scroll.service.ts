@@ -5,7 +5,7 @@ import { filter } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class ScrollService {
     private router = inject(Router);
-    private scrollListener?: () => void;
+    private observer: IntersectionObserver | null = null;
 
     activeSection = signal<string>('hero');
 
@@ -62,36 +62,25 @@ export class ScrollService {
     }
 
     startObserving() {
-        const container = document.querySelector('.sections');
-        if (!container) return;
+        const sections = document.querySelectorAll('.section[id]');
+        if (!sections.length) return;
 
-        const updateActive = () => {
-            if (window.innerWidth <= 1024) return;
-
-            const sections = container.querySelectorAll('.section[id]');
-            const containerRect = container.getBoundingClientRect();
-            let nearest = 'hero';
-            let minDist = Infinity;
-
-            sections.forEach((section: Element) => {
-                const rect = section.getBoundingClientRect();
-                const dist = Math.abs(rect.left - containerRect.left);
-                if (dist < minDist) {
-                    minDist = dist;
-                    nearest = section.id;
+        this.observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        this.activeSection.set(entry.target.id);
+                    }
                 }
-            });
+            },
+            { root: null, threshold: 0.5 }
+        );
 
-            this.activeSection.set(nearest);
-        };
-
-        container.addEventListener('scroll', updateActive);
-        this.scrollListener = () => container.removeEventListener('scroll', updateActive);
-
-        updateActive();
+        sections.forEach((section) => this.observer!.observe(section));
     }
 
     stopObserving() {
-        this.scrollListener?.();
+        this.observer?.disconnect();
+        this.observer = null;
     }
 }
