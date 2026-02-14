@@ -8,6 +8,7 @@
 
     @media (max-width: vars.$mobile) {
         height: auto;
+        background: linear-gradient(180deg, vars.$black 0%, vars.$bg-gray 100%);
     }
 }
 

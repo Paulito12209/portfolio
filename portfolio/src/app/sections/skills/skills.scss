@@ -11,6 +11,7 @@
     @media (max-width: vars.$mobile) {
         flex-direction: column;
         height: auto;
+        background: linear-gradient(180deg, vars.$bg-gray 0%, vars.$black 100%);
     }
 }
 

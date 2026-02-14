@@ -10,6 +10,7 @@
         flex-direction: column;
         height: auto;
         align-items: flex-start;
+        background: linear-gradient(180deg, vars.$bg-gray 0%, vars.$black 100%);
     }
 }
 
