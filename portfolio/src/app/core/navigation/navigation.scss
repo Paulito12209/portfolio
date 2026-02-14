@@ -65,6 +65,8 @@
     min-height: 100vh;
     background-color: vars.$neon;
     background: linear-gradient(90deg, vars.$neon 90%, #89b02b 100%);
+    box-shadow: 16px 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 99;
 
     @include mix.dFlex($jc: stretch, $fdir: column, $g: 16px);
     padding: 40px 0;
@@ -80,6 +82,7 @@
         padding: 0 16px;
         z-index: 10;
         background: vars.$neon;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
     }
 
     // Logo
