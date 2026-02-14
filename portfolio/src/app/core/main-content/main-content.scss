@@ -207,7 +207,7 @@ app-header {
 
     .footer-copyright {
         color: vars.$black;
-        font-size: vars.$f-subtext;
+        font-size: vars.$f-button-mb;
         font-family: vars.$font-quantico;
         margin: 0;
     }
@@ -217,7 +217,7 @@ app-header {
 
         a {
             color: vars.$black;
-            font-size: vars.$f-subtext;
+            font-size: vars.$f-button-mb;
             font-family: vars.$font-quantico;
             text-decoration: none;
 

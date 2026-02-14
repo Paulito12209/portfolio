@@ -14,7 +14,7 @@
             <!-- "Show me more" Button (nur wenn collapsed UND Mobile) -->
             @if (shouldShowToggle && !isExpanded) {
             <button class="toggle-btn show-more" (click)="toggleExpand()">
-                <span class="text">Show me more</span> <span class="arrow">▼</span>
+                <span class="text">{{ 'PROJECTS.SHOW_MORE' | translate }}</span> <span class="arrow">▼</span>
             </button>
             }
 
@@ -63,6 +63,6 @@
 <!-- "Show me less" Button (nur wenn expanded UND Mobile) -->
 @if (shouldShowToggle && isExpanded) {
 <button class="toggle-btn show-less" (click)="toggleExpand()">
-    <span class="text">Show me less</span> <span class="arrow">▲</span>
+    <span class="text">{{ 'PROJECTS.SHOW_LESS' | translate }}</span> <span class="arrow">▲</span>
 </button>
 }

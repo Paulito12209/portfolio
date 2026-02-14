@@ -16,5 +16,12 @@ export class App {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('de');
     this.translate.use('de');
+
+    // Aktualisiert das lang-Attribut des html-Tags bei Sprachwechsel
+    this.translate.onLangChange.subscribe((event) => {
+      document.documentElement.lang = event.lang;
+    });
+    // Initial setzen
+    document.documentElement.lang = this.translate.currentLang || 'de';
   }
 }

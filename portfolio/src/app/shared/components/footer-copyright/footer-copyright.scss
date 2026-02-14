@@ -6,6 +6,6 @@ p {
     text-align: center;
 
     @media (max-width: vars.$mobile) {
-        font-size: 14px;
+        font-size: vars.$f-button-mb;
     }
 }

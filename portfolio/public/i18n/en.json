@@ -58,6 +58,8 @@
         "TECHNOLOGIES": "Technologies I have used",
         "LEARNING": "What I have learned",
         "BUTTON_LIVE": "Live Test",
+        "SHOW_MORE": "Show me more",
+        "SHOW_LESS": "Show me less",
         "JOIN_DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "JOIN_LEARNING": "Through this project, I learned how to build a complex application with drag-and-drop functionality and state management.",
         "POLLO_DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",

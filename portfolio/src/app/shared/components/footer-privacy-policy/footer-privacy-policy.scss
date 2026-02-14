@@ -7,7 +7,7 @@ a {
     font-family: vars.$font-quantico;
 
     @media (max-width: vars.$mobile) {
-        font-size: 14px;
+        font-size: vars.$f-button-mb;
     }
 
     &:hover {
