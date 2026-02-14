@@ -5,6 +5,9 @@
     @include mix.dFlex();
     height: 100%;
     width: 100%;
+    background: linear-gradient(235deg, vars.$black 30%, vars.$bg-gray 50%, vars.$black 70%) no-repeat;
+    background-size: 300% 100%;
+    background-position: 50% center;
 
     @media (max-width: vars.$mobile) {
         height: auto;

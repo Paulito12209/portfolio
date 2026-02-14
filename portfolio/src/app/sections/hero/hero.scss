@@ -8,6 +8,9 @@
     width: 100%;
     flex: 1;
     margin: 0;
+    background: linear-gradient(235deg, vars.$black 30%, vars.$bg-gray 50%, vars.$black 70%) no-repeat;
+    background-size: 300% 100%;
+    background-position: 0% center;
 
     @media (max-width: vars.$mobile) {
         height: calc(100vh - 80px);
@@ -16,6 +19,7 @@
         min-height: calc(100dvh - 80px);
 
         flex: unset;
+        background: vars.$black;
     }
 }
 
