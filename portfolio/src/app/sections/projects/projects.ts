@@ -26,7 +26,7 @@ export class Projects {
       technologies: 'Angular, TypeScript, HTML, CSS, Firebase',
       learning: 'PROJECTS.JOIN_LEARNING',
       image: './img/Screen_Join.png',
-      liveLink: 'https://join-1356-2445.developerakademie.net/angular-projects/join/login',
+      liveLink: 'https://paulangeles.com/projects/join/',
       githubLink: 'https://github.com/Paulito12209/Join'
     },
     {
