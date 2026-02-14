@@ -14,37 +14,37 @@
 
 @keyframes openAnimation {
     0% {
-        background-image: url('/portfolio/img/icons/menu/1_burgermenu-close.svg');
+        background-image: url('/img/icons/menu/1_burgermenu-close.svg');
     }
 
     33% {
-        background-image: url('/portfolio/img/icons/menu/2_burgermenu-transition.svg');
+        background-image: url('/img/icons/menu/2_burgermenu-transition.svg');
     }
 
     66% {
-        background-image: url('/portfolio/img/icons/menu/3_burgermenu-transition-2.svg');
+        background-image: url('/img/icons/menu/3_burgermenu-transition-2.svg');
     }
 
     100% {
-        background-image: url('/portfolio/img/icons/menu/4_burgermenu-open.svg');
+        background-image: url('/img/icons/menu/4_burgermenu-open.svg');
     }
 }
 
 @keyframes closeAnimation {
     0% {
-        background-image: url('/portfolio/img/icons/menu/4_burgermenu-open.svg');
+        background-image: url('/img/icons/menu/4_burgermenu-open.svg');
     }
 
     33% {
-        background-image: url('/portfolio/img/icons/menu/3_burgermenu-transition-2.svg');
+        background-image: url('/img/icons/menu/3_burgermenu-transition-2.svg');
     }
 
     66% {
-        background-image: url('/portfolio/img/icons/menu/2_burgermenu-transition.svg');
+        background-image: url('/img/icons/menu/2_burgermenu-transition.svg');
     }
 
     100% {
-        background-image: url('/portfolio/img/icons/menu/1_burgermenu-close.svg');
+        background-image: url('/img/icons/menu/1_burgermenu-close.svg');
     }
 }
 
@@ -109,7 +109,7 @@
             padding: 0;
 
             @include burger-icon-base;
-            background-image: url('/portfolio/img/icons/menu/1_burgermenu-close.svg');
+            background-image: url('/img/icons/menu/1_burgermenu-close.svg');
         }
     }
 
@@ -184,7 +184,7 @@
                 transition: transform 0.2s ease;
 
                 @include burger-icon-base;
-                background-image: url('/portfolio/img/icons/menu/4_burgermenu-open.svg');
+                background-image: url('/img/icons/menu/4_burgermenu-open.svg');
                 background-color: transparent;
 
                 &:hover {

@@ -6,13 +6,16 @@
                 <div class="imp-content">
                     <app-section-content title="IMPRINT.TITLE">
                         <div class="imprint-main">
-                            <section class="imprint-section"
-                                *ngFor="let section of $any('IMPRINT.SECTIONS' | translate)">
+                            @for (section of $any('IMPRINT.SECTIONS' | translate); track $index) {
+                            <section class="imprint-section">
                                 <h3>{{ section.TITLE }}</h3>
                                 <div class="text-content">
-                                    <p *ngFor="let line of $any(section.CONTENT)">{{ line }}</p>
+                                    @for (line of $any(section.CONTENT); track $index) {
+                                    <p>{{ line }}</p>
+                                    }
                                 </div>
                             </section>
+                            }
                         </div>
                     </app-section-content>
                 </div>

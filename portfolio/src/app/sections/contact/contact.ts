@@ -52,7 +52,7 @@ export class Contact {
   showToast = false;
 
   post = {
-    endPoint: 'https://paulangeles.com/portfolio/sendMail.php',
+    endPoint: 'https://paulangeles.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

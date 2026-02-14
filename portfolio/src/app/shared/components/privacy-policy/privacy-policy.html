@@ -7,13 +7,16 @@
                 <div class="pp-content">
                     <app-section-content title="PRIVACY_POLICY.TITLE">
                         <div class="privacy-policy-main">
-                            <section class="privacy-policy-section"
-                                *ngFor="let section of $any('PRIVACY_POLICY.SECTIONS' | translate | slice:0:3)">
+                            @for (section of $any('PRIVACY_POLICY.SECTIONS' | translate | slice:0:3); track $index) {
+                            <section class="privacy-policy-section">
                                 <h3>{{ section.TITLE }}</h3>
                                 <div class="text-content">
-                                    <p *ngFor="let line of $any(section.CONTENT)">{{ line }}</p>
+                                    @for (line of $any(section.CONTENT); track $index) {
+                                    <p>{{ line }}</p>
+                                    }
                                 </div>
                             </section>
+                            }
                         </div>
                     </app-section-content>
                 </div>
@@ -29,13 +32,16 @@
                 <div class="pp-footer-text">
                     <app-section-content class="no-title">
                         <div class="privacy-policy-main">
-                            <section class="privacy-policy-section"
-                                *ngFor="let section of $any('PRIVACY_POLICY.SECTIONS' | translate | slice:3)">
+                            @for (section of $any('PRIVACY_POLICY.SECTIONS' | translate | slice:3); track $index) {
+                            <section class="privacy-policy-section">
                                 <h3>{{ section.TITLE }}</h3>
                                 <div class="text-content">
-                                    <p *ngFor="let line of $any(section.CONTENT)">{{ line }}</p>
+                                    @for (line of $any(section.CONTENT); track $index) {
+                                    <p>{{ line }}</p>
+                                    }
                                 </div>
                             </section>
+                            }
                         </div>
                     </app-section-content>
                 </div>

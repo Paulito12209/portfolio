@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Header } from '../header/header';
 import { SectionBow } from '../section-bow/section-bow';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-imprint',
-  imports: [CommonModule, TranslateModule, Header, SectionContent, Footer, Email, PhoneNumber, RouterLink, MobileFooter],
+  imports: [CommonModule, TranslateModule, Header, SectionContent, Footer, Email, PhoneNumber, MobileFooter],
   templateUrl: './imprint.html',
   styleUrl: './imprint.scss',
 })
