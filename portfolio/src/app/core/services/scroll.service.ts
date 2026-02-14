@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 export class ScrollService {
     private router = inject(Router);
     private observer: IntersectionObserver | null = null;
+    private ratioMap = new Map<string, number>();
 
     activeSection = signal<string>('hero');
 
@@ -68,12 +69,23 @@ export class ScrollService {
         this.observer = new IntersectionObserver(
             (entries) => {
                 for (const entry of entries) {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                        this.activeSection.set(entry.target.id);
+                    this.ratioMap.set(entry.target.id, entry.intersectionRatio);
+                }
+
+                let maxRatio = 0;
+                let maxSection = '';
+                for (const [id, ratio] of this.ratioMap) {
+                    if (ratio > maxRatio) {
+                        maxRatio = ratio;
+                        maxSection = id;
                     }
                 }
+
+                if (maxSection) {
+                    this.activeSection.set(maxSection);
+                }
             },
-            { root: null, threshold: 0.5 }
+            { root: null, threshold: [0, 0.25, 0.5, 0.75, 1.0] }
         );
 
         sections.forEach((section) => this.observer!.observe(section));
@@ -82,5 +94,6 @@ export class ScrollService {
     stopObserving() {
         this.observer?.disconnect();
         this.observer = null;
+        this.ratioMap.clear();
     }
 }
