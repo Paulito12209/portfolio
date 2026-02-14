@@ -27,4 +27,8 @@ button {
         color: rgba(255, 255, 255, 0.3);
         cursor: not-allowed;
     }
+
+    @media (max-width: vars.$mobile) {
+        font-size: vars.$f-button-mb;
+    }
 }

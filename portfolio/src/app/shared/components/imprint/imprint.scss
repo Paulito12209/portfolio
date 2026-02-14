@@ -104,6 +104,7 @@ app-header {
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;
+        padding-bottom: 0px;
     }
 }
 
@@ -139,7 +140,7 @@ app-header {
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
-        padding: 0 16px;
+        padding: 0 16px 40px;
         width: 100%;
     }
 }
@@ -311,7 +312,7 @@ app-header {
 
     .footer-copyright {
         color: vars.$black;
-        font-size: vars.$f-subtext;
+        font-size: 14px;
         font-family: vars.$font-quantico;
         margin: 0;
     }
@@ -321,7 +322,7 @@ app-header {
 
         a {
             color: vars.$black;
-            font-size: vars.$f-subtext;
+            font-size: 14px;
             font-family: vars.$font-quantico;
             text-decoration: none;
 

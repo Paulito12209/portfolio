@@ -63,29 +63,46 @@ export class ScrollService {
     }
 
     startObserving() {
+        this.stopObserving();
+        const container = document.querySelector('.sections');
         const sections = document.querySelectorAll('.section[id]');
         if (!sections.length) return;
 
+        // Desktop: Horizontales Scrollen im Container
+        // Mobile: Vertikales Scrollen im Viewport
+        const isMobile = window.innerWidth <= 1024;
+
         this.observer = new IntersectionObserver(
             (entries) => {
-                for (const entry of entries) {
+                entries.forEach(entry => {
                     this.ratioMap.set(entry.target.id, entry.intersectionRatio);
-                }
+                });
 
                 let maxRatio = 0;
-                let maxSection = '';
-                for (const [id, ratio] of this.ratioMap) {
+                let activeId = 'hero';
+
+                sections.forEach(section => {
+                    const ratio = this.ratioMap.get(section.id) || 0;
                     if (ratio > maxRatio) {
                         maxRatio = ratio;
-                        maxSection = id;
+                        activeId = section.id;
                     }
+                });
+
+                // Sonderlogik für Hero: Wenn wir ganz oben sind, immer Hero
+                if (isMobile && window.scrollY < 50) {
+                    activeId = 'hero';
                 }
 
-                if (maxSection) {
-                    this.activeSection.set(maxSection);
+                if (activeId) {
+                    this.activeSection.set(activeId);
                 }
             },
-            { root: null, threshold: [0, 0.25, 0.5, 0.75, 1.0] }
+            {
+                root: isMobile ? null : container,
+                threshold: [0, 0.25, 0.5, 0.75, 1.0],
+                rootMargin: isMobile ? '-80px 0px 0px 0px' : '0px'
+            }
         );
 
         sections.forEach((section) => this.observer!.observe(section));
