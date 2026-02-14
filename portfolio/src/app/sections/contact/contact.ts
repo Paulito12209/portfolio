@@ -52,7 +52,7 @@ export class Contact {
   showToast = false;
 
   post = {
-    endPoint: 'https://paulangeles.com/projects/portfolio/sendMail.php',
+    endPoint: 'https://paulangeles.com/portfolio/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -79,34 +79,37 @@ export class Contact {
 
   onSubmit() {
     if (!this.isFormValid()) return;
+    this.mailTest ? this.handleTestSubmission() : this.handleRealSubmission();
+  }
 
-    if (this.mailTest) {
-      console.log('Test-Modus: Formular wurde gesendet', {
-        name: this.name,
-        email: this.email,
-        message: this.message
+  private handleTestSubmission() {
+    console.log('Test-Modus: Formular wurde gesendet', {
+      name: this.name,
+      email: this.email,
+      message: this.message
+    });
+    this.finishSubmission();
+  }
+
+  private handleRealSubmission() {
+    this.http.post(this.post.endPoint, this.post.body(this.createPayload()))
+      .subscribe({
+        next: () => this.finishSubmission(),
+        error: (error) => {
+          console.error('Fehler beim Senden:', error);
+          this.finishSubmission();
+        },
+        complete: () => console.info('E-Mail gesendet!')
       });
-      this.showToast = true;
-      this.resetForm();
-    } else {
-      this.http.post(this.post.endPoint, this.post.body({
-        name: this.name,
-        email: this.email,
-        message: this.message
-      }))
-        .subscribe({
-          next: () => {
-            this.showToast = true;
-            this.resetForm();
-          },
-          error: (error) => {
-            console.error('Fehler beim Senden:', error);
-            this.showToast = true;
-            this.resetForm();
-          },
-          complete: () => console.info('E-Mail gesendet!')
-        });
-    }
+  }
+
+  private createPayload() {
+    return { name: this.name, email: this.email, message: this.message };
+  }
+
+  private finishSubmission() {
+    this.showToast = true;
+    this.resetForm();
   }
 
 

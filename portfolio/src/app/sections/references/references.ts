@@ -55,23 +55,25 @@ export class References implements AfterViewInit, OnDestroy {
     if (!container) return;
 
     this.observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const cards = container.querySelectorAll('app-reference-details');
-            const index = Array.from(cards).indexOf(entry.target as HTMLElement);
-            if (index !== -1) {
-              this.activeIndex = index;
-              this.cdr.detectChanges();
-            }
-          }
-        }
-      },
+      (entries) => this.handleIntersect(entries, container),
       { root: container, threshold: 0.6 }
     );
 
     const cards = container.querySelectorAll('app-reference-details');
     cards.forEach((card) => this.observer!.observe(card));
+  }
+
+  private handleIntersect(entries: IntersectionObserverEntry[], container: HTMLElement) {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        const cards = container.querySelectorAll('app-reference-details');
+        const index = Array.from(cards).indexOf(entry.target as HTMLElement);
+        if (index !== -1) {
+          this.activeIndex = index;
+          this.cdr.detectChanges();
+        }
+      }
+    }
   }
 
   scrollToCard(index: number): void {
@@ -81,17 +83,17 @@ export class References implements AfterViewInit, OnDestroy {
 
     const cards = container.querySelectorAll('app-reference-details');
     if (cards[index]) {
-      const card = cards[index] as HTMLElement;
-
-      if (index === 0) {
-        container.scrollTo({ left: 0, behavior: 'smooth' });
-      } else if (index === this.references.length - 1) {
-        container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
-      } else {
-        const containerCenter = container.clientWidth / 2;
-        const cardCenter = card.offsetLeft + card.clientWidth / 2;
-        container.scrollTo({ left: cardCenter - containerCenter, behavior: 'smooth' });
-      }
+      const position = this.getScrollPosition(index, container, cards[index] as HTMLElement);
+      container.scrollTo({ left: position, behavior: 'smooth' });
     }
+  }
+
+  private getScrollPosition(index: number, container: HTMLElement, card: HTMLElement): number {
+    if (index === 0) return 0;
+    if (index === this.references.length - 1) return container.scrollWidth;
+
+    const containerCenter = container.clientWidth / 2;
+    const cardCenter = card.offsetLeft + card.clientWidth / 2;
+    return cardCenter - containerCenter;
   }
 }

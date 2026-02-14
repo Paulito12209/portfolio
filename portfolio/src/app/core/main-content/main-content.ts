@@ -68,9 +68,11 @@ export class MainContent implements AfterViewInit, OnDestroy {
 
   private alignBows() {
     if (window.innerWidth <= 1024) return;
+    const items = this.getBowItems();
+    requestAnimationFrame(() => this.applyBowOffsets(items));
+  }
 
-    const el = this.elementRef.nativeElement;
-
+  private getBowItems() {
     const bowPairs = [
       { bow: '.hero-bow', title: '#why-me app-section-content h2' },
       { bow: '.why-me-bow', title: '#skills app-section-content h2' },
@@ -80,26 +82,37 @@ export class MainContent implements AfterViewInit, OnDestroy {
     ];
 
     const items: { bowEl: HTMLElement; titleEl: HTMLElement }[] = [];
+    const el = this.elementRef.nativeElement;
+
     for (const { bow, title } of bowPairs) {
       const bowEl = el.querySelector(bow) as HTMLElement;
       const titleEl = el.querySelector(title) as HTMLElement;
       if (bowEl && titleEl) {
-        bowEl.style.paddingTop = '0px';
-        bowEl.style.marginTop = '0px';
+        this.resetBowStyle(bowEl);
         items.push({ bowEl, titleEl });
       }
     }
+    return items;
+  }
 
-    requestAnimationFrame(() => {
-      for (const { bowEl, titleEl } of items) {
-        const bowTop = bowEl.getBoundingClientRect().top;
-        const titleBottom = titleEl.getBoundingClientRect().bottom;
-        const arrowImg = bowEl.querySelector('img');
-        const arrowH = arrowImg ? arrowImg.getBoundingClientRect().height : 0;
-        const offset = Math.max(0, (titleBottom - bowTop - arrowH / 2) - 18);
-        bowEl.style.paddingTop = `${offset}px`;
-      }
-    });
+  private resetBowStyle(bowEl: HTMLElement) {
+    bowEl.style.paddingTop = '0px';
+    bowEl.style.marginTop = '0px';
+  }
+
+  private applyBowOffsets(items: { bowEl: HTMLElement; titleEl: HTMLElement }[]) {
+    for (const { bowEl, titleEl } of items) {
+      const offset = this.calculateOffset(bowEl, titleEl);
+      bowEl.style.paddingTop = `${offset}px`;
+    }
+  }
+
+  private calculateOffset(bowEl: HTMLElement, titleEl: HTMLElement): number {
+    const bowTop = bowEl.getBoundingClientRect().top;
+    const titleBottom = titleEl.getBoundingClientRect().bottom;
+    const arrowImg = bowEl.querySelector('img');
+    const arrowH = arrowImg ? arrowImg.getBoundingClientRect().height : 0;
+    return Math.max(0, (titleBottom - bowTop - arrowH / 2) - 18);
   }
 
   scrollToTop() {
