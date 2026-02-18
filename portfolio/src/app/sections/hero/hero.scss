@@ -82,7 +82,7 @@
             @include mix.dFlex();
             flex: 1;
             width: 100%;
-            max-height: 1380px;
+            max-height: min(1380px, calc(100vh - 80px));
 
             background-image: url('/img/pa-hero-bg-image.png');
             background-repeat: no-repeat;
@@ -101,11 +101,11 @@
 
             // Desktop Text (inside Image)
             .hero-text {
-                @include mix.dFlex($fdir: column);
+                @include mix.dFlex($fdir: column, $jc: flex-end);
                 flex: 1;
                 height: 100%;
                 width: 100%;
-                padding-top: 40%;
+                padding-bottom: clamp(48px, 7.71vw - 30.88px, 80px);
 
                 @media (max-width: vars.$mobile) {
                     display: none;
