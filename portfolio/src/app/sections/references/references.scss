@@ -29,7 +29,7 @@
 
 .references-content {
     @include mix.dFlex($jc: start);
-    padding-top: 80px;
+    padding-top: clamp(40px, 6vh, 80px);
     width: 70%;
 
     @media (max-width: vars.$mobile) {

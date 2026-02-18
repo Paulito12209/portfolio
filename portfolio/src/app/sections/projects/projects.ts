@@ -25,7 +25,7 @@ export class Projects {
       description: 'PROJECTS.JOIN_DESCRIPTION',
       technologies: 'Angular, TypeScript, HTML, CSS, Firebase',
       learning: 'PROJECTS.JOIN_LEARNING',
-      image: './img/Screen_Join.png',
+      image: './img/Screen_Join.svg',
       liveLink: 'https://paulangeles.com/projects/join/',
       githubLink: 'https://github.com/Paulito12209/Join'
     },

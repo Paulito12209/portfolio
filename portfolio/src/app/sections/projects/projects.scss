@@ -5,9 +5,6 @@
     @include mix.dFlex($jc: flex-start, $ai: start);
     width: fit-content;
     height: 100%;
-    padding-top: 64px;
-    background: linear-gradient(235deg, vars.$black 25%, vars.$bg-gray 50%, vars.$black 75%) no-repeat;
-    background-size: 100% 100%;
 
     @media (max-width: vars.$mobile) {
         height: auto;

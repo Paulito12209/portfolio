@@ -8,9 +8,6 @@
     width: 100%;
     flex: 1;
     margin: 0;
-    background: linear-gradient(235deg, vars.$black 30%, vars.$bg-gray 50%, vars.$black 70%) no-repeat;
-    background-size: 300% 100%;
-    background-position: 0% center;
 
     @media (max-width: vars.$mobile) {
         height: calc(100vh - 80px);
@@ -24,7 +21,7 @@
 }
 
 .hero-container {
-    @include mix.dFlex($fdir: column);
+    @include mix.dFlex($fdir: column, $jc: flex-start);
     flex: 1;
     height: 100%;
     width: 100%;
@@ -69,7 +66,7 @@
     }
 
     .hero-image {
-        @include mix.dFlex();
+        @include mix.dFlex($ai: stretch);
         flex: 1;
         height: 100%;
         width: 100%;
@@ -84,13 +81,13 @@
         .hero-image-bg {
             @include mix.dFlex();
             flex: 1;
-            height: 100%;
             width: 100%;
+            max-height: 1380px;
 
             background-image: url('/img/pa-hero-bg-image.png');
             background-repeat: no-repeat;
             background-position: top;
-            background-size: cover;
+            background-size: contain;
 
             @media (max-width: vars.$mobile) {
                 flex: 1 1 auto;

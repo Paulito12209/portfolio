@@ -8,5 +8,5 @@ import { TranslateModule } from "@ngx-translate/core";
   styleUrl: './section-content.scss',
 })
 export class SectionContent {
-  @Input() title: string = '';
+  @Input() headline: string = '';
 }

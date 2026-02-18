@@ -87,6 +87,7 @@
         flex-direction: column;
         padding-left: 0px;
         gap: 24px;
+        align-items: stretch;
     }
 
     @media (min-width: 1025px) and (max-width: 1440px) {
@@ -100,6 +101,7 @@
 
     @media (max-width: vars.$mobile) {
         max-width: 100%;
+        width: 100%;
     }
 
     ul {
@@ -110,6 +112,8 @@
 
         @media (max-width: vars.$mobile) {
             gap: 24px;
+            width: 100%;
+            align-items: stretch;
         }
     }
 
@@ -174,14 +178,15 @@
     }
 
     img {
-        height: auto;
         max-width: clamp(300px, 24vw + 54px, 400px);
         width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: top;
         border-radius: 32px;
         border: 1px solid rgba(255, 255, 255, 0.2);
 
         @media (max-width: vars.$mobile) {
-            height: auto;
             max-width: 100%;
             width: 100%;
             border-radius: 16px;
@@ -283,11 +288,13 @@
         margin-left: 8px;
     }
 
+    // Center the button content
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
     @media (max-width: vars.$mobile) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
         font-size: vars.$f-button-mb;
     }
 
@@ -302,6 +309,7 @@
 }
 
 // "Show me less" Button below Frame
+// "Show me less" Button below Frame
 .show-less {
     @media (max-width: vars.$mobile) {
         position: absolute;
@@ -310,5 +318,8 @@
         transform: translateX(-50%);
         margin-top: 0;
         padding-top: 24px;
+        // Ensure it has width to be clickable and centered properly 
+        width: auto;
+        min-width: 150px;
     }
 }

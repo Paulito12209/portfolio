@@ -65,7 +65,7 @@
     min-height: 100vh;
     background-color: vars.$neon;
     background: linear-gradient(90deg, vars.$neon 90%, #89b02b 100%);
-    box-shadow: 16px 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 24px 0 20px rgba(0, 0, 0, 0.75);
     z-index: 99;
 
     @include mix.dFlex($jc: stretch, $fdir: column, $g: 16px);

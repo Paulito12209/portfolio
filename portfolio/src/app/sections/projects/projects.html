@@ -1,6 +1,6 @@
 <div class="projects-container">
     <div class="projects-content">
-        <app-section-content title="PROJECTS.TITLE">
+        <app-section-content [headline]="'PROJECTS.TITLE'">
             <div class="projects-list">
                 <app-project-details *ngFor="let project of projects; let i = index" [number]="project.number"
                     [title]="project.title" [description]="project.description" [technologies]="project.technologies"

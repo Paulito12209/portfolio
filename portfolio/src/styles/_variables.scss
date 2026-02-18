@@ -5,7 +5,7 @@ $f-h1: clamp(40px, 14vw - 128px, 100px); // Steil: 1200px (100px) -> 1025px (60p
 $f-h2: clamp(28px, 12.5vw - 96px, 54px); // Steil: 1200px (54px) -> 1025px (32px)
 $f-h3: clamp(20px, 12.5vw - 100px, 48px); // Steil: 1200px (48px) -> 1025px (28px) 
 $f-h4: clamp(14px, 5vw - 36px, 24px); // Steil: 1200px (24px) -> 1025px (16px)
-$f-p: clamp(12px, 4vw - 30px, 18px); // Steil: 1200px (18px) -> 1025px (11-12px -> Min 12px)
+$f-p: var(--f-p); // Gestuft via CSS Custom Property (definiert in styles.scss)
 $f-subtext: clamp(12px, 3.4vw - 25px, 16px); // Steil: 1200px (16px) -> 1025px (10px -> Min 12px)
 $f-button: clamp(12px, 2.3vw - 14px, 14px); // Steil: 1200px (14px) -> 1025px (10px -> Min 12px)
 $nav-links: clamp(16px, 8vh - 40px, 30px); // Aggressiveres vh-Scaling

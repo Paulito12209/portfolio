@@ -28,6 +28,7 @@ app-header {
     min-height: 900px;
     overflow: hidden;
     color: white;
+    background: vars.$black;
 
     @media (max-width: vars.$mobile) {
         margin-left: 0;
@@ -35,6 +36,7 @@ app-header {
         height: auto;
         min-height: unset;
         overflow: visible;
+        background: none;
     }
 }
 
@@ -44,11 +46,30 @@ app-header {
     flex-direction: row;
     align-items: stretch;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x proximity;
     scroll-behavior: smooth;
-    background-color: vars.$black;
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+        display: none; // Chrome / Safari
+    }
+
+    // Durchgehender Gradient über die gesamte Scrollbreite (Pixel-Stops)
+    // Hero: 0–1280 | Why Me: 1280–2560 | Skills: 2560–3840
+    // Projects: 3840–6340 | References: 6340–7240 | Contact: 7240–8420
+    background: linear-gradient(80deg,
+        vars.$black 0px,
+        vars.$black 1280px,      // Hero: schwarz
+        vars.$bg-gray 2048px,    // Why Me: Gradient-Peak (40% Anstieg, 60% Ausfaden)
+        vars.$black 3200px,      // Abfallend – erste 50% von Skills
+        vars.$black 3840px,      // schwarz bis Projects
+        vars.$bg-gray 5320px,    // Projects: Gradient-Peak (mittig)
+        vars.$black 6800px,      // Abfallend – etwas in References hinein
+        vars.$black 8420px       // Rest schwarz (Contact)
+    ) no-repeat;
+    background-attachment: local;
 
     @media (max-width: vars.$mobile) {
         flex-direction: column;
@@ -56,7 +77,8 @@ app-header {
         overflow-x: hidden;
         overflow-y: visible;
         scroll-snap-type: none;
-        background-color: vars.$black;
+        background: vars.$black;
+        background-attachment: scroll;
     }
 }
 
@@ -69,7 +91,7 @@ app-header {
     overflow: hidden;
     scroll-snap-align: start;
     scroll-behavior: smooth;
-    margin-top: 80px;
+    padding-top: 80px;
 
     // Projects Section
     &#projects {
