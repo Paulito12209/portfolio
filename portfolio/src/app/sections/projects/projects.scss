@@ -28,6 +28,7 @@
 
 .projects-content {
     @include mix.dFlex($ai: start);
+    padding-top: 40px;
     width: fit-content;
 
     @media (max-width: vars.$mobile) {

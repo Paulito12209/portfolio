@@ -17,7 +17,7 @@
 
     caption {
         font-family: vars.$font-quantico;
-        font-size: 16px;
+        font-size: clamp(14px, 0.48vw + 9.09px, 16px);
         font-weight: 400;
     }
 }

@@ -27,7 +27,7 @@
 }
 
 .why-me-content {
-    padding-top: clamp(40px, 6vh, 80px);
+    padding-top: 80px;
     width: 70%;
 
     @media (max-width: vars.$mobile) {

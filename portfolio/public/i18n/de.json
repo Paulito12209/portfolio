@@ -64,7 +64,7 @@
         "JOIN_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man eine komplexe Anwendung mit Drag-and-Drop-Funktionalität und State Management erstellt.",
         "POLLO_DESCRIPTION": "Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
         "POLLO_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man objektorientierte Programmierung in JavaScript umsetzt und einen Game-Loop erstellt.",
-        "POKEDEX_DESCRIPTION": "Basierend auf der PokéAPI. Eine App zum Suchen und Anzeigen von Pokémon-Informationen.",
+        "POKEDEX_DESCRIPTION": "Basierend auf der PokéAPI. Eine App zum Suchen und Anzeigen von Pokémon-Informationen. Nutzer können durch eine moderne Oberfläche navigieren und Details wie Statistiken abrufen.",
         "POKEDEX_LEARNING": "Durch dieses Projekt habe ich gelernt, wie man komplexe APIs einbindet und Daten effizient filtert."
     },
     "REFERENCES": {

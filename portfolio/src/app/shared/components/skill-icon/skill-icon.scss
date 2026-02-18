@@ -5,6 +5,10 @@
     @include mix.dFlex($fdir: column, $g: 8px); // <- Zentriert alles
     width: 100px;
 
+    img {
+        height: clamp(40px, 4.83vw - 9.50px, 60px);
+    }
+
     p {
         font-size: vars.$f-p;
         text-align: center;

@@ -30,7 +30,7 @@
 
 .skills-content {
     @include mix.dFlex($g: 16px);
-    padding-top: clamp(40px, 8vh, 160px);
+    padding-top: 240px;
     width: 95%;
 
     @media (max-width: vars.$mobile) {
@@ -46,7 +46,7 @@
         font-size: vars.$f-p;
         font-weight: 400;
         line-height: 1.5;
-        margin-bottom: 48px;
+        margin-bottom: clamp(32px, 3.86vw - 7.55px, 48px);
 
         @media (max-width: vars.$mobile) {
             font-size: vars.$f-p-mb;
@@ -56,7 +56,7 @@
 }
 
 .skills-subcontent {
-    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(8px, 2vmin, 32px));
+    @include mix.dFlex($fdir: column, $ai: start, $g: clamp(16px, 3.86vw - 23.55px, 32px));
     width: 100%;
 
     @media (max-width: vars.$mobile) {
@@ -69,7 +69,7 @@
 }
 
 .skills-icon-list {
-    @include mix.dFlex($jc: start, $ai: start, $g: clamp(8px, 1.5vmin, 24px));
+    @include mix.dFlex($jc: start, $ai: start, $g: clamp(4px, 4.83vw - 45.50px, 24px));
     flex-grow: max-content;
 
     @media (max-width: vars.$mobile) {
@@ -81,7 +81,7 @@
     }
 
     .skills-icons {
-        @include mix.dFlex($jc: start, $g: clamp(8px, 1.5vmin, 24px));
+        @include mix.dFlex($jc: start, $g: clamp(4px, 4.83vw - 45.50px, 24px));
 
         @media (max-width: vars.$mobile) {
             display: flex;
@@ -112,7 +112,7 @@
     align-self: center;
 
     p {
-        font-size: vars.$f-subtext;
+        font-size: clamp(14px, 0.48vw + 9.09px, 16px);
         margin: 0;
     }
 }
