@@ -1,6 +1,6 @@
 <div class="skills-container">
     <div class="skills-content">
-        <app-section-content headline="SKILLS.TITLE">
+        <app-section-content [headline]="'SKILLS.TITLE'">
             <p>{{ 'SKILLS.TEXT' | translate }}</p>
             <div class="skills-subcontent">
                 <div class="skills-icon-list">
@@ -46,7 +46,7 @@
             <div class="challenge-me">
                 <p>{{ 'SKILLS.SUBTEXT' | translate }}</p>
             </div>
-            <app-button class="skills-button" title="SKILLS.BUTTON"></app-button>
+            <app-button class="skills-button" [label]="'SKILLS.BUTTON'"></app-button>
         </app-section-content>
     </div>
     <div class="skills-bow">

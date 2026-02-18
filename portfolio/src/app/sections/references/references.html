@@ -7,7 +7,7 @@
             <p>{{ 'REFERENCES.MOBILE_P' | translate }}</p>
         </div>
 
-        <app-section-content headline="REFERENCES.TITLE" class="hide-title-mobile">
+        <app-section-content [headline]="'REFERENCES.TITLE'" class="hide-title-mobile">
             <div class="references-list" #referencesList>
                 <app-reference-details [person]="references[0].person" [project]="references[0].project"
                     [description]="references[0].description">

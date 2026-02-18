@@ -4,9 +4,9 @@ $font-quantico: "Quantico", Arial, sans-serif;
 $f-h1: clamp(48px, 12.56vw - 80.74px, 100px); // 1439px (100px) -> 1025px (48px)
 $f-h2: clamp(32px, 5.31vw - 22.41px, 54px); // 1439px (54px) -> 1025px (32px)
 $f-h3: clamp(24px, 5.80vw - 35.46px, 48px); // 1439px (48px) -> 1025px (24px) 
-$f-h4: clamp(14px, 5vw - 36px, 24px); // Steil: 1200px (24px) -> 1025px (16px)
+$f-h4: clamp(16px, 1.93vw - 3.77px, 24px); // 1439px (24px) -> 1025px (16px)
 $f-p: var(--f-p); // Gestuft via CSS Custom Property (definiert in styles.scss)
-$f-subtext: clamp(12px, 3.4vw - 25px, 16px); // Steil: 1200px (16px) -> 1025px (10px -> Min 12px)
+$f-subtext: 14px; // Fest 14px (kein Schrumpfen)
 $f-button: 14px; // Fest 14px für Desktop
 $nav-links: clamp(16px, 8vh - 40px, 30px); // Aggressiveres vh-Scaling
 

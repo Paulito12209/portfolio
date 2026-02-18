@@ -133,7 +133,7 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 12px;
+            top: clamp(6px, 1.45vw - 8.87px, 12px);
             width: 10px;
             height: 10px;
             border: 1px solid vars.$neon;
@@ -238,7 +238,7 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 12px;
+            top: clamp(6px, 1.45vw - 8.87px, 12px);
             width: 10px;
             height: 10px;
             border: 1px solid vars.$neon;

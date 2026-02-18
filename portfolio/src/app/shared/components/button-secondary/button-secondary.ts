@@ -9,5 +9,5 @@ import { TranslateModule } from "@ngx-translate/core";
     styleUrl: './button-secondary.scss',
 })
 export class ButtonSecondary {
-    @Input() title: string = '';
+    @Input() label: string = '';
 }
