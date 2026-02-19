@@ -91,6 +91,27 @@ app-header {
     scroll-behavior: smooth;
     padding-top: 80px;
 
+    // Hero Section
+    &#hero {
+        @media (max-width: vars.$mobile) {
+            background: vars.$black;
+        }
+    }
+
+    // Why Me Section
+    &#why-me {
+        @media (max-width: vars.$mobile) {
+            background: linear-gradient(180deg, vars.$black 0%, vars.$bg-gray 50%, vars.$black 100%);
+        }
+    }
+
+    // Skills Section
+    &#skills {
+        @media (max-width: vars.$mobile) {
+            background: vars.$black;
+        }
+    }
+
     // Projects Section
     &#projects {
         max-width: none;
@@ -101,6 +122,7 @@ app-header {
             width: 100%;
             min-width: 100%;
             max-width: 100%;
+            background: linear-gradient(180deg, vars.$black 0%, vars.$bg-gray 50%, vars.$black calc(100% - 400px));
         }
     }
 
@@ -110,6 +132,7 @@ app-header {
 
         @media (max-width: vars.$mobile) {
             max-width: 100%;
+            background: vars.$black;
         }
     }
 
@@ -119,6 +142,7 @@ app-header {
 
         @media (max-width: vars.$mobile) {
             max-width: 100%;
+            background: vars.$black;
         }
     }
 
