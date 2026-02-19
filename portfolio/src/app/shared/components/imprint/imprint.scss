@@ -212,6 +212,11 @@ app-header {
             font-size: clamp(14px, 0.96vw + 4.12px, 18px);
         }
 
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        word-wrap: break-word; // Legacy support
+        overflow-wrap: break-word; // Modern standard
+
         line-height: 1.5;
         margin: 0;
 
