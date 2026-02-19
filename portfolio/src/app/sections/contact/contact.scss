@@ -36,7 +36,7 @@
     @include mix.dFlex($jc: start, $ai: start);
     flex: 0 0 60%;
     max-width: 60%;
-    padding-top: clamp(40px, 8vh, 100px);
+    padding-top: 64px;
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -57,7 +57,7 @@
     @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
     flex: 0 0 40%;
     max-width: 40%;
-    padding-top: 80px;
+    padding-top: 64px;
     padding-right: 24px;
     box-sizing: border-box;
     position: relative;
