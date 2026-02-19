@@ -56,18 +56,18 @@ app-header {
         display: none; // Chrome / Safari
     }
 
-    // Durchgehender Gradient über die gesamte Scrollbreite (Pixel-Stops)
+    // Durchgehender Gradient über die gesamte Scrollbreite (Dynamisch skaliert: 1440px → 1025px = 71.18%)
     // Hero: 0–1280 | Why Me: 1280–2560 | Skills: 2560–3840
     // Projects: 3840–6340 | References: 6340–7240 | Contact: 7240–8420
     background: linear-gradient(80deg,
         vars.$black 0px,
-        vars.$black 1280px,      // Hero: schwarz
-        vars.$bg-gray 2048px,    // Why Me: Gradient-Peak (40% Anstieg, 60% Ausfaden)
-        vars.$black 3200px,      // Abfallend – erste 50% von Skills
-        vars.$black 3840px,      // schwarz bis Projects
-        vars.$bg-gray 5320px,    // Projects: Gradient-Peak (mittig)
-        vars.$black 6800px,      // Abfallend – etwas in References hinein
-        vars.$black 8420px       // Rest schwarz (Contact)
+        vars.$black calc(911.104px + 369.096px * ((100vw - 1025px) / 415px)),      // Hero: schwarz (1280px @ 1440px)
+        vars.$bg-gray calc(1457.766px + 590.234px * ((100vw - 1025px) / 415px)),   // Why Me: Gradient-Peak (2048px @ 1440px)
+        vars.$black calc(2277.76px + 922.24px * ((100vw - 1025px) / 415px)),       // Abfallend – erste 50% von Skills (3200px @ 1440px)
+        vars.$black calc(2733.312px + 1106.688px * ((100vw - 1025px) / 415px)),    // schwarz bis Projects (3840px @ 1440px)
+        vars.$bg-gray calc(3786.776px + 1533.224px * ((100vw - 1025px) / 415px)),  // Projects: Gradient-Peak (5320px @ 1440px)
+        vars.$black calc(4840.24px + 1959.76px * ((100vw - 1025px) / 415px)),      // Abfallend – References (6800px @ 1440px)
+        vars.$black calc(5993.356px + 2426.644px * ((100vw - 1025px) / 415px))     // Rest schwarz (Contact) (8420px @ 1440px)
     ) no-repeat;
     background-attachment: local;
 

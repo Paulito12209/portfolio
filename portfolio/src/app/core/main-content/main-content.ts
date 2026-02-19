@@ -26,7 +26,7 @@ export class MainContent implements AfterViewInit, OnDestroy {
   private wheelHandler = (event: WheelEvent) => {
     if (window.innerWidth > 1024) {
       event.preventDefault();
-      const scrollAmount = event.deltaY * 4;
+      const scrollAmount = event.deltaY * 10;
       this.container!.scrollLeft += scrollAmount;
     }
   };
