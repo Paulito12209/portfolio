@@ -64,17 +64,26 @@
             touch-action: pan-y;
             -webkit-overflow-scrolling: touch;
 
-            // Show scrollbar on mobile
+            // Schlanke, dunkle Scrollbar
             scrollbar-width: thin;
+            scrollbar-color: rgba(68, 68, 68, 0.8) rgba(0, 0, 0, 0.5);
 
             &::-webkit-scrollbar {
                 display: block;
-                width: 4px;
+                width: 2px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.5);
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: vars.$neon;
-                border-radius: 2px;
+                background-color: rgba(68, 68, 68, 0.8);
+                border-radius: 1px;
+
+                &:hover {
+                    background-color: rgba(100, 100, 100, 0.9);
+                }
             }
         }
     }

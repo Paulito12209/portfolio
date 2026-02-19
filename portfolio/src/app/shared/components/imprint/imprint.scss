@@ -78,7 +78,8 @@ app-header {
     min-height: 100%;
     flex-shrink: 0;
     overflow: visible;
-    margin-top: clamp(40px, 7vh, 80px);
+    margin-top: 0;
+    padding-top: 80px; // Added for header clearance
 
     &.section-footer {
         max-width: 1180px;
@@ -151,12 +152,17 @@ app-header {
 
 // ===== Section 2: Right Column (email, phone, footer) =====
 .imp-right {
-    @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
-    width: 400px;
+    @include mix.dFlex($fdir: column, $ai: end, $g: 16px);
+    width: 320px; // Fixed width as requested
     flex-shrink: 0;
     padding-top: clamp(40px, 8vh, 100px);
     padding-right: 24px;
     box-sizing: border-box;
+
+    @media (min-width: 1025px) and (max-width: 1440px) {
+        // Fluid font scaling from 18px (at 1440px) to 14px (at 1025px)
+        font-size: clamp(14px, 0.96vw + 4.12px, 18px);
+    }
 
     @media (max-width: vars.$mobile) {
         display: none;
@@ -200,7 +206,12 @@ app-header {
 
     p {
         color: white;
-        font-size: clamp(10px, -9px + 1.9vw, 18px);
+        font-size: 18px; // Default for > 1440px
+
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            font-size: clamp(14px, 0.96vw + 4.12px, 18px);
+        }
+
         line-height: 1.5;
         margin: 0;
 
@@ -231,6 +242,7 @@ app-header {
     flex-shrink: 0;
     background: linear-gradient(165deg, vars.$neon 0%, #7aa619 100%);
     box-shadow: -5px 0 20px rgba(vars.$neon, 0.3);
+    // Ensure negative margin or similar if needed, but better to pad content instead.
 
     app-mobile-footer {
         display: none;

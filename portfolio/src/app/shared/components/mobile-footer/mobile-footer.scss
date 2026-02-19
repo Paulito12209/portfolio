@@ -29,28 +29,22 @@
 .mobile-footer-socials {
     @include mix.dFlex($g: 24px);
     width: 100%;
-    padding: 24px 0 32px;
+    padding: 40px 0;
     background: vars.$black;
 
-    .social-circle {
+    a {
         @include mix.dFlex();
-        width: 50px;
-        height: 50px;
-        border: 2px solid white;
-        border-radius: 50%;
         text-decoration: none;
         cursor: pointer;
-        transition: transform vars.$transition-duration ease, border-color vars.$transition-duration ease;
+        transition: transform vars.$transition-duration ease;
 
         &:hover {
             transform: scale(1.1);
-            border-color: vars.$neon;
         }
 
         img {
             width: 30px;
             height: 30px;
-            transition: filter vars.$transition-duration ease;
 
             &:hover {
                 filter: brightness(0) saturate(100%) invert(82%) sepia(35%) saturate(3000%) hue-rotate(35deg) brightness(145%) contrast(104%);
