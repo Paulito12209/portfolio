@@ -3,7 +3,7 @@
 
 :host {
     @include mix.dFlex($jc: end, $ai: stretch, $g: 40px);
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -36,7 +36,7 @@
     @include mix.dFlex($jc: start, $ai: start);
     flex: 0 0 60%;
     max-width: 60%;
-    padding-top: 64px;
+    padding-top: clamp(32px, 7.11vh, 64px);
     box-sizing: border-box;
 
     @media (max-width: vars.$mobile) {
@@ -57,7 +57,7 @@
     @include mix.dFlex($fdir: column, $jc: space-between, $ai: end);
     flex: 0 0 40%;
     max-width: 40%;
-    padding-top: 64px;
+    padding-top: clamp(32px, 7.11vh, 64px);
     padding-right: 24px;
     box-sizing: border-box;
     position: relative;
@@ -145,7 +145,7 @@
 .contact-right-bow {
     @include mix.dFlex($jc: end);
     transform: rotate(180deg);
-    margin: 120px 0;
+    margin: clamp(40px, 13.33vh, 120px) 0;
 
     @media (max-width: vars.$mobile) {
         margin: 40px 0;

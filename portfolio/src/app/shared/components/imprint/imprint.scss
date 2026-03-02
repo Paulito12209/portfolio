@@ -121,6 +121,10 @@ app-header {
     padding-top: clamp(40px, 8vh, 100px);
     box-sizing: border-box;
 
+    @media (max-height: 780px) {
+        padding-top: calc(141.33vh - 1040px);
+    }
+
     @media (max-width: vars.$mobile) {
         padding: 40px 16px;
         width: 100%;
@@ -160,6 +164,10 @@ app-header {
     padding-top: clamp(40px, 8vh, 100px);
     padding-right: 24px;
     box-sizing: border-box;
+
+    @media (max-height: 780px) {
+        padding-top: calc(141.33vh - 1040px);
+    }
 
     @media (min-width: 1025px) and (max-width: 1440px) {
         // Fluid font scaling from 18px (at 1440px) to 14px (at 1025px)

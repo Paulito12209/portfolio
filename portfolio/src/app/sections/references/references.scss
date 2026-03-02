@@ -32,6 +32,10 @@
     padding-top: clamp(40px, 6vh, 80px);
     width: 70%;
 
+    @media (max-height: 780px) {
+        padding-top: calc(100vh - 733px);
+    }
+
     @media (max-width: vars.$mobile) {
         padding-top: 0;
         width: 100%;
@@ -134,6 +138,10 @@
 
 .references-bow {
     padding-top: clamp(100px, 35vh, 360px);
+
+    @media (max-height: 780px) {
+        padding-top: calc(100vh - 507px);
+    }
 
     @media (max-width: vars.$mobile) {
         display: none;

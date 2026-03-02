@@ -30,8 +30,12 @@
 
 .skills-content {
     @include mix.dFlex($g: 16px);
-    padding-top: 240px;
+    padding-top: clamp(140px, 26.67vh, 240px);
     width: 95%;
+
+    @media (max-height: 780px) {
+        padding-top: calc(100vh - 572px);
+    }
 
     @media (max-width: vars.$mobile) {
         padding-top: 0;
@@ -159,6 +163,10 @@
     height: 80%;
     width: 15%;
     padding-top: clamp(60px, 15vh, 154px);
+
+    @media (max-height: 780px) {
+        padding-top: calc(100vh - 663px);
+    }
 
     @media (max-width: vars.$mobile) {
         display: none;
